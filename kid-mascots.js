@@ -46,9 +46,13 @@ function apply(){
   const key=info?info.kind:"pebble";
   if(key===shown)return;shown=key;
   swap(key);
+  m.dataset.mascot=key;
   m.setAttribute("aria-label",info?info.label:"Pip the pebble");
   m.onclick=info?function(){try{SFX.tap()}catch(e){}const t=pick(info.lines);pip("happy",t);try{speak(t,"happy")}catch(e){}}:orig;
 }
+const hatCss=document.createElement("style");
+hatCss.textContent='#mascot[data-mascot="unicorn"] #hat{left:24%!important;top:-2px!important;transform:translateX(-50%) rotate(-20deg)!important;font-size:30px!important}';
+document.head.appendChild(hatCss);
 window.PEBBLE_MASCOT_APPLY=apply;
 apply();
 ["pointerdown","click","touchstart"].forEach(e=>document.addEventListener(e,apply,true));

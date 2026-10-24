@@ -35,7 +35,7 @@ let tab="overview",who=0,M=null,EV=[],INFO={};
 function rankOf(p){return[num(p.best),num(p.lvl),num(p.stars)]}
 function beats(a,b){for(let i=0;i<3;i++){if(a[i]!==b[i])return a[i]>b[i]}return false}
 function mergeSources(srcs){
-  const m={progress:{},cp:{},prof:{},coins:{},pathYear:{},labYear:{}};
+  const m={progress:{},cp:{},prof:{},coins:{},pathYear:{},labYear:{},faces:{}};
   srcs.forEach(s=>{
     Object.keys(s.progress||{}).forEach(k=>{const dst=m.progress[k]=m.progress[k]||{};
       Object.keys(s.progress[k]||{}).forEach(w=>{const p=s.progress[k][w];if(!p||typeof p!=="object")return;if(!dst[w]||beats(rankOf(p),rankOf(dst[w])))dst[w]=p})});
@@ -46,6 +46,10 @@ function mergeSources(srcs){
     Object.keys(pr).forEach(k=>{const dst=m.prof[k]=m.prof[k]||{};
       Object.keys(pr[k]||{}).forEach(key=>{const r=pr[k][key],o=dst[key];
         if(!r)return;if(!o||num(r.sessions)>num(o.sessions)||(num(r.sessions)===num(o.sessions)&&num(r.lastAt)>num(o.lastAt)))dst[key]=r})});
+    const fc=(s.journey&&s.journey.faces)||{};
+    Object.keys(fc).forEach(k=>{const dst=m.faces[k]=m.faces[k]||{};
+      Object.keys(fc[k]||{}).forEach(key=>{const r=fc[k][key]||{},o=dst[key];
+        dst[key]=o?{got:Math.max(num(o.got),num(r.got)),nearly:Math.max(num(o.nearly),num(r.nearly)),again:Math.max(num(o.again),num(r.again)),last:Math.max(num(o.last),num(r.last))}:{got:num(r.got),nearly:num(r.nearly),again:num(r.again),last:num(r.last)}})});
     Object.keys(s.coins||{}).forEach(k=>{m.coins[k]=Math.max(num(m.coins[k]),num(s.coins[k]))});
     Object.keys(s.pathwayYear||{}).forEach(k=>{if(m.pathYear[k]===undefined)m.pathYear[k]=s.pathwayYear[k]});
     Object.keys(s.curriculumYear||{}).forEach(k=>{if(m.labYear[k]===undefined)m.labYear[k]=s.curriculumYear[k]});
@@ -117,6 +121,11 @@ function lessonNext(k){const rows=lessons(k);const py=pathYear(k),ly=labYear(k);
   mine.filter(r=>r.touched&&!r.due&&r.status.kind!=="strong").forEach(r=>out.push({r,note:"Building. "+A.dueText(r.s)+".",pri:1}));
   return out.sort((a,b)=>a.pri-b.pri)}
 
+function feelings(k){const f=M.faces[k]||{};const by={};lessons(k).forEach(r=>{by[r.key]=r});
+  return Object.entries(f).map(([key,e])=>({r:by[key],e,tot:num(e.got)+num(e.nearly)+num(e.again)})).filter(x=>x.r&&(num(x.e.again)||num(x.e.nearly)))
+    .sort((a,b)=>num(b.e.again)-num(a.e.again)||num(b.e.nearly)-num(a.e.nearly)||num(b.e.last)-num(a.e.last))}
+function feelSection(k){const rows=feelings(k);
+  return `<div class="hc"><h3>Asked to see again</h3><p class="sub">After the practice questions, ${esc(S.kids[k].name)} taps how a lesson feels: Got it, Nearly or Show me again. Lessons with Show me again or Nearly are listed first. This is how it felt, not a score.</p>${rows.length?`<div class="scroll"><table><tr><th>Lesson</th><th>Show me again</th><th>Nearly</th><th>Got it</th><th>Last</th></tr>${rows.slice(0,15).map(x=>`<tr><td><b>${esc(x.r.les.icon||"")} ${esc(x.r.les.title)}</b><br><small>${esc(NICE[x.r.area]||x.r.area)} · ${yrLabel(x.r.y)} · ${esc(x.r.les.code||"")}</small></td><td>${num(x.e.again)}</td><td>${num(x.e.nearly)}</td><td>${num(x.e.got)}</td><td>${x.e.last?day(x.e.last):""}</td></tr>`).join("")}</table></div><p>Lessons asked for again more than once are good ones to do together, with real objects or a printable.</p>`:`<p class="sub">Nothing yet. This fills in as lessons are done.</p>`}</div>`}
 function coverage(k){const by=islandStats(k);const since=Date.now()-7*DAY;
   const wk=EV.filter(e=>e.kid===k&&e.kind==="answer"&&+new Date(e.at)>since);
   const ls=lessonSessions(k).filter(x=>x.at>since);
@@ -188,7 +197,7 @@ function view(){
   if(tab==="skills"){const done=all.filter(r=>r.done);
     body=`<div class="hc"><h3>Island skills (Australian Curriculum v9)</h3><div class="scroll"><table><tr><th>Island</th><th>Skill</th><th>AC9 code</th><th>Thinking skill</th><th>Achieved</th></tr>${acq.map(a=>`<tr><td>${esc(a.w.name)}</td><td>${esc(a.act)}</td><td>${esc(a.code)}</td><td>${esc(a.skill)}</td><td>${a.at?day(a.at):"✓"}</td></tr>`).join("")||"<tr><td colspan=5>None yet: they appear as levels are passed.</td></tr>"}</table></div></div>
     <div class="hc"><h3>Lessons practised (Learning Path and Curiosity Lab)</h3>${lessonList(done)}</div>`}
-  if(tab==="next"){body=`<div class="hc"><h3>Islands</h3><div class="scroll"><table><tr><th>Island</th><th>Next target</th><th>Advice</th></tr>${ns.map(n=>`<tr><td>${esc(n.w.name)}</td><td>${n.r?esc(n.r[0])+` <small>${esc(n.r[1])}</small>`:""}</td><td>${esc(n.note)}</td></tr>`).join("")}</table></div><p>Printable sheets for each subject are in the Pebble Island Printables PDF.</p></div>
+  if(tab==="next"){body=feelSection(who)+`<div class="hc"><h3>Islands</h3><div class="scroll"><table><tr><th>Island</th><th>Next target</th><th>Advice</th></tr>${ns.map(n=>`<tr><td>${esc(n.w.name)}</td><td>${n.r?esc(n.r[0])+` <small>${esc(n.r[1])}</small>`:""}</td><td>${esc(n.note)}</td></tr>`).join("")}</table></div><p>Printable sheets for each subject are in the Pebble Island Printables PDF.</p></div>
     <div class="hc"><h3>Lessons: ${yrLabel(pathYear(k))} Maths and English, Year ${labYear(k)} Lab</h3><div class="scroll"><table><tr><th>Lesson</th><th>Subject</th><th>AC9 code</th><th>Advice</th></tr>${lnext.map(n=>`<tr><td>${esc(n.r.les.icon||"")} ${esc(n.r.les.title)}</td><td>${esc(NICE[n.r.area]||n.r.area)}</td><td>${esc(n.r.les.code||"")}</td><td>${esc(n.note)}</td></tr>`).join("")||"<tr><td colspan=4>All lessons at this level are strong.</td></tr>"}</table></div></div>`}
   if(tab==="plan"){const cov=coverage(k);const pr=ns.filter(n=>n.pri<=1).slice(0,5);const dn=["Mon","Tue","Wed","Thu","Fri"];const dueFirst=lnext.filter(n=>n.pri===0);
     body=`<div class="hc"><h3>This week's coverage</h3><div class="scroll"><table><tr><th>Learning area</th><th>Questions this week</th><th>All time</th></tr>${cov.map(c=>`<tr><td>${esc(c.a)}</td><td>${c.n}</td><td>${c.total}</td></tr>`).join("")}<tr><td>The Arts</td><td colspan=2><i>Offline: see ideas below</i></td></tr><tr><td>Languages</td><td colspan=2><i>Offline: see ideas below</i></td></tr></table></div></div>
