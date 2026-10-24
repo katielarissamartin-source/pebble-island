@@ -1,6 +1,6 @@
 PEBBLE_EXTRA(3,"english",[
 ["verbtense",
-["Verbs and tenses","🏃","AC9E3LA","Use verbs in the past, present and future.","A verb is an action word. Past tense means it already happened: jumped. Present tense means it is happening now: jumps. Future tense means it will happen: will jump.","Yesterday I walked. Today I walk. Tomorrow I will walk.","Write one sentence about yesterday and one about tomorrow.",[
+["Verbs and tenses","🏃","AC9E3LA08","Use verbs in the past, present and future.","A verb is an action word. Past tense means it already happened: jumped. Present tense means it is happening now: jumps. Future tense means it will happen: will jump.","Yesterday I walked. Today I walk. Tomorrow I will walk.","Write one sentence about yesterday and one about tomorrow.",[
 ["Which word is a verb?","run","tree","blue","Run is an action."],
 ["Which sentence is in the past?","She baked a cake.","She bakes a cake.","She will bake a cake.","Baked already happened."],
 ["Which sentence is in the future?","We will visit the zoo.","We visited the zoo.","We visit the zoo.","Will shows the future."],
@@ -17,7 +17,7 @@ PEBBLE_EXTRA(3,"english",[
 ["Pick the past tense of 'build'.","built","builds","building","Build changes to built."]]]],
 
 ["sentences3",
-["Sentences that make sense","📝","AC9E3LA","Write sentences that are complete and clear.","A sentence starts with a capital letter and ends with a full stop, question mark or exclamation mark. It tells a whole idea. It needs a subject (who or what) and a verb (what they do).","The cat slept. Who? The cat. Did what? Slept.","Write three sentences about your favourite place.",[
+["Sentences that make sense","📝","AC9E3LA06","Write sentences that are complete and clear.","A sentence starts with a capital letter and ends with a full stop, question mark or exclamation mark. It tells a whole idea. It needs a subject (who or what) and a verb (what they do).","The cat slept. Who? The cat. Did what? Slept.","Write three sentences about your favourite place.",[
 ["Which is a complete sentence?","The dog barked.","The big dog","Barked loudly at","It has a who and a doing word."],
 ["What does a sentence start with?","A capital letter","A number","A comma","Sentences begin with a capital."],
 ["Which ends with the right mark? 'Where is my hat'","Where is my hat?","Where is my hat.","Where is my hat!","Questions end with ?"],
@@ -34,7 +34,7 @@ PEBBLE_EXTRA(3,"english",[
 ["In 'Sam found a fossil', who is the subject?","Sam","found","fossil","Sam is who did it."]]]],
 
 ["adjectives3",
-["Describing words","🎨","AC9E3LA","Use adjectives and adverbs to add detail.","An adjective describes a noun: a tall tree. An adverb describes a verb: ran quickly. Good describing words help the reader see, hear and feel.","The small, brown dog ran quickly.","Describe your breakfast with three adjectives.",[
+["Describing words","🎨","AC9E3LA10","Use adjectives and adverbs to add detail.","An adjective describes a noun: a tall tree. An adverb describes a verb: ran quickly. Good describing words help the reader see, hear and feel.","The small, brown dog ran quickly.","Describe your breakfast with three adjectives.",[
 ["Which word is an adjective? 'the shiny coin'","shiny","coin","the","Shiny describes the coin."],
 ["Which is an adverb? 'She spoke softly'","softly","She","spoke","Softly tells how she spoke."],
 ["Which describes the noun best? 'a ___ night'","dark","dark quickly","darkly ran","Dark is an adjective."],
@@ -51,7 +51,7 @@ PEBBLE_EXTRA(3,"english",[
 ["Pick the best adverb: 'The builder worked ___'","carefully","careful","care","Adverbs often end in -ly."]]]],
 
 ["spelling3",
-["Spelling patterns","🔤","AC9E3LA","Use spelling rules to spell more words.","Many words follow patterns. To make a word mean more than one, add -s or -es: cats, boxes. Some words with long vowel sounds use a magic e: cake, bike. Look for little words inside bigger ones.","Box ends in x, so we add -es: boxes.","Spell five words that end in -es.",[
+["Spelling patterns","🔤","AC9E3LY11","Use spelling rules to spell more words.","Many words follow patterns. To make a word mean more than one, add -s or -es: cats, boxes. Some words with long vowel sounds use a magic e: cake, bike. Look for little words inside bigger ones.","Box ends in x, so we add -es: boxes.","Spell five words that end in -es.",[
 ["More than one box is...","boxes","boxs","boxen","Add -es to words ending in x."],
 ["Which word has the long a sound with magic e?","cake","cat","cap","The silent e makes a say its name."],
 ["More than one dish is...","dishes","dishs","dishies","Add -es after sh."],
@@ -68,7 +68,7 @@ PEBBLE_EXTRA(3,"english",[
 ["Which is spelled correctly?","friend","freind","frend","'Friend' has 'i' before 'e'."]]]],
 
 ["dialogue",
-["Speech marks","💬","AC9E3LA","Use speech marks around spoken words.","Speech marks show the exact words someone says. Put them around the spoken words. A comma comes before the speech marks. Start a new line when a new person speaks.","Mum said, \"Dinner is ready.\"","Write what two people might say to each other.",[
+["Speech marks","💬","AC9E3LA03","Use speech marks around spoken words.","Speech marks show the exact words someone says. Put them around the spoken words. A comma comes before the speech marks. Start a new line when a new person speaks.","Mum said, \"Dinner is ready.\"","Write what two people might say to each other.",[
 ["Which is written correctly?","Tom said, \"Come here.\"","Tom said Come here.","\"Tom said, Come here.\"","Speech marks go around the spoken words."],
 ["What do speech marks show?","The exact words someone says","The title","A question","They show spoken words."],
 ["Which word tells who is speaking? \"Run!\" shouted Lee.","Lee","Run","shouted","Lee spoke."],
@@ -85,7 +85,7 @@ PEBBLE_EXTRA(3,"english",[
 ["Which ends spoken words correctly?","\"I like fossils,\" he said.","\"I like fossils\" he said","I like fossils, \"he said.\"","A comma goes inside the speech marks."]]]],
 
 ["storyplan",
-["Plan a story","🗺️","AC9E3LY","Plan a story with a start, middle and end.","A story has a beginning, a middle and an end. The beginning introduces the characters and setting. The middle has a problem. The end solves the problem. Plan first, then write.","Beginning: a boy finds a map. Middle: he gets lost. End: he finds his way home.","Plan a story with three boxes: start, middle, end.",[
+["Plan a story","🗺️","AC9E3LY06","Plan a story with a start, middle and end.","A story has a beginning, a middle and an end. The beginning introduces the characters and setting. The middle has a problem. The end solves the problem. Plan first, then write.","Beginning: a boy finds a map. Middle: he gets lost. End: he finds his way home.","Plan a story with three boxes: start, middle, end.",[
 ["Where does the problem usually happen?","In the middle","Before the title","After the end","The middle holds the problem."],
 ["What does the beginning introduce?","Characters and setting","The answer","A glossary","The start tells who and where."],
 ["What happens at the end?","The problem is solved","A new title","Nothing","The end wraps up the story."],
@@ -102,7 +102,7 @@ PEBBLE_EXTRA(3,"english",[
 ["Why plan a story first?","It helps you organise ideas","It makes it shorter","Stories need no plan","Planning keeps ideas in order."]]]],
 
 ["report3",
-["Facts and reports","📖","AC9E3LY","Find facts in a report and write your own.","A report gives true facts about a topic. It has a title, headings and short sentences. Use a heading for each part. Facts can be checked. Opinions cannot.","Heading: What frogs eat. Fact: Frogs eat insects.","Write three facts about an animal you know.",[
+["Facts and reports","📖","AC9E3LY05","Find facts in a report and write your own.","A report gives true facts about a topic. It has a title, headings and short sentences. Use a heading for each part. Facts can be checked. Opinions cannot.","Heading: What frogs eat. Fact: Frogs eat insects.","Write three facts about an animal you know.",[
 ["Which is a fact?","Frogs lay eggs.","Frogs are the best pets.","Frogs are boring.","A fact can be checked."],
 ["What does a heading do?","Tells what a part is about","Ends the report","Shows a picture","Headings label each part."],
 ["Which is an opinion?","Pizza is the tastiest food.","Water is wet.","The sun is a star.","Tasty is a feeling, not a fact."],
@@ -119,7 +119,7 @@ PEBBLE_EXTRA(3,"english",[
 ["A report's title tells the...","Topic","Ending","Author's age","The title names the topic."]]]],
 
 ["rhyme3",
-["Rhyme and rhythm","🎵","AC9E3LE","Notice rhyme, rhythm and patterns in poems.","Words rhyme when their endings sound the same: cat and hat. Rhythm is the beat of a poem. Some poems repeat words to make a pattern. Say it out loud and tap the beat.","Cat, hat, bat all rhyme. Clap the beats in 'Twinkle, twinkle'.","Make up two lines that rhyme.",[
+["Rhyme and rhythm","🎵","AC9E3LE04","Notice rhyme, rhythm and patterns in poems.","Words rhyme when their endings sound the same: cat and hat. Rhythm is the beat of a poem. Some poems repeat words to make a pattern. Say it out loud and tap the beat.","Cat, hat, bat all rhyme. Clap the beats in 'Twinkle, twinkle'.","Make up two lines that rhyme.",[
 ["Which word rhymes with 'moon'?","spoon","map","tree","Moon and spoon end the same."],
 ["What is rhythm?","The beat of a poem","The title","The picture","Rhythm is the beat."],
 ["Which pair rhymes?","hop, top","hop, hut","cup, cap","Hop and top end the same."],

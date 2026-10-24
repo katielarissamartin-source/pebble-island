@@ -1,6 +1,6 @@
 PEBBLE_EXTRA(4,"english",[
 ["apostrophe",
-["Apostrophes","✍️","AC9E4LA","Use apostrophes for contractions and belonging.","An apostrophe shows letters are missing: do not becomes don't. An apostrophe also shows belonging: the dog's bone. For one owner add 's. For many owners ending in s, add just an apostrophe: the girls' room.","I am becomes I'm. The cat's toy belongs to the cat.","Write three contractions and two sentences about things that belong to someone.",[
+["Apostrophes","✍️","AC9E4LA12","Use apostrophes for contractions and belonging.","An apostrophe shows letters are missing: do not becomes don't. An apostrophe also shows belonging: the dog's bone. For one owner add 's. For many owners ending in s, add just an apostrophe: the girls' room.","I am becomes I'm. The cat's toy belongs to the cat.","Write three contractions and two sentences about things that belong to someone.",[
 ["Which is the contraction of 'cannot'?","can't","cant","ca'nt","The apostrophe replaces the missing letters."],
 ["Which shows belonging?","the dog's bone","the dogs bone","the dogs' bone's","One dog owns the bone."],
 ["'It's' means...","It is","Belonging to it","It was","It's is a contraction of it is."],
@@ -17,7 +17,7 @@ PEBBLE_EXTRA(4,"english",[
 ["The diggers' tools means...","Tools of many diggers","Tools of one digger","Diggers tools","Apostrophe after s for many owners."]]]],
 
 ["adverbs4",
-["Adverbs and adverbial phrases","🏃","AC9E4LA","Say how, when and where things happen.","Adverbs tell how, when or where: quickly, tomorrow, outside. An adverbial phrase has more words: in the morning, with a smile. They make writing clearer and more interesting.","She walked slowly to the gate after school.","Add a how, when and where to the sentence 'The dog ran.'",[
+["Adverbs and adverbial phrases","🏃","AC9E4LA08","Say how, when and where things happen.","Adverbs tell how, when or where: quickly, tomorrow, outside. An adverbial phrase has more words: in the morning, with a smile. They make writing clearer and more interesting.","She walked slowly to the gate after school.","Add a how, when and where to the sentence 'The dog ran.'",[
 ["Which is an adverb? 'He spoke quietly.'","quietly","He","spoke","Quietly says how."],
 ["'After lunch' tells...","When","Where","How","After lunch gives time."],
 ["'Under the bridge' tells...","Where","When","How","Under the bridge gives place."],
@@ -34,7 +34,7 @@ PEBBLE_EXTRA(4,"english",[
 ["Which tells how? 'The dino roared ___.'","loudly","tomorrow","outside","Loudly is how."]]]],
 
 ["paragraph4",
-["Organising paragraphs","📑","AC9E4LY","Plan and write paragraphs about one idea.","A paragraph is a group of sentences about one idea. Start with a topic sentence that gives the main idea. Add detail sentences that give facts or examples. End with a closing sentence. Start a new paragraph for a new idea.","Topic: Dogs make good pets. Detail: They are friendly. They love walks.","Write a paragraph on your favourite food. Start with a topic sentence.",[
+["Organising paragraphs","📑","AC9E4LA04","Plan and write paragraphs about one idea.","A paragraph is a group of sentences about one idea. Start with a topic sentence that gives the main idea. Add detail sentences that give facts or examples. End with a closing sentence. Start a new paragraph for a new idea.","Topic: Dogs make good pets. Detail: They are friendly. They love walks.","Write a paragraph on your favourite food. Start with a topic sentence.",[
 ["A paragraph is about...","One main idea","Many ideas","Nothing","One idea per paragraph."],
 ["A topic sentence...","Gives the main idea","Ends the story","Gives the title","It introduces the idea."],
 ["When do you start a new paragraph?","For a new idea","After every sentence","Never","New idea, new paragraph."],
@@ -51,7 +51,7 @@ PEBBLE_EXTRA(4,"english",[
 ["Detail sentences give...","Facts and examples","The title","A new topic","Details support the idea."]]]],
 
 ["persuade4",
-["Persuasive writing","📣","AC9E4LY","Write to convince a reader.","Persuasive writing tries to make the reader agree. State your opinion. Give reasons and evidence. Use strong words and finish with a clear request. Think about who is reading.","Opinion: We need more trees. Reason: Trees give shade.","Write three reasons why your school should have a garden.",[
+["Persuasive writing","📣","AC9E4LY06","Write to convince a reader.","Persuasive writing tries to make the reader agree. State your opinion. Give reasons and evidence. Use strong words and finish with a clear request. Think about who is reading.","Opinion: We need more trees. Reason: Trees give shade.","Write three reasons why your school should have a garden.",[
 ["Persuasive writing tries to...","Make the reader agree","Tell a story","List facts only","Persuade means convince."],
 ["A good reason is...","Trees give shade","Because I said so","Trees are cool","A reason gives a fact."],
 ["Persuasive writing starts with...","Your opinion","A recipe","A joke","State your opinion."],
@@ -68,7 +68,7 @@ PEBBLE_EXTRA(4,"english",[
 ["A closing sentence should...","Ask the reader to act","Add a new topic","Say nothing","End with a request."]]]],
 
 ["setting4",
-["Setting and description","🏞️","AC9E4LE","Describe a setting with the senses.","The setting is where and when a story happens. Good writers use the five senses: what you see, hear, smell, feel and taste. Strong verbs and adjectives help the reader picture it.","The cave was dark and damp. Water dripped. It smelled of wet stone.","Describe your bedroom with three senses.",[
+["Setting and description","🏞️","AC9E4LE05","Describe a setting with the senses.","The setting is where and when a story happens. Good writers use the five senses: what you see, hear, smell, feel and taste. Strong verbs and adjectives help the reader picture it.","The cave was dark and damp. Water dripped. It smelled of wet stone.","Describe your bedroom with three senses.",[
 ["A setting is...","Where and when a story happens","Who the hero is","The ending","Setting is place and time."],
 ["'Water dripped' uses the sense of...","Hearing","Taste","Sight only","Dripping is a sound."],
 ["Which is more descriptive?","The ancient forest creaked in the wind.","It was a forest.","There were trees.","It uses sound and detail."],
@@ -85,7 +85,7 @@ PEBBLE_EXTRA(4,"english",[
 ["Senses help the reader...","Picture the scene","Skip the story","Stop reading","Senses paint a picture."]]]],
 
 ["vocab4",
-["Prefixes and suffixes","🔠","AC9E4LA","Use prefixes and suffixes to build words.","A prefix goes at the start of a word and changes its meaning: un-, re-, dis-, pre-. A suffix goes at the end: -ful, -less, -ness, -ly. Hopeful means full of hope. Hopeless means without hope.","Un + happy = unhappy. Care + less = careless.","Make three new words using un-, re- and -ful.",[
+["Prefixes and suffixes","🔠","AC9E4LY09","Use prefixes and suffixes to build words.","A prefix goes at the start of a word and changes its meaning: un-, re-, dis-, pre-. A suffix goes at the end: -ful, -less, -ness, -ly. Hopeful means full of hope. Hopeless means without hope.","Un + happy = unhappy. Care + less = careless.","Make three new words using un-, re- and -ful.",[
 ["Which prefix means 'not'?","un-","re-","pre-","Un- means not."],
 ["Hopeless means...","Without hope","Full of hope","Hope again","-less means without."],
 ["Re- means...","Again","Not","Before","Re- means again."],
@@ -102,7 +102,7 @@ PEBBLE_EXTRA(4,"english",[
 ["Add -ful to 'power'.","powerful","powerly","powerness","Powerful means full of power."]]]],
 
 ["simile4",
-["Similes and metaphors","🌟","AC9E4LE","Spot similes and metaphors.","A simile compares two things using like or as: as brave as a lion. A metaphor says one thing is another: the classroom was a zoo. Both paint a picture in the reader's mind.","Her smile was a ray of sunshine. He ran like the wind.","Write one simile and one metaphor about a storm.",[
+["Similes and metaphors","🌟","AC9E4LE04","Spot similes and metaphors.","A simile compares two things using like or as: as brave as a lion. A metaphor says one thing is another: the classroom was a zoo. Both paint a picture in the reader's mind.","Her smile was a ray of sunshine. He ran like the wind.","Write one simile and one metaphor about a storm.",[
 ["Which is a simile?","as quiet as a mouse","The room was a zoo","Time flew","Simile uses as or like."],
 ["Which is a metaphor?","The classroom was a zoo.","as busy as a bee","like a bee","A metaphor says one thing is another."],
 ["A simile uses the words...","Like or as","Is or was","Go or went","Like or as."],
@@ -119,7 +119,7 @@ PEBBLE_EXTRA(4,"english",[
 ["Why use a simile?","To paint a picture","To confuse","To end","Similes help readers picture."]]]],
 
 ["nonfiction4",
-["Reading information texts","📚","AC9E4LY","Find information in non-fiction texts.","Non-fiction texts give facts. They use headings, a contents page, an index, a glossary, diagrams and captions. Use headings to find a topic fast. A glossary explains hard words. Skim, then read closely for details.","The index tells you which page to find 'volcano'.","Find a fact in a book using the index.",[
+["Reading information texts","📚","AC9E4LY04","Find information in non-fiction texts.","Non-fiction texts give facts. They use headings, a contents page, an index, a glossary, diagrams and captions. Use headings to find a topic fast. A glossary explains hard words. Skim, then read closely for details.","The index tells you which page to find 'volcano'.","Find a fact in a book using the index.",[
 ["A glossary explains...","Hard words","Pictures","The ending","A glossary lists word meanings."],
 ["Which helps you find a page quickly?","The index","The cover","The title","The index points to pages."],
 ["A caption goes with a...","Picture","Story","Poem","Captions explain pictures."],

@@ -1,6 +1,6 @@
 PEBBLE_EXTRA(2,"english",[
 ["syllables",
-["Beats in words","👏","AC9E2LA","Clap the beats (syllables) in words.","A syllable is one beat in a word. Clap as you say it. Cat has 1 beat. Rab-bit has 2 beats. But-ter-fly has 3 beats.","Pen-cil: clap, clap. 2 beats.","Clap the beats in your name and in 3 foods.",[
+["Beats in words","👏","AC9E2LY09","Clap the beats (syllables) in words.","A syllable is one beat in a word. Clap as you say it. Cat has 1 beat. Rab-bit has 2 beats. But-ter-fly has 3 beats.","Pen-cil: clap, clap. 2 beats.","Clap the beats in your name and in 3 foods.",[
 ["How many beats in 'dog'?","1","2","3","Dog is said in one beat."],
 ["How many beats in 'rabbit'?","2","1","3","Rab-bit has two beats."],
 ["How many beats in 'butterfly'?","3","2","4","But-ter-fly has three beats."],
@@ -17,7 +17,7 @@ PEBBLE_EXTRA(2,"english",[
 ["Which word has 2 beats?","pickaxe","block","egg","Pick-axe has two beats."]]]],
 
 ["fullstops",
-["Sentence starts and ends","✏️","AC9E2LA","Use capital letters and full stops.","A sentence starts with a capital letter. It ends with a full stop, question mark or exclamation mark. Names need capital letters too.","The dog ran. A capital T and a full stop.","Write one sentence about today. Check the start and end.",[
+["Sentence starts and ends","✏️","AC9E2LA10","Use capital letters and full stops.","A sentence starts with a capital letter. It ends with a full stop, question mark or exclamation mark. Names need capital letters too.","The dog ran. A capital T and a full stop.","Write one sentence about today. Check the start and end.",[
 ["Which sentence starts correctly?","The cat sat.","the cat sat.","tHe cat sat.","A sentence starts with a capital letter."],
 ["Which sentence ends correctly?","I like pizza.","I like pizza","i like pizza","A sentence ends with a full stop."],
 ["Which name is written correctly?","Mia","mia","mIa","Names start with a capital letter."],
@@ -34,7 +34,7 @@ PEBBLE_EXTRA(2,"english",[
 ["What goes at the end of a telling sentence?","A full stop","A comma","Nothing","Telling sentences end with a full stop."]]]],
 
 ["nouns",
-["Naming words","🏷️","AC9E2LA","Find nouns: people, places and things.","A noun is a naming word. It names a person, place or thing. Girl, park and ball are nouns.","The boy kicked the ball. Boy and ball are nouns.","Find 5 nouns in your room.",[
+["Naming words","🏷️","AC9E2LA07","Find nouns: people, places and things.","A noun is a naming word. It names a person, place or thing. Girl, park and ball are nouns.","The boy kicked the ball. Boy and ball are nouns.","Find 5 nouns in your room.",[
 ["Which is a noun?","dog","run","quickly","A dog is a thing you can name."],
 ["Which is a place noun?","park","jump","soft","A park is a place."],
 ["Which word names a person?","teacher","blue","hop","A teacher is a person."],
@@ -51,7 +51,7 @@ PEBBLE_EXTRA(2,"english",[
 ["Find the noun: 'The T. rex roared.'","T. rex","roared","The","T. rex names an animal."]]]],
 
 ["verbs",
-["Doing words","🏃","AC9E2LA","Find verbs: action words.","A verb is a doing word. It tells what someone does. Run, jump and eat are verbs.","The bird flies. Flies is the verb.","Act out 5 verbs. Name each one.",[
+["Doing words","🏃","AC9E2LA07","Find verbs: action words.","A verb is a doing word. It tells what someone does. Run, jump and eat are verbs.","The bird flies. Flies is the verb.","Act out 5 verbs. Name each one.",[
 ["Which is a verb?","jump","tree","green","Jump is something you do."],
 ["Find the verb: 'The boy ran.'","ran","boy","The","Ran is the action."],
 ["Which word is NOT a verb?","table","swim","read","A table is a thing."],
@@ -68,7 +68,7 @@ PEBBLE_EXTRA(2,"english",[
 ["Find the verb: 'We build houses.'","build","houses","We","Build is the action."]]]],
 
 ["adjectives",
-["Describing words","🎨","AC9E2LA","Use adjectives to describe.","An adjective is a describing word. It tells more about a noun. A big dog. A red ball. A soft pillow.","The tall tree has green leaves. Tall and green are adjectives.","Describe your favourite toy with 3 words.",[
+["Describing words","🎨","AC9E2LA07","Use adjectives to describe.","An adjective is a describing word. It tells more about a noun. A big dog. A red ball. A soft pillow.","The tall tree has green leaves. Tall and green are adjectives.","Describe your favourite toy with 3 words.",[
 ["Which is an adjective?","fluffy","jump","table","Fluffy describes something."],
 ["Find the adjective: 'a loud noise'","loud","noise","a","Loud describes the noise."],
 ["Which word describes a lemon?","sour","run","under","Sour tells about the taste."],
@@ -85,7 +85,7 @@ PEBBLE_EXTRA(2,"english",[
 ["Find the adjective: 'The huge dino roared.'","huge","dino","roared","Huge describes the dino."]]]],
 
 ["punctuation",
-["Question and exclamation marks","❓","AC9E2LA","Use ? and ! correctly.","A question mark ends an asking sentence. An exclamation mark shows a big feeling or a shout. A full stop ends a telling sentence.","Where is my hat? Wow! A full stop ends: I found it.","Write one question and one exclamation.",[
+["Question and exclamation marks","❓","AC9E2LA10","Use ? and ! correctly.","A question mark ends an asking sentence. An exclamation mark shows a big feeling or a shout. A full stop ends a telling sentence.","Where is my hat? Wow! A full stop ends: I found it.","Write one question and one exclamation.",[
 ["Which ends a question?","?","!",",","Asking sentences end with a question mark."],
 ["Which sentence needs a question mark?","Where is the park","The park is big","I like the park","It asks something."],
 ["Which sentence is a big feeling?","Wow, that is amazing!","I sat down.","It is Monday.","The ! shows strong feeling."],
@@ -102,7 +102,7 @@ PEBBLE_EXTRA(2,"english",[
 ["Pick the correct sentence.","Can you dig?","Can you dig.","Can you dig!","A question ends with ?."]]]],
 
 ["sequence",
-["First, next, then, last","1️⃣","AC9E2LY","Put story events in order.","A story has events in order. Words like first, next, then and last show the order. First wake up. Next brush teeth. Last go to bed.","First Mia packed her bag. Then she walked to school.","Tell 3 things you did today with first, then and last.",[
+["First, next, then, last","1️⃣","AC9E2LY05","Put story events in order.","A story has events in order. Words like first, next, then and last show the order. First wake up. Next brush teeth. Last go to bed.","First Mia packed her bag. Then she walked to school.","Tell 3 things you did today with first, then and last.",[
 ["Which word shows the start?","First","Last","Then","First means the beginning."],
 ["Which word shows the end?","Last","First","Next","Last means the end."],
 ["Put in order: eat dinner, wake up, go to bed","wake up, eat dinner, go to bed","go to bed, wake up, eat dinner","eat dinner, go to bed, wake up","Morning comes first."],
@@ -119,7 +119,7 @@ PEBBLE_EXTRA(2,"english",[
 ["First Alex found wood. Then he made a table. What happened last?","He built a house","He found wood","He made a table","The house is built after the table is made."]]]],
 
 ["mainidea",
-["What is it about?","🎯","AC9E2LY","Find the main idea.","The main idea is what a text is mostly about. Details give extra facts. A text about frogs may say what they eat, where they live and how they hop.","A text about bees says they make honey, live in hives and visit flowers. The main idea is bees.","Read a short text. Say what it is mostly about.",[
+["What is it about?","🎯","AC9E2LY05","Find the main idea.","The main idea is what a text is mostly about. Details give extra facts. A text about frogs may say what they eat, where they live and how they hop.","A text about bees says they make honey, live in hives and visit flowers. The main idea is bees.","Read a short text. Say what it is mostly about.",[
 ["A text says: Bees make honey. Bees live in hives. Bees visit flowers. What is it about?","Bees","Flowers only","Honey only","All the facts are about bees."],
 ["What is a main idea?","What the text is mostly about","The last word","The title only","The main idea covers the whole text."],
 ["Which is a detail about frogs?","Frogs have long back legs","Frogs are interesting","Animals exist","A detail is a small fact."],
