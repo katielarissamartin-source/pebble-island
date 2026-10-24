@@ -89,7 +89,29 @@ function show(){
  try{window.scrollTo(0,0)}catch(e){}
 }
 
-window.PEBBLE_TODAY={show,pickLesson,pickIsland};
+function doneThisYear(k){
+ let n=0;SUBJ.forEach(([a])=>{const y=yearOf(k,a);((B[y]&&B[y][a])||[]).forEach(l=>{try{const s=A.state(S,k,y,a,l.id);if(s&&(s.sessions||s.legacy))n++}catch(e){}})});return n;
+}
+const mapCss=document.createElement("style");
+mapCss.textContent='#pi-classic-islands>summary{pointer-events:none;cursor:default;list-style:none}#pi-classic-islands>summary::-webkit-details-marker{display:none}#pi-classic-islands>summary::marker{content:""}#pi-classic-islands>summary::after,#pi-classic-islands>summary::before{display:none!important}#pi-all-islands{display:none!important}.curr-card[data-qcaa]{display:none!important}';
+document.head.appendChild(mapCss);
+function decorateMap(){
+ const k=who(),a=app();if(k===null||!a||!a.querySelector(".map"))return;
+ const d=a.querySelector("#pi-classic-islands");
+ if(d){if(!d.open)d.open=true;if(!d.dataset.td){d.dataset.td="1";d.addEventListener("toggle",()=>{if(!d.open)d.open=true});const sm=d.querySelector("summary");if(sm){sm.textContent="🧭 All the islands";sm.tabIndex=-1}}}
+ const lp=a.querySelector("[data-learning-path]");
+ if(lp&&!lp.dataset.td){lp.dataset.td="1";
+  lp.innerHTML='<span class="studio-emoji" aria-hidden="true">📚</span><span><strong style="font:800 1.4rem var(--display);display:block;color:#fff">Lessons</strong><small style="display:block;color:#fff">Maths, English, Science, Our World and Tech</small></span>';
+  lp.onclick=()=>{try{SFX.tap()}catch(e){}show()}}
+ const g=a.querySelector(".pi-guide-row p");
+ if(g&&!g.dataset.td){g.dataset.td="1";const n=doneThisYear(k);g.textContent="🌟 "+n+" lesson"+(n===1?"":"s")+" done this year"}
+ const sc=a.querySelector(".curr-map-shortcut");
+ if(sc&&!sc.dataset.td){sc.dataset.td="1";const r=pickLesson(k);
+  if(r){sc.textContent="📚 Today's lesson: "+r.lesson.title;sc.onclick=()=>{try{round=null}catch(e){}startLesson(r)}}else sc.remove()}
+}
+try{new MutationObserver(decorateMap).observe(app(),{childList:true,subtree:true})}catch(e){}
+
+window.PEBBLE_TODAY={show,pickLesson,pickIsland,decorateMap};
 if(window.PEBBLE_STUDIO)window.PEBBLE_STUDIO.showDashboard=show;
 if(window.PEBBLE_ADAPTIVE_UI)window.PEBBLE_ADAPTIVE_UI.showHome=show;
 
