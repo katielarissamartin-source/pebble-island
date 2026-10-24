@@ -7,7 +7,7 @@ const LABEL=y=>Number(y)===0?"Prep":"Year "+y,app=()=>document.getElementById("a
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const route={page:"dashboard",area:null,index:0,kid:0,year:2};
 let unlocked=false,step=0,asked=[],firstTry=0,misses=0,questionErrors=0,queue=[],spare=null,added=false,lesson=null,corrected=0;
-const getYear=(k=kid)=>{S.pathwayYear=S.pathwayYear||{};return S.pathwayYear[k]??((S.kids[k]?.age||7)>=10?5:(S.kids[k]?.age||7)>=9?4:(S.kids[k]?.age||7)>=8?3:(S.kids[k]?.age||7)>=7?2:(S.kids[k]?.age||7)>=6?1:0)};
+const getYear=(k=kid)=>{S.pathwayYear=S.pathwayYear||{};return S.pathwayYear[k]??((S.kids[k]?.age||7)>=11?6:(S.kids[k]?.age||7)>=10?5:(S.kids[k]?.age||7)>=9?4:(S.kids[k]?.age||7)>=8?3:(S.kids[k]?.age||7)>=7?2:(S.kids[k]?.age||7)>=6?1:0)};
 const setYear=(y)=>{S.pathwayYear[kid]=Number(y);save()};
 const data=(y=getYear())=>({[y]:{english:B[y]?.english||[],maths:B[y]?.maths||[]}});
 const lessons=(y,area)=>B[y]?.[area]||[];
@@ -136,12 +136,13 @@ function showDashboard(){
  return '<button class="studio-card" type="button" data-studio-area="'+a+'"><span class="studio-emoji" aria-hidden="true">'+SYMBOLS[a]+'</span><h3>'+NAMES[a]+'</h3><span class="studio-note">'+(a==="english"?"Reading, phonics and writing":"Number sense and problem solving")+'</span><span class="studio-note">'+count+' of '+list.length+' explored · '+d+' reviews ready</span></button>'}).join("");
  const focus=next?'<section class="studio-callout"><span class="studio-eyebrow">Recommended next · '+(next.mode==="review"?"Spaced review":next.mode==="new"?"New skill":"Extra practice")+'</span><h2>'+esc(next.lesson.icon+" "+next.lesson.title)+'</h2><p class="studio-sub">'+esc(next.reason)+'</p><div class="studio-row">'+tag(record(year,next.area,next.lesson))+'<span class="studio-note">'+NAMES[next.area]+' · '+esc(next.lesson.code)+'</span></div><div class="studio-buttons"><button type="button" class="studio-button primary" id="studio-recommended">Let us learn →</button></div></section>':"";
  const task=assigned&&assigned.year===year&&lessons(year,assigned.area).some(l=>l.id===assigned.id)?'<div class="studio-banner"><strong>From your teacher:</strong> '+esc(lessons(year,assigned.area).find(l=>l.id===assigned.id).title)+' <button class="studio-entry" id="studio-task" type="button">Open lesson →</button></div>':"";
- screen(bar()+'<header class="studio-hero"><span class="studio-eyebrow">Queensland Australian Curriculum v9.0 · Practice pathway</span><h1 data-studio-heading>My Learning Path</h1><p class="studio-sub">Little lessons that adapt as you learn. Explore a new idea, think it through, and come back for helpful reviews.</p><div class="studio-year" aria-label="Choose learning level">'+chips+'</div></header>'+task+focus+overviewStats(stats)+'<h2>Choose a subject</h2><div class="studio-cards">'+topics+'</div><div class="studio-panel"><strong>Learning takes time.</strong><p class="studio-sub">There is no speed score and no penalty for needing help. Our strong-skill labels grow after correct answers on different days.</p><div class="studio-buttons"><button type="button" class="studio-button" id="studio-adult">For grown-ups</button><button type="button" class="studio-button" id="studio-access">Reading & display options</button><button type="button" class="studio-button" id="studio-discover">Science & discovery</button></div></div>');
+ screen(bar()+'<header class="studio-hero"><span class="studio-eyebrow">Australian Curriculum v9.0 · Developing core pathway</span><h1 data-studio-heading>My Learning Path</h1><p class="studio-sub">Little lessons that adapt as you learn. Explore a new idea, think it through, and come back for helpful reviews.</p><div class="studio-year" aria-label="Choose learning level">'+chips+'</div></header>'+task+focus+overviewStats(stats)+'<h2>Curriculum lessons</h2><p class="studio-sub">Guided lessons mapped to curriculum content descriptions. The full year-level program is still being developed; island games provide additional practice.</p><div class="studio-cards">'+topics+'</div><div class="studio-panel"><strong>Learning takes time.</strong><p class="studio-sub">There is no speed score and no penalty for needing help. Our strong-skill labels grow after correct answers on different days.</p><div class="studio-buttons"><button type="button" class="studio-button" id="studio-adult">For grown-ups</button><button type="button" class="studio-button" id="studio-access">Reading & display options</button><button type="button" class="studio-button" id="studio-discover">Science & discovery</button><button type="button" class="studio-button" id="studio-extra">Extra practice islands</button></div></div>');
  app().querySelectorAll("[data-studio-year]").forEach(b=>b.onclick=()=>{setYear(Number(b.dataset.studioYear));showDashboard()});
  app().querySelectorAll("[data-studio-area]").forEach(b=>b.onclick=()=>showSubject(b.dataset.studioArea));
  const n=document.getElementById("studio-recommended");if(n&&next)n.onclick=()=>start(next.area,next.index);
  const t=document.getElementById("studio-task");if(t&&assigned)t.onclick=()=>start(assigned.area,lessons(year,assigned.area).findIndex(l=>l.id===assigned.id));
  document.getElementById("studio-adult").onclick=showAdultGate;
+ document.getElementById("studio-extra").onclick=goMap;
  document.getElementById("studio-access").onclick=()=>showSettings(false);
  document.getElementById("studio-discover").onclick=()=>{round=null;render();const cur=document.querySelector(".curr-card");if(cur)cur.click()};
 }
@@ -233,18 +234,19 @@ function allStats(){
  return p;
 }
 function parentNav(tab){
- const options=[["overview","Overview"],["reports","Learning reports"],["school","School pilot"],["plans","Pilot pricing"],["privacy","Privacy & settings"]];
+ const options=[["overview","Overview"],["reports","Learning reports"],["curriculum","Curriculum coverage"],["school","School pilot"],["plans","Pilot pricing"],["privacy","Privacy & settings"]];
  return '<nav class="studio-parentnav" aria-label="Grown-up area sections">'+options.map(([id,label])=>'<button type="button" class="studio-button" data-studio-tab="'+id+'" '+(tab===id?'aria-current="page"':"")+'>'+label+'</button>').join("")+'</nav>';
 }
 function showParent(tab="overview"){
  if(!unlocked)return showAdultGate();
  route.page="parent";route.tab=tab;
- const head=bar("Island map",goMap)+'<header class="studio-hero"><span class="studio-eyebrow">Pebble Island · Family and school pilot</span><h1 data-studio-heading>Grown-up dashboard</h1><p class="studio-sub">Learning evidence and useful actions for this device. These reports are not school grades, diagnostic assessments or externally verified results.</p></header>'+parentNav(tab);
+ const head=bar("Island map",goMap)+'<header class="studio-hero"><span class="studio-eyebrow">Pebble Island · Family and school pilot</span><h1 data-studio-heading>Grown-up dashboard</h1><p class="studio-sub">Learning records and curriculum coverage for this device. Short quizzes are not official grades, accredited assessments or proof that a year-level curriculum is complete.</p></header>'+parentNav(tab);
  screen(head+'<div class="studio-panel" id="studio-parent-content"></div>');
  app().querySelectorAll("[data-studio-tab]").forEach(b=>b.onclick=()=>showParent(b.dataset.studioTab));
- if(tab==="reports")renderReports();else if(tab==="school")renderSchool();else if(tab==="plans")renderPlans();else if(tab==="privacy")renderPrivacy();else renderOverview();
+ if(tab==="reports")renderReports();else if(tab==="curriculum")renderCurriculumAudit();else if(tab==="school")renderSchool();else if(tab==="plans")renderPlans();else if(tab==="privacy")renderPrivacy();else renderOverview();
 }
 const panel=()=>document.getElementById("studio-parent-content");
+function renderCurriculumAudit(){const a=window.PEBBLE_CURRICULUM_AUDIT;panel().innerHTML=a?a.render():"<p>Curriculum audit unavailable. Reload while online.</p>";}
 function renderOverview(){
  const cards=S.kids.map((v,k)=>{const y=getYear(k),s=summaries(k,y),all=YRS.map(yy=>summaries(k,yy)).reduce((acc,x)=>({studied:acc.studied+x.explored,strong:acc.strong+x.strong,due:acc.due+x.due}),{studied:0,strong:0,due:0});
  return '<article class="studio-offer"><strong>'+esc(name(k))+'</strong><span class="studio-note">Current pathway: '+LABEL(y)+'</span><div class="studio-grid2"><div class="studio-number"><strong>'+s.explored+'/'+s.total+'</strong><span>Topics explored at selected level</span></div><div class="studio-number"><strong>'+all.due+'</strong><span>Reviews due across levels</span></div></div><span class="studio-note">Strong skills (all levels): '+all.strong+' · Topics explored: '+all.studied+'</span><button type="button" class="studio-button" data-studio-report="'+k+'">View learning report</button></article>'}).join("");

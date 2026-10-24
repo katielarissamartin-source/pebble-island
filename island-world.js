@@ -17,9 +17,9 @@ const escapeHtml=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;"
 const safeId=k=>Number.isInteger(k)&&k>=0?k:0;
 const getLevel=k=>{
  const val=Number(S.pathwayYear?.[k]);
- if([0,1,2,3,4,5].includes(val))return val;
+ if([0,1,2,3,4,5,6].includes(val))return val;
  const age=Number(S.kids[k]?.age||7);
- return age>=10?5:age>=9?4:age>=8?3:age>=7?2:age>=6?1:0;
+ return age>=11?6:age>=10?5:age>=9?4:age>=8?3:age>=7?2:age>=6?1:0;
 };
 function getAdaptive(k,area){
  const y=getLevel(k),bank=window.PEBBLE_QCAA_LESSONS?.[y],A=window.PEBBLE_ADAPTIVE;
