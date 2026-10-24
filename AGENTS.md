@@ -31,6 +31,9 @@ Prefer a new file over editing a shared one.
 
 If you need to change a file owned by the other tool, say so in the pull request and keep the change minimal.
 
+## Going live
+Merging to `main` puts the change live within about a minute (Vercel auto-assigns `pebble-island.vercel.app` to each `main` production build). Do not point the domain by hand. If a build shows "Staged" instead of live, stop and tell KT; she promotes it once in the Vercel dashboard.
+
 ## Before you merge
 - Check the Vercel preview for your branch loads and its `/sw.js` shows your cache name.
 - After merging, fetch `/sw.js` and one changed file from the live site and confirm they match `main`.
