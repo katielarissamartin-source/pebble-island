@@ -6,7 +6,7 @@ const TITLE="Pebble Learning Path",NAMES={maths:"Mathematics",english:"English"}
 const LABEL=y=>Number(y)===0?"Prep":"Year "+y,app=()=>document.getElementById("app");
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const route={page:"dashboard",area:null,index:0,kid:0,year:2};
-let unlocked=false,step=0,asked=[],firstTry=0,misses=0,questionErrors=0,queue=[],spare=null,added=false,lesson=null,corrected=0;
+let unlocked=false,step=0,asked=[],firstTry=0,misses=0,lesson=null,corrected=0;
 const getYear=(k=kid)=>{S.pathwayYear=S.pathwayYear||{};return S.pathwayYear[k]??((S.kids[k]?.age||7)>=11?6:(S.kids[k]?.age||7)>=10?5:(S.kids[k]?.age||7)>=9?4:(S.kids[k]?.age||7)>=8?3:(S.kids[k]?.age||7)>=7?2:(S.kids[k]?.age||7)>=6?1:0)};
 const setYear=(y)=>{S.pathwayYear[kid]=Number(y);save()};
 const data=(y=getYear())=>({[y]:{english:B[y]?.english||[],maths:B[y]?.maths||[]}});
@@ -134,7 +134,7 @@ function showDashboard(){
  const chips=YRS.map(y=>'<button type="button" class="studio-button" data-studio-year="'+y+'" aria-pressed="'+(year===y)+'">'+LABEL(y)+'</button>').join("");
  const topics=["english","maths"].map(a=>{const list=lessons(year,a),count=list.filter(l=>record(year,a,l).sessions||record(year,a,l).legacy).length,d=list.filter(l=>A.due(record(year,a,l))).length;
  return '<button class="studio-card" type="button" data-studio-area="'+a+'"><span class="studio-emoji" aria-hidden="true">'+SYMBOLS[a]+'</span><h3>'+NAMES[a]+'</h3><span class="studio-note">'+(a==="english"?"Reading, phonics and writing":"Number sense and problem solving")+'</span><span class="studio-note">'+count+' of '+list.length+' explored · '+d+' reviews ready</span></button>'}).join("");
- const focus=next?'<section class="studio-callout"><span class="studio-eyebrow">Recommended next · '+(next.mode==="review"?"Spaced review":next.mode==="new"?"New skill":"Extra practice")+'</span><h2>'+esc(next.lesson.icon+" "+next.lesson.title)+'</h2><p class="studio-sub">'+esc(next.reason)+'</p><div class="studio-row">'+tag(record(year,next.area,next.lesson))+'<span class="studio-note">'+NAMES[next.area]+' · '+esc(next.lesson.code)+'</span></div><div class="studio-buttons"><button type="button" class="studio-button primary" id="studio-recommended">Let us learn →</button></div></section>':"";
+ const focus=next?'<section class="studio-callout"><span class="studio-eyebrow">Recommended next · '+(next.mode==="review"?"Spaced review":next.mode==="new"?"New skill":"Extra practice")+'</span><h2>'+esc(next.lesson.icon+" "+next.lesson.title)+'</h2><p class="studio-sub">'+esc(next.reason)+'</p><div class="studio-row">'+tag(record(year,next.area,next.lesson))+'<span class="studio-note">'+NAMES[next.area]+'</span></div><div class="studio-buttons"><button type="button" class="studio-button primary" id="studio-recommended">Let us learn →</button></div></section>':"";
  const task=assigned&&assigned.year===year&&lessons(year,assigned.area).some(l=>l.id===assigned.id)?'<div class="studio-banner"><strong>From your teacher:</strong> '+esc(lessons(year,assigned.area).find(l=>l.id===assigned.id).title)+' <button class="studio-entry" id="studio-task" type="button">Open lesson →</button></div>':"";
  screen(bar()+'<header class="studio-hero"><span class="studio-eyebrow">Australian Curriculum v9.0 · Developing core pathway</span><h1 data-studio-heading>My Learning Path</h1><p class="studio-sub">Little lessons that adapt as you learn. Explore a new idea, think it through, and come back for helpful reviews.</p><div class="studio-year" aria-label="Choose learning level">'+chips+'</div></header>'+task+focus+overviewStats(stats)+'<h2>Curriculum lessons</h2><p class="studio-sub">Guided lessons mapped to curriculum content descriptions. The full year-level program is still being developed; island games provide additional practice.</p><div class="studio-cards">'+topics+'</div><div class="studio-panel"><strong>Learning takes time.</strong><p class="studio-sub">There is no speed score and no penalty for needing help. Our strong-skill labels grow after correct answers on different days.</p><div class="studio-buttons"><button type="button" class="studio-button" id="studio-adult">For grown-ups</button><button type="button" class="studio-button" id="studio-access">Reading & display options</button><button type="button" class="studio-button" id="studio-discover">Science & discovery</button><button type="button" class="studio-button" id="studio-extra">Extra practice islands</button></div></div>');
  app().querySelectorAll("[data-studio-year]").forEach(b=>b.onclick=()=>{setYear(Number(b.dataset.studioYear));showDashboard()});
@@ -150,53 +150,16 @@ function showSubject(a){
  route.page="subject";route.area=a;const year=getYear(),next=recommendation(kid,year,a),list=lessons(year,a);
  const suggest=next?'<div class="studio-callout"><strong>Suggested: '+esc(next.lesson.title)+'</strong><p>'+esc(next.reason)+'</p><button id="studio-subject-next" type="button" class="studio-button primary">Start suggested lesson →</button></div>':"";
  const cards=list.map((l,i)=>{const s=record(year,a,l),isDone=!!s.sessions||!!s.legacy;
- return '<button type="button" class="studio-card" data-studio-lesson="'+i+'" data-complete="'+isDone+'"><span class="studio-emoji" aria-hidden="true">'+esc(l.icon)+'</span><h3>'+esc(l.title)+'</h3><span class="studio-note">'+esc(l.goal)+'</span>'+tag(s)+'<span class="studio-note">'+esc(due(s))+' · '+esc(l.code)+'</span></button>'}).join("");
+ return '<button type="button" class="studio-card" data-studio-lesson="'+i+'" data-complete="'+isDone+'"><span class="studio-emoji" aria-hidden="true">'+esc(l.icon)+'</span><h3>'+esc(l.title)+'</h3><span class="studio-note">'+esc(l.goal)+'</span>'+tag(s)+'<span class="studio-note">'+esc(due(s))+'</span></button>'}).join("");
  screen(bar("Learning path",showDashboard)+'<header class="studio-hero"><span class="studio-eyebrow">'+LABEL(year)+' · '+NAMES[a]+'</span><h1 data-studio-heading>'+NAMES[a]+' pathway</h1><p class="studio-sub">Follow the recommended order or choose a topic. Practising on later days helps the learning stick.</p></header>'+suggest+'<div class="studio-cards">'+cards+'</div>');
  app().querySelectorAll("[data-studio-lesson]").forEach(b=>b.onclick=()=>start(a,Number(b.dataset.studioLesson)));
  const n=document.getElementById("studio-subject-next");if(n&&next)n.onclick=()=>start(a,next.index);
 }
 function start(a,i){
  const year=getYear();if(!lessons(year,a)[i])return showSubject(a);
- route.page="teach";route.area=a;route.index=i;lesson=lessons(year,a)[i];step=0;asked=[];firstTry=0;misses=0;questionErrors=0;added=false;spare=null;queue=[];
- const x=A.shuffledIndices(record(year,a,lesson),lesson.questions.length,3);
- const set=x.map(id=>({id,q:A.shuffleAnswer(lesson.questions[id])}));
- queue=set.slice(0,2);spare=set[2]||null;
- showTeach();
-}
-function showTeach(){
- route.page="teach";const s=record(getYear(),route.area,lesson),returning=s.sessions>0||s.legacy;
- screen(bar("Topics",()=>showSubject(route.area))+'<header class="studio-hero"><span class="studio-eyebrow">'+NAMES[route.area]+' · '+esc(lesson.code)+'</span><h1 data-studio-heading>'+esc(lesson.icon+" "+lesson.title)+'</h1><p class="studio-sub">'+esc(lesson.goal)+'</p></header><div class="studio-panel"><strong>'+(returning?"A quick reminder":"Let us explore")+'</strong><p class="studio-lab">'+esc(lesson.teach)+'</p><div class="studio-example"><strong>See an example</strong>'+esc(lesson.example)+'</div><div class="studio-buttons"><button type="button" class="studio-button" id="studio-read">🔊 Read it to me</button><button type="button" class="studio-button primary" id="studio-begin">'+(returning?"Start my review":"Let us try")+' →</button></div></div>');
- document.getElementById("studio-read").onclick=()=>{if(typeof speak==="function")speak(lesson.teach+" "+lesson.example,"soft")};
- document.getElementById("studio-begin").onclick=question;
-}
-function question(){
- if(step>=queue.length)return finish();
- route.page="question";const q=queue[step].q,task=queue[step];questionErrors=0;
- if(!asked.includes(task.id))asked.push(task.id);
- screen(bar("Topics",()=>showSubject(route.area))+'<div class="studio-progress" role="progressbar" aria-label="Practice progress" aria-valuemin="0" aria-valuemax="'+queue.length+'" aria-valuenow="'+step+'"><i style="width:'+Math.round(100*step/queue.length)+'%"></i></div><div class="studio-panel"><div class="studio-row"><span class="studio-eyebrow">'+(added&&step===2?"A little extra practice":"Think it through")+'</span><span class="studio-note">Question '+(step+1)+' of '+queue.length+'</span></div><h2 data-studio-heading>'+esc(q.prompt)+'</h2><div class="studio-answer-list">'+q.choices.map((v,i)=>'<button type="button" class="studio-answer" data-studio-answer="'+i+'">'+esc(v)+'</button>').join("")+'</div><div id="studio-feedback" role="status" aria-live="polite" aria-atomic="true" class="studio-feedback" hidden></div><div class="studio-buttons"><button type="button" class="studio-button" id="studio-read-question">🔊 Hear question</button><button type="button" class="studio-button primary" id="studio-next" hidden>Continue →</button></div></div>');
- document.getElementById("studio-read-question").onclick=()=>{if(typeof speak==="function")speak(q.prompt+" "+q.choices.join(". "),"soft")};
- const fb=document.getElementById("studio-feedback"),forward=document.getElementById("studio-next"),buttons=[...app().querySelectorAll("[data-studio-answer]")];
- let answered=false;
- const showNext=()=>{forward.hidden=false;forward.textContent=step===1&&misses>0&&spare&&!added?"One more practice question →":step+1>=queue.length?"See my progress →":"Next question →"};
- forward.onclick=()=>{if(step===1&&misses>0&&spare&&!added){queue.push(spare);added=true}step++;question()};
- buttons.forEach(b=>b.onclick=()=>{
-  if(answered||b.disabled)return;
-  const ix=Number(b.dataset.studioAnswer),good=ix===q.correct;fb.hidden=false;
-  if(good){
-   answered=true;if(questionErrors===0)firstTry++;
-   b.classList.add("right");buttons.forEach(v=>v.disabled=true);
-   fb.innerHTML='<strong>'+(questionErrors?"You worked it out!":"Correct on your own!")+'</strong><p>'+esc(q.explain)+'</p>';
-   if(typeof SFX!=="undefined")SFX.good();showNext();
-  }else{
-   misses++;questionErrors++;b.classList.add("wrong");b.disabled=true;
-   if(typeof SFX!=="undefined")SFX.oops();
-   if(questionErrors>=2||buttons.filter(v=>!v.disabled).length<=1){
-    answered=true;buttons.forEach((v,i)=>{v.disabled=true;if(i===q.correct)v.classList.add("right")});
-    fb.innerHTML='<strong>Let us work it through.</strong><p>The answer is <b>'+esc(q.choices[q.correct])+'</b>. '+esc(q.explain)+'</p>';
-    showNext();
-   }else fb.innerHTML='<strong>Try once more.</strong><p>'+esc(q.hint)+'</p>';
-  }
- });
+ route.page="teach";route.area=a;route.index=i;lesson=lessons(year,a)[i];step=0;asked=[];firstTry=0;misses=0;
+ const st=record(year,a,lesson);
+ window.PEBBLE_JOURNEY.run({lesson,st,A,key:A.lessonKey(year,a,lesson.id),returning:st.sessions>0||!!st.legacy,backLabel:"Topics",onBack:()=>showSubject(a),onFinish:r=>{asked=r.ids;firstTry=r.firstTry;misses=r.misses;finish()}});
 }
 function finish(){
  route.page="finish";const y=getYear(),a=route.area,key=A.lessonKey(y,a,lesson.id);
@@ -207,9 +170,9 @@ function finish(){
  save();
  if(window.PEBBLE_WORLD?.noteLesson)window.PEBBLE_WORLD.noteLesson({child:kid,area:a,year:y,title:lesson.title,newStar:first});
  const next=recommendation();
- const title=rs.high?(rs.creditAllowed?"Great independent thinking!":"Good practice. Come back again another day."):"Good effort. We will revisit this skill to help it stick.";
+ const title=rs.high?(rs.creditAllowed?"Great independent thinking!":"Good practice. Come back again another day."):"You kept going, and that is how learning grows. We will practise this again soon.";
  const follow='<button type="button" class="studio-button primary" id="studio-follow">Follow my learning path →</button><button type="button" class="studio-button" id="studio-island">🏝️ Return to island</button>';
- screen(bar("Topics",()=>showSubject(a))+'<div class="studio-panel"><span class="studio-eyebrow">Practice finished · '+esc(lesson.code)+'</span><h1 data-studio-heading>'+esc(lesson.icon+" "+lesson.title)+'</h1><p class="studio-lab">'+title+'</p>'+tag(rs.state)+'<div class="studio-grid2"><div class="studio-number"><strong>'+firstTry+' / '+asked.length+'</strong><span>Correct without hints</span></div><div class="studio-number"><strong>'+esc(due(rs.state))+'</strong><span>Next review</span></div></div><p class="studio-note">'+(first?"A new lesson star has been earned.":"Your previously earned stars are kept.")+' '+misses+' incorrect choice'+(misses===1?"":"s")+'.</p><div class="studio-example"><strong>Try this away from the screen</strong>'+esc(lesson.tryIt)+'</div><div class="studio-buttons">'+follow+'<button type="button" class="studio-button" id="studio-again">Practise again</button><button type="button" class="studio-button" id="studio-other">Choose a topic</button></div></div>');
+ screen(bar("Topics",()=>showSubject(a))+'<div class="studio-panel"><span class="studio-eyebrow">All done</span><h1 data-studio-heading>'+esc(lesson.icon+" "+lesson.title)+'</h1><p class="studio-lab">'+title+'</p><p class="studio-note">You worked on: '+esc(lesson.goal)+'</p>'+tag(rs.state)+'<div class="studio-grid2"><div class="studio-number"><strong>'+esc(due(rs.state))+'</strong><span>Next review</span></div></div><p class="studio-note">'+(first?"A new lesson star has been earned.":"Your previously earned stars are kept.")+'</p><div class="studio-example"><strong>Try this away from the screen</strong>'+esc(lesson.tryIt)+'</div><div class="studio-buttons">'+follow+'<button type="button" class="studio-button" id="studio-again">Practise again</button><button type="button" class="studio-button" id="studio-other">Choose a topic</button></div></div>');
  document.getElementById("studio-follow").onclick=()=>next?start(next.area,next.index):showDashboard();
  document.getElementById("studio-island").onclick=goMap;
  document.getElementById("studio-again").onclick=()=>start(a,route.index);

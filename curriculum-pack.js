@@ -313,7 +313,7 @@ style.textContent=[
 "@media(max-width:430px){.curr-focus{padding:17px}.curr-result-score{grid-template-columns:1fr}.curr-metric{padding:9px 5px}.curr-metric span{font-size:.75rem}}"
 ].join("\n");
 document.head.appendChild(style);
-let section="home",area=null,lesson=null,step=0,deck=[],spare=null,extra=false,asked=[],independent=0,misses=0,wrongThis=0;
+let section="home",area=null,lesson=null,step=0,asked=[],independent=0,misses=0;
 const app=()=>document.getElementById("app");
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const yr=()=>{S.curriculumYear=S.curriculumYear||{};return S.curriculumYear[kid]||((S.kids[kid].age||7)>=11?6:(S.kids[kid].age||7)>=9?5:2)};
@@ -338,7 +338,7 @@ function statsHTML(){
 function showHome(){
  section="home";area=null;lesson=null;
  const next=rec(),row=progress(),categories=Object.keys(names);
- const recommended=next?'<section class="curr-focus" aria-labelledby="adaptive-next"><span class="curr-label">Your next best step · '+(next.mode==="review"?"Quick review":next.mode==="new"?"Discover":"Optional practice")+'</span><h2 id="adaptive-next">'+esc(next.lesson.icon+" "+next.lesson.title)+'</h2><p>'+esc(next.reason)+'</p><div class="curr-session-meter">'+stateTag(next.area,next.lesson)+'<span class="curr-meta">'+esc(names[next.area])+' · '+esc(next.lesson.code)+'</span></div><button class="curr-primary" type="button" id="adapt-next">Start my next lesson →</button></section>':"";
+ const recommended=next?'<section class="curr-focus" aria-labelledby="adaptive-next"><span class="curr-label">Your next best step · '+(next.mode==="review"?"Quick review":next.mode==="new"?"Discover":"Optional practice")+'</span><h2 id="adaptive-next">'+esc(next.lesson.icon+" "+next.lesson.title)+'</h2><p>'+esc(next.reason)+'</p><div class="curr-session-meter">'+stateTag(next.area,next.lesson)+'<span class="curr-meta">'+esc(names[next.area])+'</span></div><button class="curr-primary" type="button" id="adapt-next">Start my next lesson →</button></section>':"";
  const topics=categories.map(a=>'<button type="button" data-adapt-area="'+a+'" class="curr-course"><span class="em" aria-hidden="true">'+icons[a]+'</span><strong>'+esc(names[a])+'</strong><span>'+esc(a==="science"?"How the world works":a==="hass"?"History, places and community":"Coding, design and online safety")+'</span><small class="curr-mini">'+entries(a).filter(l=>completed(a,l)).length+' of '+entries(a).length+' explored · '+entries(a).filter(l=>A.due(st(a,l))).length+' reviews due</small></button>').join("");
  const insight='<details class="curr-guide"><summary>Learning insights (grown-ups)</summary><p>The app tracks answers without hints, revisits skills on later days, and suggests topics to practise. The labels are estimates from a small number of questions, not formal assessments. Speed is not scored.</p><div class="curr-insight-wrap"><table class="curr-insights"><caption>Year '+yr()+' evidence for this child, stored on this device</caption><thead><tr><th scope="col">Topic</th><th scope="col">Progress</th><th scope="col">First-try accuracy</th><th scope="col">Review</th></tr></thead><tbody>'+categories.flatMap(a=>entries(a).map(l=>{const x=st(a,l),accuracy=x.questions?Math.round(100*x.firstTry/x.questions)+"%":"Not yet measured";return'<tr><th scope="row">'+esc(l.title)+'</th><td>'+stateTag(a,l)+'<div class="curr-meta">'+x.sessions+' session'+(x.sessions===1?"":"s")+'</div></td><td>'+accuracy+'</td><td>'+esc(A.dueText(x))+'</td></tr>'})).join("")+'</tbody></table></div></details>';
  const sourcesHTML='<details class="curr-guide"><summary>Queensland curriculum links (grown-ups)</summary><p>These are developing curriculum-linked lessons, not full achievement-standard coverage or QCAA endorsement. Curriculum codes refer to the learning area and year level.</p><ul>'+categories.map(a=>'<li><a href="'+(sources[a][yr()]||'https://v9.australiancurriculum.edu.au/')+'" target="_blank" rel="noopener noreferrer">'+esc(names[a])+' — QCAA alignment document</a></li>').join("")+'</ul></details>';
@@ -352,54 +352,14 @@ function showArea(a){
  section="area";area=a;lesson=null;
  const next=rec(a);
  const suggest=next?'<div class="curr-suggestion"><strong>Suggested: '+esc(next.lesson.title)+'</strong><p class="curr-adaptive-note">'+esc(next.reason)+'</p><button type="button" class="curr-secondary" id="adapt-subject-next">Try this next →</button></div>':"";
- screen(header(names[a],"My learning path")+'<p class="curr-sub">Pick any lesson. Strong skills grow through correct answers and reviews on different days.</p>'+suggest+'<div class="curr-lessons">'+entries(a).map((l,i)=>'<button type="button" data-adapt-lesson="'+i+'" class="curr-lesson '+(completed(a,l)?"complete":"")+'"><span class="em" aria-hidden="true">'+l.icon+'</span><strong>'+esc(l.title)+'</strong><span>'+esc(l.goal)+'</span>'+stateTag(a,l)+'<small class="curr-mini">'+esc(A.dueText(st(a,l)))+' · '+esc(l.code)+'</small></button>').join("")+'</div>');
+ screen(header(names[a],"My learning path")+'<p class="curr-sub">Pick any lesson. Strong skills grow through correct answers and reviews on different days.</p>'+suggest+'<div class="curr-lessons">'+entries(a).map((l,i)=>'<button type="button" data-adapt-lesson="'+i+'" class="curr-lesson '+(completed(a,l)?"complete":"")+'"><span class="em" aria-hidden="true">'+l.icon+'</span><strong>'+esc(l.title)+'</strong><span>'+esc(l.goal)+'</span>'+stateTag(a,l)+'<small class="curr-mini">'+esc(A.dueText(st(a,l)))+'</small></button>').join("")+'</div>');
  app().querySelectorAll("[data-adapt-lesson]").forEach(b=>b.onclick=()=>start(a,Number(b.dataset.adaptLesson)));
  const btn=document.getElementById("adapt-subject-next");if(btn&&next)btn.onclick=()=>start(a,next.index);
 }
 function start(a,i){
- area=a;lesson=entries(a)[i];section="teach";step=0;deck=[];spare=null;extra=false;asked=[];independent=0;misses=0;wrongThis=0;
- const indexes=A.shuffledIndices(st(a,lesson),lesson.questions.length,3);
- const questions=indexes.map(n=>({id:n,q:A.shuffleAnswer(lesson.questions[n])}));
- deck=questions.slice(0,2);spare=questions[2]||null;
- showTeach();
-}
-function showTeach(){
- section="teach";
- const was=st(area,lesson),review=was.sessions>0||was.legacy;
- screen(header(lesson.icon+" "+lesson.title,"Lessons")+'<div class="curr-head"><span class="curr-label">'+(review?"Remember this?":"Let us learn")+' · '+esc(lesson.code)+'</span><h2 class="curr-title">'+esc(lesson.goal)+'</h2><p class="curr-adaptive-note">'+(review?"Here is a quick reminder before your review.":"Read the idea, see an example, then try two questions.")+'</p><p class="curr-teach">'+esc(lesson.teach)+'</p><div class="curr-example"><b>See an example</b>'+esc(lesson.example)+'</div><div class="curr-actions"><button type="button" class="curr-secondary" id="adapt-read">🔊 Read aloud</button><button type="button" class="curr-primary" id="adapt-try">'+(review?"Start review →":"Let us try it →")+'</button></div></div>');
- document.getElementById("adapt-read").onclick=()=>{if(typeof speak==="function")speak(lesson.teach+" "+lesson.example,"soft")};
- document.getElementById("adapt-try").onclick=showQuestion;
-}
-function showQuestion(){
- if(step>=deck.length){finish();return}
- section="question";wrongThis=0;
- const task=deck[step],q=task.q;
- if(!asked.includes(task.id))asked.push(task.id);
- screen(header(lesson.icon+" "+lesson.title,"Lessons")+'<div class="curr-progress" role="progressbar" aria-label="Questions completed" aria-valuemin="0" aria-valuemax="'+deck.length+'" aria-valuenow="'+step+'"><span style="width:'+Math.round(step/deck.length*100)+'%"></span></div><div class="curr-head"><div class="curr-session-meter"><span class="curr-label">'+(extra&&step===2?"A little more practice":"Think it through")+'</span><span class="curr-quiz-status">Question '+(step+1)+' of '+deck.length+'</span></div><h2 class="curr-title">'+esc(q.prompt)+'</h2><div class="curr-answers">'+q.choices.map((s,i)=>'<button type="button" class="curr-answer" data-adapt-answer="'+i+'">'+esc(s)+'</button>').join("")+'</div><div class="curr-feedback" id="adapt-feedback" role="status" aria-live="polite" aria-atomic="true" hidden></div><div class="curr-actions"><button type="button" class="curr-secondary" id="adapt-hear">🔊 Hear question</button><button type="button" class="curr-primary" id="adapt-forward" hidden>Next question →</button></div></div>');
- document.getElementById("adapt-hear").onclick=()=>{if(typeof speak==="function")speak(q.prompt+" "+q.choices.join(". "),"soft")};
- const forward=document.getElementById("adapt-forward"),fb=document.getElementById("adapt-feedback"),buttons=[...app().querySelectorAll("[data-adapt-answer]")];
- forward.onclick=()=>{if(step===1&&misses>0&&spare&&!extra){deck.push(spare);extra=true}step++;showQuestion()};
- const forwardLabel=()=>{forward.hidden=false;forward.textContent=step===1&&misses>0&&spare&&!extra?"One more practice question →":step===deck.length-1?"See my progress →":"Next question →"};
- let answered=false;
- buttons.forEach(btn=>btn.onclick=()=>{
-  if(answered||btn.disabled)return;
-  const chosen=Number(btn.dataset.adaptAnswer),correct=chosen===q.correct;
-  fb.hidden=false;
-  if(correct){
-   answered=true;if(wrongThis===0)independent++;
-   btn.classList.add("correct");buttons.forEach(b=>b.disabled=true);fb.dataset.result="correct";
-   fb.innerHTML='<strong>'+(wrongThis===0?"Correct without a hint!":"You worked it out!")+'</strong><span>'+esc(q.explain)+'</span>';
-   if(typeof SFX!=="undefined")SFX.good();forwardLabel();
-  }else{
-   wrongThis++;misses++;btn.classList.add("incorrect");btn.disabled=true;fb.dataset.result="incorrect";
-   if(typeof SFX!=="undefined")SFX.oops();
-   if(wrongThis>=2||buttons.filter(b=>!b.disabled).length<=1){
-    answered=true;buttons.forEach((b,i)=>{b.disabled=true;if(i===q.correct)b.classList.add("correct")});
-    fb.innerHTML='<strong>Let us work through this together.</strong><span>The answer is <b>'+esc(q.choices[q.correct])+'</b>. '+esc(q.explain)+'</span>';
-    forwardLabel();
-   }else fb.innerHTML='<strong>Have another go.</strong><span>'+esc(q.hint)+'</span>';
-  }
- });
+ area=a;lesson=entries(a)[i];section="teach";step=0;asked=[];independent=0;misses=0;
+ const rs=st(a,lesson);
+ window.PEBBLE_JOURNEY.run({lesson,st:rs,A,key:A.lessonKey(yr(),a,lesson.id),returning:rs.sessions>0||!!rs.legacy,backLabel:"Lessons",onBack:()=>showArea(a),onFinish:r=>{asked=r.ids;independent=r.firstTry;misses=r.misses;finish()}});
 }
 function finish(){
  section="finish";
@@ -411,9 +371,9 @@ function finish(){
  if(first){S.progress[kid]=S.progress[kid]||{};const p=S.progress[kid].curriculum||(S.progress[kid].curriculum={stars:0});p.stars=(p.stars||0)+1}
  save();
  const next=rec(),s=result.state;
- const comment=result.high?(result.creditAllowed?"Nice! Those answers were yours without hints.":"Great practice. We will check what sticks another day."):"Good effort. A helpful review is coming back soon.";
+ const comment=result.high?(result.creditAllowed?"Nice! Those answers were yours without hints.":"Great practice. We will check what sticks another day."):"You kept going, and that is how learning grows. We will practise this again soon.";
  const statusText=A.dueText(s);
- screen(header("Your learning progress","Lessons")+'<div class="curr-head"><span class="curr-label">Practice complete · '+esc(lesson.code)+'</span><h2 class="curr-title">'+esc(lesson.icon+" "+lesson.title)+'</h2><p class="curr-teach">'+esc(comment)+'</p>'+stateTag(area,lesson)+'<div class="curr-result-score"><div><strong>'+independent+' / '+asked.length+'</strong><span>Correct without hints</span></div><div><strong>'+esc(statusText)+'</strong><span>Next review</span></div></div><p class="curr-meta">'+(first?"⭐ Your first lesson star is earned.":"✓ Your earlier stars stay saved.")+' '+misses+' incorrect choice'+(misses===1?"":"s")+'.</p><div class="curr-example"><b>Try this away from the screen</b>'+esc(lesson.tryIt)+'</div><div class="curr-actions"><button type="button" class="curr-primary" id="adapt-follow">Follow my learning path →</button><button type="button" class="curr-secondary" id="adapt-repeat">Practise this again</button><button type="button" class="curr-secondary" id="adapt-other">Other lessons</button></div></div>');
+ screen(header("Your learning progress","Lessons")+'<div class="curr-head"><span class="curr-label">All done</span><h2 class="curr-title">'+esc(lesson.icon+" "+lesson.title)+'</h2><p class="curr-teach">'+esc(comment)+'</p><p class="curr-meta">You worked on: '+esc(lesson.goal)+'</p>'+stateTag(area,lesson)+'<div class="curr-result-score"><div><strong>'+esc(statusText)+'</strong><span>Next review</span></div></div><p class="curr-meta">'+(first?"⭐ Your first lesson star is earned.":"✓ Your earlier stars stay saved.")+'</p><div class="curr-example"><b>Try this away from the screen</b>'+esc(lesson.tryIt)+'</div><div class="curr-actions"><button type="button" class="curr-primary" id="adapt-follow">Follow my learning path →</button><button type="button" class="curr-secondary" id="adapt-repeat">Practise this again</button><button type="button" class="curr-secondary" id="adapt-other">Other lessons</button></div></div>');
  document.getElementById("adapt-follow").onclick=()=>next?start(next.area,next.index):showHome();
  document.getElementById("adapt-repeat").onclick=()=>start(area,entries(area).findIndex(l=>l.id===lesson.id));
  document.getElementById("adapt-other").onclick=()=>showArea(area);
