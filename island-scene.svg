@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="680" viewBox="0 0 1000 680" preserveAspectRatio="none" role="img" aria-label="A colourful tropical island with mountains, rainforest, a glowing cave, coral reef, treasure beach, and a welcoming cove">
+<defs>
+<linearGradient id="sea" x1="0" y1="0" x2=".9" y2="1"><stop stop-color="#5fc8da"/><stop offset=".52" stop-color="#2ca7cb"/><stop offset="1" stop-color="#126f9b"/></linearGradient>
+<linearGradient id="grass" x1="0" y1="0" x2=".65" y2="1"><stop stop-color="#a9e582"/><stop offset=".55" stop-color="#55be78"/><stop offset="1" stop-color="#2e9769"/></linearGradient>
+<linearGradient id="sand" x1="0" y1="0" x2=".9" y2="1"><stop stop-color="#fff2bf"/><stop offset=".6" stop-color="#fce0a2"/><stop offset="1" stop-color="#ebc381"/></linearGradient>
+<linearGradient id="hill" x1="0" y1="0" x2=".6" y2="1"><stop stop-color="#86b3d4"/><stop offset=".5" stop-color="#55849f"/><stop offset="1" stop-color="#345d78"/></linearGradient>
+<linearGradient id="cave" x1="0" y1="0" x2=".7" y2="1"><stop stop-color="#a68ab8"/><stop offset=".5" stop-color="#6d5488"/><stop offset="1" stop-color="#382c65"/></linearGradient>
+<linearGradient id="waterfall" x1="0" y1="0" x2=".4" y2="1"><stop stop-color="#fff"/><stop offset=".5" stop-color="#b4f9ff"/><stop offset="1" stop-color="#55e8fa"/></linearGradient>
+<linearGradient id="reef" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#96f2e5"/><stop offset="1" stop-color="#54c8c2"/></linearGradient>
+<radialGradient id="waterLight"><stop stop-color="#c7ffff" stop-opacity=".55"/><stop offset="1" stop-color="#70d4e9" stop-opacity="0"/></radialGradient>
+<pattern id="dots" width="58" height="42" patternUnits="userSpaceOnUse"><circle cx="10" cy="9" r="2.3" fill="#d9fffb" opacity=".23"/><circle cx="48" cy="31" r="1.8" fill="#e9f6ea" opacity=".3"/></pattern>
+</defs>
+<style>
+.wi-waves{animation:wi-drift 16s ease-in-out infinite alternate;transform-origin:50% 50%}
+.wi-cloud{animation:wi-float 15s ease-in-out infinite alternate}
+.wi-cloud.two{animation-delay:-6s;animation-duration:19s}
+.wi-leaf{transform-box:fill-box;transform-origin:50% 93%;animation:wi-sway 5s ease-in-out infinite alternate}
+.wi-leaf:nth-child(even){animation-delay:-2s;animation-duration:6s}
+.wi-fall{animation:wi-flow 1.8s linear infinite}
+.wi-boat{transform-box:fill-box;transform-origin:50% 75%;animation:wi-boat 3.8s ease-in-out infinite}
+.wi-bird{animation:wi-bird 14s ease-in-out infinite alternate}
+.wi-shine{animation:wi-shine 4s ease-in-out infinite alternate}
+.wi-creature{animation:wi-bob 3.5s ease-in-out infinite alternate}
+@keyframes wi-drift{to{transform:translateX(-18px)}}
+@keyframes wi-float{to{transform:translateX(24px) translateY(-8px)}}
+@keyframes wi-sway{to{transform:rotate(5deg)}}
+@keyframes wi-flow{to{stroke-dashoffset:-40}}
+@keyframes wi-boat{50%{transform:translateY(4px) rotate(2deg)}}
+@keyframes wi-bird{to{transform:translate(28px,-12px)}}
+@keyframes wi-shine{to{opacity:.25}}
+@keyframes wi-bob{to{transform:translateY(-5px)}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<!-- Turquoise water -->
+<rect width="1000" height="680" fill="url(#sea)"/>
+<rect width="1000" height="680" fill="url(#dots)"/>
+<ellipse cx="540" cy="310" rx="540" ry="360" fill="url(#waterLight)"/>
+<g class="wi-waves" fill="none" stroke="#d5ffff" stroke-linecap="round" opacity=".48">
+<path d="M-30 120 C90 80 140 148 260 110 S440 72 560 120 S810 155 1040 104" stroke-width="4"/>
+<path d="M-40 154 C80 114 144 190 270 145 S480 120 598 157 S823 179 1050 145" stroke-width="2"/>
+<path d="M-50 591 C100 550 207 613 325 585 S553 533 690 579 S906 618 1060 556" stroke-width="5"/>
+<path d="M-40 624 C98 588 199 656 341 613 S556 573 701 618 S946 647 1050 607" stroke-width="2"/>
+<path d="M34 322 Q58 310 83 325 M920 372 Q952 351 971 372 M940 399 Q959 383 981 399 M64 470 Q95 448 123 461" stroke-width="3"/>
+</g>
+<!-- Small distant islets and clouds (island overhead fantasy map) -->
+<path d="M38 196 Q55 177 77 184 Q98 178 111 198 Q99 212 71 212 Q40 209 38 196Z" fill="#fbdea1"/>
+<path d="M51 197 Q64 189 83 194 Q93 199 90 201 Q73 205 51 197Z" fill="#75c88c"/>
+<path d="M870 109 Q892 92 915 107 Q940 103 960 120 Q953 141 912 134 Q889 143 870 124Z" fill="#f6dda5"/>
+<path d="M881 115 Q910 100 945 119 L930 126 L898 128Z" fill="#74d0a7"/>
+<g class="wi-cloud" opacity=".75" fill="#f0ffff"><ellipse cx="146" cy="83" rx="42" ry="15"/><ellipse cx="135" cy="70" rx="25" ry="20"/><ellipse cx="165" cy="72" rx="30" ry="19"/></g>
+<g class="wi-cloud two" opacity=".65" fill="#e5ffff"><ellipse cx="837" cy="53" rx="46" ry="13"/><ellipse cx="814" cy="46" rx="26" ry="18"/><ellipse cx="849" cy="43" rx="28" ry="18"/></g>
+<!-- Sea reefs and shallow-water shelves -->
+<path d="M80 278 C72 232 152 192 212 208 C270 183 353 139 426 160 C496 105 599 100 696 140 C765 142 839 199 875 245 C920 288 921 399 900 452 C864 538 780 587 720 594 C641 661 543 647 486 635 C401 670 286 617 233 587 C121 550 65 463 80 278Z" fill="#c0f8ed" opacity=".42"/>
+<path d="M98 301 C97 250 146 214 198 206 C246 175 319 157 374 171 C431 116 555 99 633 132 C709 139 774 180 816 230 C864 244 894 321 874 376 C906 432 857 525 779 550 C723 604 664 639 565 608 C475 638 389 614 331 601 C270 604 209 559 169 512 C111 485 72 396 98 301Z" fill="#0d587d" opacity=".22" transform="translate(2 22)"/>
+<!-- Island body -->
+<path d="M95 312 C88 267 139 213 205 205 C246 168 305 154 377 165 C425 112 540 107 629 132 C709 137 785 177 818 228 C869 256 893 314 875 374 C906 434 855 520 782 547 C715 605 642 629 562 601 C473 633 388 611 329 591 C252 604 199 553 161 512 C114 489 71 396 95 312Z" fill="url(#sand)" stroke="#fffae0" stroke-width="13" stroke-linejoin="round"/>
+<path d="M139 326 C137 285 168 239 229 234 C271 195 315 198 395 201 C443 150 548 142 625 165 C700 170 760 216 785 260 C839 278 848 331 831 379 C850 429 821 482 748 509 C697 563 630 585 563 555 C475 593 399 571 345 548 C277 572 224 524 196 485 C147 469 110 396 139 326Z" fill="url(#grass)" stroke="#dbf5a8" stroke-width="5"/>
+<!-- Moss patches and terrain -->
+<path d="M177 300 Q270 214 363 235 Q344 272 280 284 Q225 331 177 300Z" fill="#329b70" opacity=".25"/>
+<path d="M513 242 Q567 185 705 223 Q764 264 768 322 Q684 286 624 308 Q539 292 513 242Z" fill="#1e8667" opacity=".2"/>
+<path d="M242 442 Q329 399 408 451 Q401 524 317 519 Q269 505 242 442Z" fill="#3ba96d" opacity=".3"/>
+<path d="M566 486 Q633 448 713 471 Q718 513 641 531 Q593 521 566 486Z" fill="#d4f7a1" opacity=".4"/>
+<!-- Islands' connecting walking paths -->
+<g fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path d="M495 535 Q516 471 492 424 Q492 362 555 317 Q617 261 661 174" stroke="#438e72" stroke-width="34" opacity=".18"/>
+<path d="M495 535 Q516 471 492 424 Q492 362 555 317 Q617 261 661 174" stroke="#e7ba6f" stroke-width="20"/>
+<path d="M495 535 Q431 480 365 386 Q337 330 291 264" stroke="#4e9a77" stroke-width="33" opacity=".2"/>
+<path d="M495 535 Q431 480 365 386 Q337 330 291 264" stroke="#e7ba6f" stroke-width="20"/>
+<path d="M495 535 Q569 482 628 456 Q696 436 780 411" stroke="#4e9a77" stroke-width="34" opacity=".2"/>
+<path d="M495 535 Q569 482 628 456 Q696 436 780 411" stroke="#e7ba6f" stroke-width="20"/>
+<path d="M495 535 Q412 540 336 511 Q311 506 281 504" stroke="#4e9a77" stroke-width="34" opacity=".2"/>
+<path d="M495 535 Q412 540 336 511 Q311 506 281 504" stroke="#e7ba6f" stroke-width="20"/>
+<path d="M495 535 Q516 471 492 424 Q492 362 555 317 Q617 261 661 174" stroke="#fff4c5" stroke-width="2.8" stroke-dasharray="6 16"/>
+<path d="M495 535 Q431 480 365 386 Q337 330 291 264" stroke="#fff4c5" stroke-width="2.8" stroke-dasharray="6 16"/>
+<path d="M495 535 Q569 482 628 456 Q696 436 780 411" stroke="#fff4c5" stroke-width="2.8" stroke-dasharray="6 16"/>
+<path d="M495 535 Q412 540 336 511 Q311 506 281 504" stroke="#fff4c5" stroke-width="2.8" stroke-dasharray="6 16"/>
+</g>
+<!-- Upper mountains, snow highlights -->
+<g stroke-linejoin="round">
+<path d="M513 267 L587 128 L645 224 L695 116 L805 281 Q747 310 674 309 Q586 303 513 267Z" fill="#345870" opacity=".25" transform="translate(0 13)"/>
+<path d="M522 259 L589 130 L645 234 L695 113 L800 270 Q730 298 669 288 Q585 291 522 259Z" fill="url(#hill)" stroke="#b9d5d5" stroke-width="6"/>
+<path d="M562 184 L589 130 L620 188 L602 179 L591 189 L578 177Z" fill="#f2fff6"/>
+<path d="M658 176 L695 113 L736 191 L713 175 L696 190 L681 174Z" fill="#ecfff8"/>
+<path d="M612 244 L643 213 L662 243 L679 217 L708 259 L675 277Z" fill="#82b5ab"/>
+<path d="M685 187 Q673 225 686 253 Q687 274 668 300" fill="none" stroke="#317c96" stroke-width="21" opacity=".45"/>
+<path class="wi-fall" d="M688 188 Q677 228 689 254 Q690 275 670 303" stroke="url(#waterfall)" stroke-width="13" fill="none" stroke-linecap="round" stroke-dasharray="22 11"/>
+<ellipse cx="671" cy="301" rx="34" ry="13" fill="#a0f7ee" opacity=".9"/>
+<path d="M643 305 Q669 289 699 305" stroke="#e8ffff" stroke-width="4" fill="none"/>
+</g>
+<!-- Rainforest tree groups reusable visual trees -->
+<g class="wi-leaf"><ellipse cx="231" cy="344" rx="39" ry="15" fill="#167c63" opacity=".26"/><path d="M224 341L228 296" stroke="#7a6142" stroke-width="11"/><circle cx="219" cy="293" r="29" fill="#2b8d60"/><circle cx="240" cy="287" r="22" fill="#58bb64"/><circle cx="209" cy="276" r="23" fill="#7bdd78"/><circle cx="227" cy="269" r="18" fill="#a3eb77"/></g>
+<g class="wi-leaf"><ellipse cx="431" cy="266" rx="34" ry="15" fill="#167c63" opacity=".22"/><path d="M430 258L430 213" stroke="#866b4b" stroke-width="10"/><circle cx="415" cy="215" r="26" fill="#267e65"/><circle cx="450" cy="215" r="25" fill="#59bf69"/><circle cx="431" cy="195" r="28" fill="#80dd79"/></g>
+<g class="wi-leaf"><ellipse cx="378" cy="324" rx="27" ry="9" fill="#167c63" opacity=".26"/><path d="M376 321L379 293" stroke="#866b4b" stroke-width="7"/><circle cx="372" cy="292" r="20" fill="#2c956c"/><circle cx="389" cy="288" r="17" fill="#63c975"/><circle cx="379" cy="277" r="20" fill="#8bdf7a"/></g>
+<g class="wi-leaf"><ellipse cx="559" cy="387" rx="40" ry="14" fill="#167c63" opacity=".2"/><path d="M555 381L556 339" stroke="#876a46" stroke-width="11"/><circle cx="543" cy="342" r="30" fill="#278961"/><circle cx="572" cy="340" r="29" fill="#58bd6c"/><circle cx="561" cy="321" r="31" fill="#88df77"/></g>
+<g class="wi-leaf"><ellipse cx="767" cy="337" rx="38" ry="12" fill="#167c63" opacity=".23"/><path d="M764 332L767 290" stroke="#8e704a" stroke-width="10"/><circle cx="754" cy="298" r="27" fill="#2b946a"/><circle cx="776" cy="294" r="27" fill="#5ec677"/><circle cx="762" cy="277" r="23" fill="#a1e78d"/></g>
+<g class="wi-leaf"><ellipse cx="670" cy="512" rx="34" ry="12" fill="#167c63" opacity=".22"/><path d="M672 511L671 473" stroke="#96774b" stroke-width="9"/><circle cx="661" cy="479" r="26" fill="#2b986b"/><circle cx="683" cy="474" r="25" fill="#6fcd78"/><circle cx="667" cy="461" r="22" fill="#97e383"/></g>
+<g class="wi-leaf"><ellipse cx="372" cy="555" rx="29" ry="10" fill="#167c63" opacity=".22"/><path d="M370 551L368 515" stroke="#91714c" stroke-width="9"/><circle cx="357" cy="518" r="22" fill="#268e67"/><circle cx="379" cy="512" r="23" fill="#61c873"/><circle cx="369" cy="501" r="19" fill="#94e48b"/></g>
+<!-- The crystal curiosity cave on northwest hillside -->
+<ellipse cx="285" cy="301" rx="86" ry="25" fill="#317467" opacity=".18"/>
+<path d="M206 290 Q196 235 229 214 L257 178 L298 196 L325 182 Q374 203 376 264 L352 299Z" fill="url(#cave)" stroke="#a5a3ba" stroke-width="5"/>
+<path d="M244 287 Q239 229 292 220 Q342 226 340 287Z" fill="#261c53"/>
+<path d="M271 290 L287 246 L298 289Z" fill="#c1afff" stroke="#e5dbff" stroke-width="3"/>
+<path d="M302 290 L315 257 L330 291Z" fill="#75dfed" stroke="#daffff" stroke-width="3"/>
+<path d="M251 287 L261 268 L272 287Z" fill="#f5b5fb" stroke="#ffe6ff" stroke-width="2"/>
+<g class="wi-shine" fill="#eaffff"><circle cx="310" cy="236" r="3"/><circle cx="261" cy="229" r="2"/><path d="M352 233v15m-7-7h14" stroke="#d9e6ff" stroke-width="2"/></g>
+<!-- Treehouse/library on Reading Reef -->
+<ellipse cx="783" cy="449" rx="69" ry="18" fill="#388e74" opacity=".25"/>
+<path d="M736 437L734 386 L745 386 L747 437 M819 440L816 386 L828 387 L831 439" stroke="#8d6044" stroke-width="13"/>
+<path d="M720 386 L782 330 L844 388 Z" fill="#e87c72" stroke="#fff0c7" stroke-width="5"/>
+<rect x="734" y="383" width="97" height="56" rx="7" fill="#fff1c4" stroke="#8c6951" stroke-width="4"/>
+<rect x="749" y="397" width="26" height="24" rx="5" fill="#9ae6f2" stroke="#518fa4" stroke-width="4"/>
+<path d="M787 439 V405 Q787 394 798 394 Q811 394 811 405 V439" fill="#6f9c93" stroke="#557775" stroke-width="4"/>
+<path d="M742 440 L820 440" stroke="#a97a51" stroke-width="10"/>
+<path d="M839 443 L872 478" stroke="#cf9e66" stroke-width="14" stroke-linecap="round"/>
+<path d="M839 445 L872 478" stroke="#f9d8a3" stroke-width="4" stroke-dasharray="7 9"/>
+<!-- Coral in water -->
+<path d="M911 456q-6-24-17-30m17 30q13-19 18-32m-18 32v-34" fill="none" stroke="#ff8f87" stroke-width="9" stroke-linecap="round"/>
+<path d="M900 502q-8-20-18-23m18 23q11-22 21-23m-21 23v-35" fill="none" stroke="#ffa577" stroke-width="10" stroke-linecap="round"/>
+<circle cx="933" cy="484" r="12" fill="#fce1a4"/><circle cx="942" cy="509" r="7" fill="#fff0bc"/>
+<!-- Treasure Beach -->
+<ellipse cx="285" cy="508" rx="72" ry="29" fill="#f1d796" opacity=".92"/>
+<path d="M251 517V477L263 463H307L321 479V517Q286 536 251 517Z" fill="#925b3f" stroke="#6b4036" stroke-width="5"/>
+<path d="M250 477Q278 452 320 477V486H250Z" fill="#d28d50" stroke="#ffe2a1" stroke-width="4"/>
+<path d="M282 465V525" stroke="#f6d477" stroke-width="10"/>
+<path d="M251 496H320" stroke="#e2bb66" stroke-width="7"/>
+<rect x="274" y="485" width="22" height="21" rx="3" fill="#fff0a5" stroke="#8a6837" stroke-width="4"/>
+<circle class="wi-shine" cx="319" cy="470" r="5" fill="#fffad5"/>
+<path d="M333 474v18m-9-9h18" stroke="#fdfbb7" stroke-width="3"/>
+<path d="M229 505l10-10 10 10-10 10Z M331 519l7-8 8 8-8 8Z" fill="#fff4bc"/>
+<!-- Home cove huts and dock -->
+<ellipse cx="504" cy="556" rx="88" ry="22" fill="#5c9b72" opacity=".22"/>
+<path d="M461 545 V503 Q462 484 481 484 H533 Q550 486 550 506 V544Z" fill="#fff0c4" stroke="#9c6b4d" stroke-width="5"/>
+<path d="M445 502 L502 447 L563 502 Z" fill="#e5786d" stroke="#fce5b0" stroke-width="6" stroke-linejoin="round"/>
+<path d="M478 495L506 465L532 495" fill="none" stroke="#f9ae73" stroke-width="7"/>
+<rect x="488" y="513" width="31" height="36" rx="15" fill="#7eaf9a" stroke="#7c6a4f" stroke-width="4"/>
+<circle cx="511" cy="530" r="2.7" fill="#fff2b9"/>
+<rect x="467" y="508" width="14" height="18" rx="4" fill="#b6ecf3" stroke="#9f9072" stroke-width="3"/>
+<rect x="528" y="506" width="14" height="17" rx="4" fill="#b6ecf3" stroke="#9f9072" stroke-width="3"/>
+<path d="M528 561Q540 580 561 591" fill="none" stroke="#ddad74" stroke-width="12" stroke-linecap="round"/>
+<!-- palm-tree accents -->
+<g class="wi-leaf" transform="translate(431 544)"><path d="M0 0Q-5-40 5-68" fill="none" stroke="#9a704b" stroke-width="11"/><path d="M4-68Q-39-81-54-51Q-26-65 4-59Q23-108 53-92Q36-85 12-60Q47-68 62-42Q33-51 8-55Q-8-102-22-107Q0-98 4-68Z" fill="#2f9d6c" stroke="#7ddd8f" stroke-width="3"/></g>
+<g class="wi-leaf" transform="translate(160 411) scale(.8)"><path d="M0 0Q-6-39 4-65" fill="none" stroke="#996c48" stroke-width="11"/><path d="M4-65Q-40-79-52-49Q-22-64 4-58Q22-100 52-91Q34-78 10-57Q46-68 60-39Q29-50 8-54Q-9-99-21-103Q-3-91 4-65Z" fill="#238c6a" stroke="#8adf8b" stroke-width="3"/></g>
+<!-- Sailboat in cove -->
+<g class="wi-boat"><ellipse cx="599" cy="610" rx="44" ry="9" fill="#efffff" opacity=".3"/><path d="M560 606Q594 625 635 603L627 622Q598 643 571 620Z" fill="#805a4c" stroke="#efd4a9" stroke-width="4"/><path d="M594 602V555" stroke="#675b4e" stroke-width="5"/><path d="M590 562L558 597L590 597Z" fill="#ffdb8a"/><path d="M600 562L634 598L600 598Z" fill="#fff8de"/></g>
+<!-- Small birds and marine creatures -->
+<g class="wi-bird" fill="none" stroke="#f6ffff" stroke-width="4" stroke-linecap="round"><path d="M151 127 Q165 113 179 129 Q190 116 202 126"/><path d="M798 87Q808 79 818 89 Q831 81 842 91"/></g>
+<g class="wi-creature"><ellipse cx="113" cy="560" rx="18" ry="10" fill="#d9ffdd" opacity=".7"/><ellipse cx="104" cy="557" rx="11" ry="7" fill="#599d80"/><circle cx="120" cy="553" r="7" fill="#8dc99b"/><circle cx="122" cy="552" r="1.4" fill="#214648"/></g>
+<g class="wi-creature"><ellipse cx="907" cy="285" rx="22" ry="8" fill="#78d7cf"/><path d="M906 286q-14-15-25-6m25 6q16-15 25-6" fill="none" stroke="#f8de90" stroke-width="5"/><circle cx="906" cy="281" r="12" fill="#ffae83"/><circle cx="901" cy="278" r="2" fill="#355364"/><circle cx="911" cy="278" r="2" fill="#355364"/></g>
+<!-- Tiny flowering plants -->
+<g fill="#ffeeb7"><circle cx="407" cy="409" r="4"/><circle cx="414" cy="404" r="4"/><circle cx="417" cy="413" r="4"/><circle cx="405" cy="417" r="4"/></g>
+<g fill="#ffbdd4"><circle cx="613" cy="420" r="4"/><circle cx="620" cy="416" r="4"/><circle cx="623" cy="425" r="4"/><circle cx="610" cy="427" r="4"/></g>
+<g fill="#e9ffb3"><circle cx="326" cy="368" r="4"/><circle cx="335" cy="362" r="4"/><circle cx="338" cy="373" r="4"/></g>
+</svg>

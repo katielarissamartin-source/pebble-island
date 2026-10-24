@@ -1,0 +1,226 @@
+
+/* Pebble Island: animated overworld V1. No new animation libraries. */
+#app .pi-world, #app .pi-world *{box-sizing:border-box}
+#app .pi-world{
+  --pi-ink:#153845;--pi-muted:#446978;--pi-blue:#1b667f;
+  width:100%;display:grid;gap:14px;isolation:isolate;color:var(--pi-ink);
+}
+#app .pi-world h1,#app .pi-world h2,#app .pi-world h3{
+  color:var(--pi-ink)!important;-webkit-text-fill-color:var(--pi-ink)!important;
+  background:none!important;letter-spacing:-.02em;line-height:1.17;
+}
+#app .pi-world-head{
+ display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+ background:#fffdf3;border:2px solid #cfebdf;border-radius:23px;padding:17px 21px;
+ box-shadow:0 5px 0 #c0dfd5;
+}
+#app .pi-world-headcopy{display:grid;gap:4px;max-width:60ch}
+#app .pi-eyebrow{font:800 .7rem var(--display);letter-spacing:.13em;text-transform:uppercase;color:#2b6778}
+#app .pi-world-head h1{font:800 clamp(1.4rem,3.2vw,2.1rem) var(--display)}
+#app .pi-world-head p{font-size:.92rem;line-height:1.4;color:#315d69;margin:0}
+#app .pi-head-action{
+ font:800 .83rem var(--display);color:#174c67;background:#e8f8ee;
+ border:2px solid #b2d8c9;border-radius:14px;padding:12px 15px;min-height:50px;
+ display:inline-flex;align-items:center;gap:7px;
+}
+#app .pi-head-action:hover{background:#d3f2e4}
+#app .pi-head-action:focus-visible,#app .pi-landmark:focus-visible,#app .pi-zone-dialog button:focus-visible,#app .pi-original-islands summary:focus-visible{
+ outline:4px solid #163b59;outline-offset:4px;
+}
+#app .pi-scene{
+ width:100%;height:min(68svh,690px);min-height:445px;position:relative;
+ border:8px solid #f7ffff;outline:2px solid #a5dcd8;
+ border-radius:31px;overflow:hidden;isolation:isolate;
+ background:linear-gradient(155deg,#80e4e5,#0b7caa);
+ box-shadow:0 13px 0 #b5e3df,0 24px 36px rgba(16,76,106,.23);
+ contain:layout paint;
+}
+#app .pi-map-art{position:absolute;inset:0;width:100%;height:100%;object-fit:fill;pointer-events:none;user-select:none;-webkit-user-drag:none}
+#app .pi-stage-shimmer{pointer-events:none;position:absolute;inset:0;z-index:1;
+ background:linear-gradient(118deg,rgba(255,255,255,.14),transparent 28%,transparent 72%,rgba(255,255,255,.08));
+}
+#app .pi-landmark{
+ --px:50%;--py:50%;position:absolute;left:var(--px);top:var(--py);
+ transform:translate(-50%,-46%);z-index:4;display:flex;align-items:center;
+ flex-direction:column;justify-content:center;gap:4px;
+ min-width:106px;min-height:94px;padding:4px 8px;
+ border:0;background:transparent;color:#fff!important;text-align:center;
+ cursor:pointer;transition:filter .18s ease,opacity .18s ease;
+ -webkit-tap-highlight-color:transparent;touch-action:manipulation;
+}
+#app .pi-landmark-emoji{
+ display:grid;place-items:center;position:relative;width:61px;height:61px;
+ border-radius:22px;box-shadow:0 7px 0 rgba(15,52,65,.29),0 9px 20px rgba(5,52,73,.20);
+ background:linear-gradient(148deg,#fffaf0,#e3f9ef);
+ border:3px solid #fffef1;color:#233c54;font-size:2.05rem;line-height:1;
+ transform:rotate(-3deg);
+}
+#app .pi-landmark[data-zone="math"] .pi-landmark-emoji{background:linear-gradient(145deg,#e9f1ff,#bde4ff)}
+#app .pi-landmark[data-zone="reading"] .pi-landmark-emoji{background:linear-gradient(145deg,#fff5da,#ffd2c4)}
+#app .pi-landmark[data-zone="cave"] .pi-landmark-emoji{background:linear-gradient(145deg,#fff0ff,#d6cdfc)}
+#app .pi-landmark[data-zone="treasure"] .pi-landmark-emoji{background:linear-gradient(145deg,#fff7d3,#ffda85)}
+#app .pi-landmark-label{
+ display:block;position:relative;
+ font:800 clamp(.69rem,1.55vw,.84rem) var(--display);line-height:1.22;letter-spacing:.015em;
+ color:#fff!important;-webkit-text-fill-color:#fff!important;
+ background:#163b55;border:2px solid #fff9e5;border-radius:999px;
+ padding:6px 10px;box-shadow:0 4px 0 rgba(5,48,74,.29);white-space:nowrap;
+}
+#app .pi-landmark[data-visited="true"] .pi-landmark-label::after{
+ content:"✓";margin-left:5px;color:#ffe493;
+}
+#app .pi-landmark:active .pi-landmark-emoji{transform:translateY(3px) rotate(0);box-shadow:0 2px 0 rgba(15,52,65,.29)}
+#app .pi-landmark.is-target .pi-landmark-emoji{outline:4px solid #fff3ac;outline-offset:3px}
+#app .pi-landmark.is-recommended .pi-landmark-emoji{animation:pi-signal 3s ease-in-out infinite}
+#app .pi-landmark.is-recommended::before{
+ content:"NEXT";position:absolute;right:0;top:-12px;
+ padding:3px 7px;border-radius:999px;background:#ffdf83;color:#604512;
+ font:900 .52rem var(--display);letter-spacing:.08em;z-index:4;
+}
+#app .pi-pathway-avatar{
+ position:absolute;left:0;top:0;z-index:7;pointer-events:none;width:61px;height:80px;
+ display:grid;place-items:center;transform:translate3d(0,0,0);
+ will-change:auto;
+}
+#app .pi-avatar-shape{
+ height:55px;width:52px;border:3px solid #fff9db;
+ border-radius:48% 48% 38% 38%;
+ background:linear-gradient(145deg,#fef6de,#ffd3a3);
+ box-shadow:0 8px 0 rgba(32,83,88,.27),0 7px 16px rgba(0,58,70,.27);
+ display:grid;place-items:center;position:relative;
+ animation:pi-idle 3.3s ease-in-out infinite;
+}
+#app .pi-avatar-shape::before{
+ content:"";position:absolute;width:19px;height:14px;left:1px;top:-7px;
+ border-radius:100% 20% 80% 30%;background:#ffbd87;transform:rotate(-15deg);
+}
+#app .pi-avatar-shape::after{
+ content:"";position:absolute;width:19px;height:14px;right:1px;top:-7px;
+ border-radius:20% 100% 30% 80%;background:#ffbd87;transform:rotate(15deg);
+}
+#app .pi-avatar-face{font-size:1.6rem;line-height:1;z-index:1}
+#app .pi-pathway-avatar::before{
+ content:"you";position:absolute;top:-4px;left:50%;transform:translateX(-50%);
+ border-radius:999px;padding:2px 7px;font:800 .58rem var(--display);
+ background:#fffdfa;color:#264c60;z-index:3;box-shadow:0 1px 4px rgba(18,68,88,.15)
+}
+#app .pi-pathway-avatar.is-walking .pi-avatar-shape{animation:pi-walk .22s ease-in-out infinite alternate}
+#app .pi-pathway-avatar.is-arrived .pi-avatar-shape{animation:pi-arrive .65s ease-out both}
+#app .pi-route-status{
+ position:absolute;top:10px;left:50%;transform:translateX(-50%);
+ z-index:8;max-width:calc(100% - 24px);
+ padding:7px 14px;border:2px solid #f5f7e8;border-radius:999px;
+ background:#17475c;color:white;font:800 .77rem var(--display);
+ box-shadow:0 4px 10px rgba(8,56,69,.2);text-align:center;
+}
+#app .pi-route-status[hidden]{display:none!important}
+#app .pi-stage-frame{
+ position:absolute;bottom:12px;left:13px;right:13px;z-index:3;
+ display:flex;justify-content:space-between;align-items:end;gap:9px;pointer-events:none;
+}
+#app .pi-stage-frame span{
+ background:rgba(15,65,82,.87);color:#fff;display:inline-block;
+ border:1px solid rgba(255,255,255,.73);border-radius:999px;
+ padding:6px 10px;font:700 .68rem var(--display);
+}
+#app .pi-zone-dialog{
+ border:2px solid #b0dcd3;border-radius:24px;padding:clamp(15px,3vw,25px);
+ display:grid;gap:11px;background:linear-gradient(125deg,#fffdfa,#eafaf5);
+ color:var(--pi-ink);box-shadow:0 5px 0 #bfdfd5;
+}
+#app .pi-zone-dialog[hidden]{display:none!important}
+#app .pi-zone-dialog-head{display:flex;align-items:center;gap:12px}
+#app .pi-zone-dialog-mark{display:grid;place-items:center;font-size:2rem;
+ background:#fff3cd;border-radius:16px;width:60px;height:60px;flex:none}
+#app .pi-zone-dialog h2{font:800 clamp(1.3rem,2.7vw,1.75rem) var(--display)}
+#app .pi-zone-dialog p{font-size:.95rem;line-height:1.5;margin:0;color:#395e68}
+#app .pi-zone-dialog-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+#app .pi-action{
+ min-height:53px;border-radius:15px;padding:10px 19px;font:800 .93rem var(--display);
+ color:#17475e;background:#fff;border:2px solid #88b3c0;
+}
+#app .pi-action.pi-action-primary{background:#155c7b;color:#fff;border-color:#155c7b;
+ box-shadow:0 4px 0 #9bc8cc}
+#app .pi-action:active{transform:translateY(2px)}
+#app .pi-guide-row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+#app .pi-guide-row p{color:#365f6b;font-size:.84rem;margin:0;line-height:1.45}
+#app .pi-explore-button{
+ min-height:53px;background:#fff!important;color:#17566b!important;border:2px solid #a3c8c8;
+ border-radius:15px;padding:11px 17px;font:800 .88rem var(--display)
+}
+#app .pi-original-islands{
+ border:2px solid var(--line);border-radius:21px;background:var(--panel);
+ padding:0 15px;overflow:visible;
+}
+#app .pi-original-islands>summary{
+ min-height:66px;padding:13px 6px;
+ display:flex;align-items:center;justify-content:space-between;gap:10px;
+ cursor:pointer;list-style:none;font:800 1rem var(--display);color:var(--ink);
+}
+#app .pi-original-islands>summary::-webkit-details-marker{display:none}
+#app .pi-original-islands>summary::after{content:"▾";font-size:1.3rem;color:var(--sea)}
+#app .pi-original-islands[open]>summary::after{content:"▴"}
+#app .pi-original-islands .dashboard-intro{margin:10px 0 23px}
+#app .pi-original-islands .island-title{margin:18px 0}
+#app .pi-original-islands .island-filters{margin-bottom:18px}
+#app .pi-original-islands .map{margin:15px 0 24px}
+@keyframes pi-idle{50%{transform:translateY(-3px) rotate(1deg)}}
+@keyframes pi-walk{from{transform:translateY(1px) rotate(-5deg)}to{transform:translateY(-4px) rotate(5deg)}}
+@keyframes pi-arrive{0%{transform:scale(.96)}45%{transform:scale(1.19)}75%{transform:scale(.95)}100%{transform:scale(1)}}
+@keyframes pi-signal{50%{box-shadow:0 0 0 8px rgba(255,242,172,.55),0 8px 0 rgba(15,52,65,.29)}}
+@media(max-width:600px){
+ #app .pi-world-head{padding:14px 16px;gap:10px}
+ #app .pi-head-action{min-height:44px;padding:8px 12px}
+ #app .pi-scene{height:min(76svh,620px);min-height:505px;border-width:6px;border-radius:23px}
+ #app .pi-landmark{min-width:90px;min-height:82px;padding:3px;gap:3px}
+ #app .pi-landmark-emoji{width:48px;height:48px;border-radius:17px;font-size:1.65rem;border-width:2px}
+ #app .pi-landmark-label{font-size:.65rem;padding:5px 7px}
+ #app .pi-pathway-avatar{width:50px;height:65px}
+ #app .pi-avatar-shape{width:44px;height:47px}
+ #app .pi-avatar-face{font-size:1.4rem}
+ #app .pi-zone-dialog-actions .pi-action{flex:1;min-width:125px}
+ #app .pi-stage-frame span{font-size:.56rem;padding:5px 7px}
+ #app .pi-stage-frame span:last-child{display:none}
+}
+@media(min-width:601px) and (max-width:900px) and (orientation:portrait){
+ #app .pi-scene{height: min(68svh,715px);min-height:530px}
+}
+@media(prefers-reduced-motion:reduce){
+ #app .pi-world *,#app .pi-world *::before,#app .pi-world *::after{animation:none!important;transition:none!important}
+}
+body.calmfx #app .pi-world *,body.calmfx #app .pi-world *::before,body.calmfx #app .pi-world *::after{
+ animation:none!important;transition:none!important
+}
+
+/* Avoid rendering a second animated cloud/ocean system behind the active world. */
+body:has(#app .pi-world) .scene .cloud,
+body:has(#app .pi-world) .scene .waves svg{animation-play-state:paused!important}
+
+/* A curriculum lesson earns one existing learning star; the island celebrates without changing the star economy. */
+#app .pi-world-achievement{
+ display:flex;align-items:center;gap:13px;padding:12px 16px;
+ background:linear-gradient(105deg,#fff9d7,#e8f9e8);
+ border:2px solid #ebd38a;border-radius:19px;
+ box-shadow:0 5px 0 rgba(190,163,84,.23);color:#31505b;
+ animation:pi-achievement-in .45s cubic-bezier(.2,.8,.2,1) both;
+}
+#app .pi-world-achievement strong{display:block;font:850 1rem var(--display);color:#254b61}
+#app .pi-world-achievement small{display:block;font:700 .8rem var(--body);color:#4f6472}
+#app .pi-achievement-star{
+ display:grid;place-items:center;flex:none;width:47px;height:47px;
+ border-radius:50%;background:#f1bf4d;border:3px solid #fff9cb;
+ color:#fff;font-size:1.8rem;text-shadow:0 2px 2px rgba(105,71,17,.2);
+ box-shadow:0 4px 0 #be9033;animation:pi-star-pop .62s ease-out both;
+}
+#app .pi-landmark[data-progress="true"] .pi-landmark-emoji::after{
+ content:"★";position:absolute;right:-9px;top:-10px;
+ display:grid;place-items:center;border-radius:50%;width:24px;height:24px;
+ font:900 .93rem var(--display);color:#7b4f16;background:#ffdf74;
+ border:2px solid #fff9cf;box-shadow:0 2px 5px rgba(17,65,76,.18);
+}
+@keyframes pi-achievement-in{from{opacity:0;transform:translateY(-7px)}to{opacity:1;transform:none}}
+@keyframes pi-star-pop{0%{transform:scale(.4) rotate(-25deg)}55%{transform:scale(1.2) rotate(9deg)}100%{transform:scale(1) rotate(0)}}
+@media(prefers-reduced-motion:reduce){
+ #app .pi-world-achievement,#app .pi-achievement-star{animation:none!important}
+}
+body.calmfx #app .pi-world-achievement,body.calmfx #app .pi-achievement-star{animation:none!important}
