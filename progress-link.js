@@ -1,7 +1,7 @@
 (function(){
 "use strict";
 const B=window.PEBBLE_QCAA_LESSONS;if(!B)return;
-const ISLANDS={sci:{area:"science",lab:"Science Lab"},geo:{area:"hass",lab:"Our World"},hist:{area:"hass",lab:"Our World"}};
+const ISLANDS={sci:{area:"science",lab:"Science"},geo:{area:"hass",lab:"Our World"},hist:{area:"hass",lab:"Our World"}};
 const AREA_ISLANDS={science:[["sci","🔬","Science Station"]],hass:[["geo","🗺️","Map Island"],["hist","🏺","Time Cave"]]};
 const who=()=>{try{return typeof kid==="undefined"?null:kid}catch(e){return null}};
 const labYear=k=>{const y=S.curriculumYear&&S.curriculumYear[k];if(y!==undefined&&y!==null)return +y;const a=(S.kids[k]||{}).age||7;return a>=9?5:2};
@@ -26,7 +26,7 @@ function decorate(){
   const b=app.querySelector('[data-w="'+w+'"]');if(!b||b.querySelector(".pl-lab"))return;
   const c=labCount(k,info.area);if(!c.total)return;
   const sm=b.querySelector("small");if(!sm)return;
-  sm.insertAdjacentHTML("afterend",'<span class="pl-lab">🧪 '+info.lab+': '+c.done+' of '+c.total+' lessons</span>');
+  sm.insertAdjacentHTML("afterend",'<span class="pl-lab">📚 '+info.lab+' lessons: '+c.done+' of '+c.total+'</span>');
  });
  const list=app.querySelector(".curr-lessons");
  if(list&&!app.querySelector(".pl-card")){
@@ -36,7 +36,7 @@ function decorate(){
   const isl=AREA_ISLANDS[area].map(([w,ic,name])=>{const l=islandLevel(k,w);return{w,ic,name,l}});
   const c=labCount(k,area);
   const card=document.createElement("div");card.className="pl-card";
-  card.innerHTML='<span>🧪 Lessons done: '+c.done+' of '+c.total+'<br>'+isl.map(x=>x.ic+' '+x.name+': '+(x.l?'level '+x.l:'not started')).join('<br>')+'</span>'+isl.map(x=>'<button type="button" data-pl="'+x.w+'">'+x.ic+' Play '+x.name+'</button>').join("");
+  card.innerHTML='<span>📚 Lessons done: '+c.done+' of '+c.total+'<br>'+isl.map(x=>x.ic+' '+x.name+': '+(x.l?'level '+x.l:'not started')).join('<br>')+'</span>'+isl.map(x=>'<button type="button" data-pl="'+x.w+'">'+x.ic+' Play '+x.name+'</button>').join("");
   list.parentNode.insertBefore(card,list);
   card.querySelectorAll("[data-pl]").forEach(btn=>btn.onclick=()=>openIsland(btn.dataset.pl));
  }
