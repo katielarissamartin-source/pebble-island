@@ -336,6 +336,7 @@ function statsHTML(){
  return '<div class="curr-path-metrics" aria-label="Personal learning progress"><div class="curr-metric"><strong>'+s.explored+' / '+s.total+'</strong><span>Explored</span></div><div class="curr-metric"><strong>'+s.due+'</strong><span>Review ready</span></div><div class="curr-metric"><strong>'+s.strong+'</strong><span>Strong skills</span></div></div>';
 }
 function showHome(){
+ if(window.PEBBLE_TODAY)return window.PEBBLE_TODAY.show();
  section="home";area=null;lesson=null;
  const next=rec(),row=progress(),categories=Object.keys(names);
  const recommended=next?'<section class="curr-focus" aria-labelledby="adaptive-next"><span class="curr-label">Your next best step · '+(next.mode==="review"?"Quick review":next.mode==="new"?"Discover":"Optional practice")+'</span><h2 id="adaptive-next">'+esc(next.lesson.icon+" "+next.lesson.title)+'</h2><p>'+esc(next.reason)+'</p><div class="curr-session-meter">'+stateTag(next.area,next.lesson)+'<span class="curr-meta">'+esc(names[next.area])+'</span></div><button class="curr-primary" type="button" id="adapt-next">Start my next lesson →</button></section>':"";
@@ -352,7 +353,7 @@ function showArea(a){
  section="area";area=a;lesson=null;
  const next=rec(a);
  const suggest=next?'<div class="curr-suggestion"><strong>Suggested: '+esc(next.lesson.title)+'</strong><p class="curr-adaptive-note">'+esc(next.reason)+'</p><button type="button" class="curr-secondary" id="adapt-subject-next">Try this next →</button></div>':"";
- screen(header(names[a],"My learning path")+'<p class="curr-sub">Pick any lesson. Strong skills grow through correct answers and reviews on different days.</p>'+suggest+'<div class="curr-lessons">'+entries(a).map((l,i)=>'<button type="button" data-adapt-lesson="'+i+'" class="curr-lesson '+(completed(a,l)?"complete":"")+'"><span class="em" aria-hidden="true">'+l.icon+'</span><strong>'+esc(l.title)+'</strong><span>'+esc(l.goal)+'</span>'+stateTag(a,l)+'<small class="curr-mini">'+esc(A.dueText(st(a,l)))+'</small></button>').join("")+'</div>');
+ screen(header(names[a],"Today")+'<p class="curr-sub">Pick any lesson. Strong skills grow through correct answers and reviews on different days.</p>'+suggest+'<div class="curr-lessons">'+entries(a).map((l,i)=>'<button type="button" data-adapt-lesson="'+i+'" class="curr-lesson '+(completed(a,l)?"complete":"")+'"><span class="em" aria-hidden="true">'+l.icon+'</span><strong>'+esc(l.title)+'</strong><span>'+esc(l.goal)+'</span>'+stateTag(a,l)+'<small class="curr-mini">'+esc(A.dueText(st(a,l)))+'</small></button>').join("")+'</div>');
  app().querySelectorAll("[data-adapt-lesson]").forEach(b=>b.onclick=()=>start(a,Number(b.dataset.adaptLesson)));
  const btn=document.getElementById("adapt-subject-next");if(btn&&next)btn.onclick=()=>start(a,next.index);
 }
