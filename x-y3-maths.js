@@ -1,6 +1,6 @@
 PEBBLE_EXTRA(3,"maths",[
 ["addsub1000",
-["Add and subtract to 1000","➕","AC9M3N","Add and subtract three-digit numbers.","Line up hundreds, tens and ones. Add or subtract ones first, then tens, then hundreds. Swap 10 ones for 1 ten when you need to.","246 + 130: 6 + 0 = 6, 40 + 30 = 70, 200 + 100 = 300. Answer 376.","Add 315 + 240 using hundreds, tens and ones.",[
+["Add and subtract to 1000","➕","AC9M3N03","Add and subtract three-digit numbers.","Line up hundreds, tens and ones. Add or subtract ones first, then tens, then hundreds. Swap 10 ones for 1 ten when you need to.","246 + 130: 6 + 0 = 6, 40 + 30 = 70, 200 + 100 = 300. Answer 376.","Add 315 + 240 using hundreds, tens and ones.",[
 ["320 + 150 = ?","470","370","480","300 + 100 = 400. 20 + 50 = 70. 470."],
 ["405 + 32 = ?","437","447","427","405 + 30 = 435, then + 2 = 437."],
 ["780 - 50 = ?","730","830","740","78 tens minus 5 tens is 73 tens, so 730."],
@@ -17,7 +17,7 @@ PEBBLE_EXTRA(3,"maths",[
 ["You have 500 blocks and use 200. How many are left?","300","700","400","500 - 200 = 300."]]]],
 
 ["times",
-["Times tables 2, 3, 5 and 10","✖️","AC9M3N","Know the 2, 3, 5 and 10 times tables.","Multiplying is adding equal groups. 3 groups of 5 is 5 + 5 + 5 = 15. Write 3 x 5 = 15. Swapping the order gives the same answer: 5 x 3 = 15.","4 bags with 5 apples in each is 4 x 5 = 20 apples.","Make 3 groups of 4 with small things. Count them.",[
+["Times tables 2, 3, 5 and 10","✖️","AC9M3A03","Know the 2, 3, 5 and 10 times tables.","Multiplying is adding equal groups. 3 groups of 5 is 5 + 5 + 5 = 15. Write 3 x 5 = 15. Swapping the order gives the same answer: 5 x 3 = 15.","4 bags with 5 apples in each is 4 x 5 = 20 apples.","Make 3 groups of 4 with small things. Count them.",[
 ["3 x 5 = ?","15","8","10","5 + 5 + 5 = 15."],
 ["4 x 10 = ?","40","14","400","Four tens is 40."],
 ["2 x 6 = ?","12","8","26","6 + 6 = 12."],
@@ -34,7 +34,7 @@ PEBBLE_EXTRA(3,"maths",[
 ["5 x 3 is the same as...","3 x 5","3 + 5","5 - 3","Swap the order and the answer stays."]]]],
 
 ["share",
-["Sharing equally","➗","AC9M3N","Share a number into equal groups.","Dividing is sharing into equal groups. 12 shared between 3 is 4 each. Times and divide are a team. 3 x 4 = 12, so 12 / 3 = 4.","15 sweets shared between 5 friends is 3 each.","Share 12 buttons between 3 cups. How many in each?",[
+["Sharing equally","➗","AC9M3N04","Share a number into equal groups.","Dividing is sharing into equal groups. 12 shared between 3 is 4 each. Times and divide are a team. 3 x 4 = 12, so 12 / 3 = 4.","15 sweets shared between 5 friends is 3 each.","Share 12 buttons between 3 cups. How many in each?",[
 ["12 shared between 3 is...","4","9","36","3 x 4 = 12."],
 ["20 / 5 = ?","4","15","25","5 x 4 = 20."],
 ["10 shared between 2 is...","5","8","12","5 + 5 = 10."],
@@ -51,7 +51,7 @@ PEBBLE_EXTRA(3,"maths",[
 ["3 x 5 = 15. So 15 / 3 = ?","5","12","18","Divide undoes times."]]]],
 
 ["fractions3",
-["Unit fractions","🍕","AC9M3N","Name and order fractions like a half, a third and a quarter.","A unit fraction is one equal part of a whole. 1/2 is one of 2 equal parts. 1/3 is one of 3 equal parts. 1/4 is one of 4. More parts means each part is smaller.","A pizza cut into 4 equal slices. Each slice is 1/4.","Fold paper into 3 equal parts. Colour one part.",[
+["Unit fractions","🍕","AC9M3N02","Name and order fractions like a half, a third and a quarter.","A unit fraction is one equal part of a whole. 1/2 is one of 2 equal parts. 1/3 is one of 3 equal parts. 1/4 is one of 4. More parts means each part is smaller.","A pizza cut into 4 equal slices. Each slice is 1/4.","Fold paper into 3 equal parts. Colour one part.",[
 ["A pizza is cut into 4 equal slices. One slice is...","1/4","1/2","1/3","1 of 4 equal parts is 1/4."],
 ["Which is bigger?","1/2","1/4","1/8","Fewer parts means bigger parts."],
 ["Which fraction has 3 equal parts?","1/3","1/2","1/4","Thirds have 3 equal parts."],
@@ -68,7 +68,7 @@ PEBBLE_EXTRA(3,"maths",[
 ["Put in order, smallest first: 1/2, 1/4, 1/3","1/4, 1/3, 1/2","1/2, 1/3, 1/4","1/3, 1/4, 1/2","More parts means smaller parts."]]]],
 
 ["time3",
-["Telling time to the minute","⏰","AC9M3M","Read the time to the minute.","The short hand shows hours. The long hand shows minutes. Count by 5s round the clock. Past means after the hour. To means before the next hour. A digital clock shows 3:45.","Long hand on 9 and short hand near 3 is 15 to 4. It is also 3:45.","Look at a clock. Say the time to the nearest 5 minutes.",[
+["Telling time to the minute","⏰","AC9M3M04","Read the time to the minute.","The short hand shows hours. The long hand shows minutes. Count by 5s round the clock. Past means after the hour. To means before the next hour. A digital clock shows 3:45.","Long hand on 9 and short hand near 3 is 15 to 4. It is also 3:45.","Look at a clock. Say the time to the nearest 5 minutes.",[
 ["The long hand points to 6. How many minutes past?","30","6","60","6 x 5 = 30 minutes."],
 ["Half past 4 is...","4:30","6:30","4:15","Half past means 30 minutes after."],
 ["Quarter to 5 is...","4:45","5:15","4:15","Quarter to means 15 minutes before."],
@@ -85,7 +85,7 @@ PEBBLE_EXTRA(3,"maths",[
 ["How many minutes in 1 hour?","60","100","24","There are 60 minutes in an hour."]]]],
 
 ["shapes3",
-["Shapes and angles","📐","AC9M3M","Spot angles and sides in shapes.","An angle is where two lines meet. A right angle is a square corner. Angles smaller than a right angle are acute. Bigger ones are obtuse. A square has 4 sides and 4 right angles.","The corner of a book is a right angle.","Find three right angles in your room.",[
+["Shapes and angles","📐","AC9M3M05","Spot angles and sides in shapes.","An angle is where two lines meet. A right angle is a square corner. Angles smaller than a right angle are acute. Bigger ones are obtuse. A square has 4 sides and 4 right angles.","The corner of a book is a right angle.","Find three right angles in your room.",[
 ["A square corner is a...","Right angle","Acute angle","Straight line","A right angle is a square corner."],
 ["How many sides does a triangle have?","3","4","5","Tri means three."],
 ["An angle smaller than a right angle is...","Acute","Obtuse","Right","Acute angles are small and sharp."],
@@ -102,7 +102,7 @@ PEBBLE_EXTRA(3,"maths",[
 ["A rectangle floor has how many right angles?","4","2","0","A rectangle has 4 square corners."]]]],
 
 ["data3",
-["Collect and show data","📊","AC9M3ST","Collect data and show it in a table or graph.","Data is information. A tally mark counts one. Four lines and a line across makes five. A bar graph uses bars. A taller bar means more. Always give a graph a title.","Tally: IIII I = 6 votes for apples.","Ask 10 people their favourite colour. Make a tally chart.",[
+["Collect and show data","📊","AC9M3ST02","Collect data and show it in a table or graph.","Data is information. A tally mark counts one. Four lines and a line across makes five. A bar graph uses bars. A taller bar means more. Always give a graph a title.","Tally: IIII I = 6 votes for apples.","Ask 10 people their favourite colour. Make a tally chart.",[
 ["IIII I in tally marks is...","6","5","4","A group of five plus one is 6."],
 ["In a bar graph, a taller bar means...","More","Less","The same","Taller bars show a bigger number."],
 ["What does a graph title tell you?","What the graph is about","Who drew it","The date","A title tells you the topic."],
@@ -119,7 +119,7 @@ PEBBLE_EXTRA(3,"maths",[
 ["Votes: T. rex 5, Triceratops 8, Stegosaurus 3. Which has the most?","Triceratops","T. rex","Stegosaurus","8 is the biggest number."]]]],
 
 ["perimeter",
-["Length around a shape","📏","AC9M3M","Measure the distance around a shape.","Perimeter is the distance around the edge of a shape. Add up all the sides. A rectangle 4 cm by 2 cm has sides 4, 2, 4, 2. 4 + 2 + 4 + 2 = 12 cm.","A square with sides of 3 cm has a perimeter of 3 + 3 + 3 + 3 = 12 cm.","Measure the sides of a book. Add them up.",[
+["Length around a shape","📏","AC9M3M02","Measure the distance around a shape.","Perimeter is the distance around the edge of a shape. Add up all the sides. A rectangle 4 cm by 2 cm has sides 4, 2, 4, 2. 4 + 2 + 4 + 2 = 12 cm.","A square with sides of 3 cm has a perimeter of 3 + 3 + 3 + 3 = 12 cm.","Measure the sides of a book. Add them up.",[
 ["A square has 5 cm sides. Its perimeter is...","20 cm","10 cm","25 cm","5 + 5 + 5 + 5 = 20."],
 ["A rectangle is 6 cm by 2 cm. Perimeter?","16 cm","8 cm","12 cm","6 + 2 + 6 + 2 = 16."],
 ["A triangle has sides 3, 4 and 5 cm. Perimeter?","12 cm","9 cm","15 cm","3 + 4 + 5 = 12."],

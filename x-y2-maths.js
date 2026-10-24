@@ -1,6 +1,6 @@
 PEBBLE_EXTRA(2,"maths",[
 ["skipcount",
-["Skip counting","🦘","AC9M2N","Count by 2s, 5s and 10s.","Skip counting is counting in jumps. Count by 2s: 2, 4, 6, 8. Count by 5s: 5, 10, 15. Count by 10s: 10, 20, 30.","Your fingers on two hands: count by 5s. 5, 10.","Count your steps to the door by 2s.",[
+["Skip counting","🦘","AC9M2A01","Count by 2s, 5s and 10s.","Skip counting is counting in jumps. Count by 2s: 2, 4, 6, 8. Count by 5s: 5, 10, 15. Count by 10s: 10, 20, 30.","Your fingers on two hands: count by 5s. 5, 10.","Count your steps to the door by 2s.",[
 ["Count by 2s: 2, 4, 6, __","8","7","10","Add 2 to 6 to get 8."],
 ["Count by 5s: 5, 10, __","15","12","20","Add 5 to 10 to get 15."],
 ["Count by 10s: 10, 20, 30, __","40","31","50","Add 10 each time."],
@@ -17,7 +17,7 @@ PEBBLE_EXTRA(2,"maths",[
 ["You count by 5s. What comes after 20?","25","22","30","20 + 5 = 25."]]]],
 
 ["add100",
-["Add to 100","➕","AC9M2N","Add two-digit numbers.","Split numbers into tens and ones. Add the tens. Then add the ones. 32 + 25: 30 + 20 = 50. 2 + 5 = 7. So 57.","23 + 14: 20 + 10 = 30. 3 + 4 = 7. So 37.","Add 41 + 25 using tens and ones.",[
+["Add to 100","➕","AC9M2N04","Add two-digit numbers.","Split numbers into tens and ones. Add the tens. Then add the ones. 32 + 25: 30 + 20 = 50. 2 + 5 = 7. So 57.","23 + 14: 20 + 10 = 30. 3 + 4 = 7. So 37.","Add 41 + 25 using tens and ones.",[
 ["34 + 20 = ?","54","44","64","3 tens + 2 tens = 5 tens, so 54."],
 ["45 + 30 = ?","75","65","85","4 tens + 3 tens = 7 tens, so 75."],
 ["23 + 14 = ?","37","36","47","20 + 10 = 30. 3 + 4 = 7. 37."],
@@ -34,7 +34,7 @@ PEBBLE_EXTRA(2,"maths",[
 ["50 + 40 = ?","90","80","100","5 tens + 4 tens = 9 tens."]]]],
 
 ["sub100",
-["Take away to 100","➖","AC9M2N","Subtract two-digit numbers.","Take away the tens first. Then take away the ones. 47 − 13: 47 − 10 = 37. Then 37 − 3 = 34.","58 − 20: 5 tens take away 2 tens is 3 tens. 38.","Take 12 from 45. Use tens, then ones.",[
+["Take away to 100","➖","AC9M2N04","Subtract two-digit numbers.","Take away the tens first. Then take away the ones. 47 − 13: 47 − 10 = 37. Then 37 − 3 = 34.","58 − 20: 5 tens take away 2 tens is 3 tens. 38.","Take 12 from 45. Use tens, then ones.",[
 ["47 − 13 = ?","34","44","33","47 − 10 = 37. 37 − 3 = 34."],
 ["58 − 20 = ?","38","48","36","5 tens − 2 tens = 3 tens."],
 ["70 − 30 = ?","40","30","50","7 tens − 3 tens = 4 tens."],
@@ -51,7 +51,7 @@ PEBBLE_EXTRA(2,"maths",[
 ["90 − 50 = ?","40","50","30","9 tens − 5 tens = 4 tens."]]]],
 
 ["groups",
-["Equal groups","⭕","AC9M2N","Make equal groups and find the total.","Equal groups have the same number in each. 3 groups of 2 is 2 + 2 + 2 = 6.","4 plates with 5 grapes each: 5 + 5 + 5 + 5 = 20.","Make 3 groups of 4 with small things. How many?",[
+["Equal groups","⭕","AC9M2N05","Make equal groups and find the total.","Equal groups have the same number in each. 3 groups of 2 is 2 + 2 + 2 = 6.","4 plates with 5 grapes each: 5 + 5 + 5 + 5 = 20.","Make 3 groups of 4 with small things. How many?",[
 ["3 groups of 2. How many in all?","6","5","8","2 + 2 + 2 = 6."],
 ["4 groups of 5. How many in all?","20","9","25","5 + 5 + 5 + 5 = 20."],
 ["2 groups of 10. How many in all?","20","12","10","10 + 10 = 20."],
@@ -68,7 +68,7 @@ PEBBLE_EXTRA(2,"maths",[
 ["5 dinosaurs have 2 spikes each. How many spikes?","10","7","12","2 + 2 + 2 + 2 + 2 = 10."]]]],
 
 ["share",
-["Sharing equally","🍰","AC9M2N","Share things into equal groups.","Sharing equally means each group gets the same. 6 shared between 2 is 3 each.","12 shared between 3 is 4 each.","Share 8 small things between 2. How many each?",[
+["Sharing equally","🍰","AC9M2N05","Share things into equal groups.","Sharing equally means each group gets the same. 6 shared between 2 is 3 each.","12 shared between 3 is 4 each.","Share 8 small things between 2. How many each?",[
 ["8 shared between 2. How many each?","4","3","6","4 + 4 = 8."],
 ["10 shared between 5. How many each?","2","5","3","2 × 5 = 10."],
 ["12 shared between 3. How many each?","4","3","5","4 + 4 + 4 = 12."],
@@ -85,7 +85,7 @@ PEBBLE_EXTRA(2,"maths",[
 ["6 eggs shared between 2 nests. How many each?","3","4","2","3 + 3 = 6."]]]],
 
 ["clock",
-["Telling the time","🕐","AC9M2M","Tell time to the hour, half hour and quarter hour.","The short hand shows the hour. The long hand shows the minutes. Long hand on 12 is o'clock. Long hand on 6 is half past. Long hand on 3 is quarter past.","Short hand on 3 and long hand on 12 is 3 o'clock.","Look at a clock. Find 3 o'clock and half past 3.",[
+["Telling the time","🕐","AC9M2M04","Tell time to the hour, half hour and quarter hour.","The short hand shows the hour. The long hand shows the minutes. Long hand on 12 is o'clock. Long hand on 6 is half past. Long hand on 3 is quarter past.","Short hand on 3 and long hand on 12 is 3 o'clock.","Look at a clock. Find 3 o'clock and half past 3.",[
 ["Short hand on 3. Long hand on 12. What time?","3 o'clock","Half past 3","Quarter past 3","Long hand on 12 means o'clock."],
 ["Long hand on 6. What is it?","Half past","O'clock","Quarter past","6 is half way round."],
 ["Long hand on 3. What is it?","Quarter past","Half past","O'clock","3 is a quarter of the way round."],
@@ -102,7 +102,7 @@ PEBBLE_EXTRA(2,"maths",[
 ["How many minutes in half an hour?","30","60","15","Half of 60 is 30."]]]],
 
 ["money",
-["Coins and money","🪙","AC9M2N","Know Australian coins and add small amounts.","Australian coins are 5c, 10c, 20c, 50c, $1 and $2. Ten 10c coins make $1. Two 50c coins make $1.","20c + 10c = 30c.","Find 3 coins at home. Add them.",[
+["Coins and money","🪙","AC9M2N06","Know Australian coins and add small amounts.","Australian coins are 5c, 10c, 20c, 50c, $1 and $2. Ten 10c coins make $1. Two 50c coins make $1.","20c + 10c = 30c.","Find 3 coins at home. Add them.",[
 ["How many 10c coins make $1?","10","5","100","10 tens make 100c, which is $1."],
 ["Which coin is worth the most?","$2","50c","20c","$2 is more than 50c."],
 ["20c + 10c = ?","30c","20c","40c","2 tens + 1 ten = 3 tens."],
@@ -119,7 +119,7 @@ PEBBLE_EXTRA(2,"maths",[
 ["Two 50c coins make...","$1","50c","$2","50c + 50c = $1."]]]],
 
 ["shapes",
-["2D and 3D shapes","🔷","AC9M2SP","Name flat and solid shapes.","Flat shapes are 2D: circle, triangle, square, rectangle. Solid shapes are 3D: sphere, cube, cylinder, cone. A triangle has 3 sides. A square has 4 equal sides.","A ball is a sphere. A box can be a cube.","Find one 3D shape at home. Name it.",[
+["2D and 3D shapes","🔷","AC9M2SP01","Name flat and solid shapes.","Flat shapes are 2D: circle, triangle, square, rectangle. Solid shapes are 3D: sphere, cube, cylinder, cone. A triangle has 3 sides. A square has 4 equal sides.","A ball is a sphere. A box can be a cube.","Find one 3D shape at home. Name it.",[
 ["How many sides does a triangle have?","3","4","5","Tri means three."],
 ["Which is a 3D shape?","Cube","Square","Circle","A cube is solid."],
 ["A ball has the shape of a...","Sphere","Cube","Triangle","A ball is round and solid."],

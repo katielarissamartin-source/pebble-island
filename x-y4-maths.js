@@ -1,6 +1,6 @@
 PEBBLE_EXTRA(4,"maths",[
 ["times4",
-["Times tables to 12","✖️","AC9M4N","Know the times tables up to 12 x 12.","Multiplying is repeated adding. Learn the tables in groups. Doubles help: 6 x 4 is double 3 x 4. Use known facts to work out new ones: 7 x 8 is 7 x 4 doubled.","6 x 7 = 42 because 6 x 7 is 5 x 7 (35) plus 7.","Write the 4 times table and spot the pattern.",[
+["Times tables to 12","✖️","AC9M4A02","Know the times tables up to 12 x 12.","Multiplying is repeated adding. Learn the tables in groups. Doubles help: 6 x 4 is double 3 x 4. Use known facts to work out new ones: 7 x 8 is 7 x 4 doubled.","6 x 7 = 42 because 6 x 7 is 5 x 7 (35) plus 7.","Write the 4 times table and spot the pattern.",[
 ["8 x 6 = ?","48","46","56","8 x 6 = 48."],
 ["7 x 7 = ?","49","42","56","7 x 7 = 49."],
 ["Double 3 x 4 is...","24","12","7","3 x 4 = 12. Double it to get 24, which is 6 x 4."],
@@ -17,7 +17,7 @@ PEBBLE_EXTRA(4,"maths",[
 ["9 stacks of 12 blocks. How many?","108","96","112","9 x 12 = 108."]]]],
 
 ["divide4",
-["Dividing with remainders","➗","AC9M4N","Divide and understand what is left over.","Dividing shares a number into equal groups. Sometimes there is a remainder, which is what is left over. 14 / 4 = 3 remainder 2, because 4 x 3 = 12 and 2 are left.","17 / 5 = 3 remainder 2.","Share 14 buttons between 4 cups. What is left?",[
+["Dividing with remainders","➗","AC9M4N06","Divide and understand what is left over.","Dividing shares a number into equal groups. Sometimes there is a remainder, which is what is left over. 14 / 4 = 3 remainder 2, because 4 x 3 = 12 and 2 are left.","17 / 5 = 3 remainder 2.","Share 14 buttons between 4 cups. What is left?",[
 ["13 / 4 = ?","3 remainder 1","4 remainder 1","3 remainder 3","4 x 3 = 12. 1 left."],
 ["20 / 5 = ?","4","5","15","5 x 4 = 20."],
 ["A remainder is...","What is left over","The answer","The total","Remainder means left over."],
@@ -34,7 +34,7 @@ PEBBLE_EXTRA(4,"maths",[
 ["25 bones shared between 6 diggers. Each gets...","4 and 1 left","3 and 7 left","5 and 0 left","6 x 4 = 24. 1 left."]]]],
 
 ["fracadd",
-["Add and subtract fractions","🍰","AC9M4N","Add and subtract fractions with the same bottom number.","When fractions have the same denominator (bottom number), add or subtract the numerators (top numbers). Keep the denominator. 2/8 + 3/8 = 5/8. 5/6 - 2/6 = 3/6.","1/5 + 2/5 = 3/5.","Use paper strips to show 2/6 + 3/6.",[
+["Add and subtract fractions","🍰","AC9M4N04","Add and subtract fractions with the same bottom number.","When fractions have the same denominator (bottom number), add or subtract the numerators (top numbers). Keep the denominator. 2/8 + 3/8 = 5/8. 5/6 - 2/6 = 3/6.","1/5 + 2/5 = 3/5.","Use paper strips to show 2/6 + 3/6.",[
 ["2/8 + 3/8 = ?","5/8","5/16","6/8","Add the tops. Keep the bottom."],
 ["5/6 - 2/6 = ?","3/6","3/0","7/6","Subtract the tops."],
 ["1/4 + 2/4 = ?","3/4","3/8","2/4","1 + 2 = 3. Bottom stays 4."],
@@ -51,7 +51,7 @@ PEBBLE_EXTRA(4,"maths",[
 ["4/5 of the egg stack. 1/5 hatches. Now?","3/5","5/5","3/0","4 - 1 = 3."]]]],
 
 ["decimals4",
-["Tenths and hundredths","0️⃣","AC9M4N","Read and write decimals to hundredths.","A decimal point separates whole numbers from parts. The first place after it is tenths. The second is hundredths. 0.5 is five tenths. 0.25 is twenty-five hundredths. 0.5 is the same as 1/2.","3.7 is 3 and 7 tenths.","Mark 0.5 and 0.25 on a number line from 0 to 1.",[
+["Tenths and hundredths","0️⃣","AC9M4N01","Read and write decimals to hundredths.","A decimal point separates whole numbers from parts. The first place after it is tenths. The second is hundredths. 0.5 is five tenths. 0.25 is twenty-five hundredths. 0.5 is the same as 1/2.","3.7 is 3 and 7 tenths.","Mark 0.5 and 0.25 on a number line from 0 to 1.",[
 ["Which is bigger?","0.7","0.07","0.007","0.7 is seven tenths."],
 ["0.5 is the same as...","1/2","1/5","5/100","Five tenths is a half."],
 ["In 4.36, the 3 is in the...","Tenths place","Hundredths place","Ones place","The first digit after the point is tenths."],
@@ -68,7 +68,7 @@ PEBBLE_EXTRA(4,"maths",[
 ["Order smallest first: 0.2, 0.02, 0.25","0.02, 0.2, 0.25","0.25, 0.2, 0.02","0.2, 0.25, 0.02","Compare each place."]]]],
 
 ["area4",
-["Area and perimeter","📐","AC9M4M","Find area and perimeter of rectangles.","Area is the space inside a shape, in square units. Area of a rectangle is length x width. Perimeter is the distance around. A 5 x 3 rectangle has area 15 square units and perimeter 16 units.","A 6 m by 4 m room has area 24 m2.","Find the area and perimeter of a book cover.",[
+["Area and perimeter","📐","AC9M4M02","Find area and perimeter of rectangles.","Area is the space inside a shape, in square units. Area of a rectangle is length x width. Perimeter is the distance around. A 5 x 3 rectangle has area 15 square units and perimeter 16 units.","A 6 m by 4 m room has area 24 m2.","Find the area and perimeter of a book cover.",[
 ["Area of a 5 by 3 rectangle?","15","16","8","5 x 3 = 15."],
 ["Perimeter of a 5 by 3 rectangle?","16","15","8","5 + 3 + 5 + 3 = 16."],
 ["Area is measured in...","Square units","Metres only","Litres","Area uses squares."],
@@ -85,7 +85,7 @@ PEBBLE_EXTRA(4,"maths",[
 ["A floor has area 24 blocks and length 6. Its width is...","4","18","30","24 / 6 = 4."]]]],
 
 ["angles4",
-["Measuring angles","📐","AC9M4M","Compare and measure angles.","Angles are measured in degrees. A right angle is 90 degrees. A straight line is 180 degrees. Acute angles are less than 90. Obtuse angles are more than 90 and less than 180. A protractor measures angles.","A corner of a book is 90 degrees.","Find an acute and an obtuse angle in your room.",[
+["Measuring angles","📐","AC9M4M04","Compare and measure angles.","Angles are measured in degrees. A right angle is 90 degrees. A straight line is 180 degrees. Acute angles are less than 90. Obtuse angles are more than 90 and less than 180. A protractor measures angles.","A corner of a book is 90 degrees.","Find an acute and an obtuse angle in your room.",[
 ["A right angle is...","90 degrees","180 degrees","45 degrees","Right angle is 90."],
 ["An angle of 120 degrees is...","Obtuse","Acute","Right","More than 90 is obtuse."],
 ["A straight line is...","180 degrees","90 degrees","360 degrees","Half a turn is 180."],
@@ -102,7 +102,7 @@ PEBBLE_EXTRA(4,"maths",[
 ["An angle of 120 degrees is...","Obtuse","Acute","Right","More than 90 is obtuse."]]]],
 
 ["time4",
-["24-hour time and timetables","🕒","AC9M4M","Read 24-hour time and work out durations.","24-hour time counts from 00:00 to 23:59. After noon add 12: 3 pm is 15:00. To find how long something takes, count to the next hour then add the rest.","The 14:30 train arrives at 15:10. The trip takes 40 minutes.","Write your day's timetable in 24-hour time.",[
+["24-hour time and timetables","🕒","AC9M4M03","Read 24-hour time and work out durations.","24-hour time counts from 00:00 to 23:59. After noon add 12: 3 pm is 15:00. To find how long something takes, count to the next hour then add the rest.","The 14:30 train arrives at 15:10. The trip takes 40 minutes.","Write your day's timetable in 24-hour time.",[
 ["3 pm in 24-hour time is...","15:00","03:00","13:00","3 + 12 = 15."],
 ["18:00 is...","6 pm","8 pm","4 pm","18 - 12 = 6."],
 ["From 09:15 to 10:00 is...","45 minutes","15 minutes","1 hour","From 09:15 to 10:00 is 45 minutes."],
@@ -119,7 +119,7 @@ PEBBLE_EXTRA(4,"maths",[
 ["A game starts at 13:30 and lasts 90 minutes. It ends at...","15:00","14:00","15:30","13:30 + 1 hour 30 = 15:00."]]]],
 
 ["data4",
-["Reading graphs","📊","AC9M4ST","Read and make graphs and tables.","Graphs show data. A bar graph has a title and labelled axes. A scale shows how much each step is worth. If a scale goes up in 2s, one step is 2. Read the bar height against the scale.","If a bar reaches 6 on a scale in 2s, three steps equal 6.","Collect data on favourite pets and draw a bar graph.",[
+["Reading graphs","📊","AC9M4ST02","Read and make graphs and tables.","Graphs show data. A bar graph has a title and labelled axes. A scale shows how much each step is worth. If a scale goes up in 2s, one step is 2. Read the bar height against the scale.","If a bar reaches 6 on a scale in 2s, three steps equal 6.","Collect data on favourite pets and draw a bar graph.",[
 ["A scale goes in 2s. A bar reaches 3 steps. Value?","6","3","5","3 x 2 = 6."],
 ["A graph title tells you...","What it is about","Who is tallest","The answer","Titles name the topic."],
 ["Votes: 4, 7, 2. The total is...","13","11","14","4 + 7 + 2 = 13."],
