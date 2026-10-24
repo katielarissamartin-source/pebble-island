@@ -656,14 +656,14 @@ SKINS.forEach(sk=>{if(Object.keys(sk.vars).length&&!sk.vars.panel){sk.vars.soft=
 
 const css=`
 :root{--soft:#33515a;--ink:#14262c}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--soft:#b9ced3;--ink:#f1f7f6}}
+
 .lede,.stat,.kid span,.msg{color:var(--soft)}
 .world{text-shadow:0 1px 2px rgba(0,0,0,.35)}
 .world small{opacity:1}
 .world .lvl i{background:rgba(255,255,255,.45);outline:1.5px solid rgba(255,255,255,.7)}
 .world.mix{background:linear-gradient(135deg,#8f2741,#9a5a10 50%,#4b3f9a)!important}
 .msg.try{color:#8a4d00}.msg.good{color:#1f6b3d}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .msg.try{color:#ffc56b}:root:not([data-theme="light"]) .msg.good{color:#7fe0a3}}
+
 body[data-skin=unicorn] h1,body[data-skin=unicorn] h2{background:none!important;color:#5b2275!important;-webkit-background-clip:border-box!important}
 body[data-skin=blocks] .q,body[data-skin=blocks] .pill,body[data-skin=blocks] .big,body[data-skin=blocks] .world b{font-family:var(--display)!important}
 .bubble{color:var(--ink)}
