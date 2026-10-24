@@ -1,1 +1,0 @@
-["core.js","content.js","ui.js","themes.js","extras.js","sync.js","audrey.js","hotfix.js","hub2.js","nosnail.js","focus.js","a11y.js","adapt.js","lb1.js","lb2.js","learn3.js","inter.js","codes.js","shop2.js","polish.js","voice.js","upgrade.js"].forEach(f=>{const s=document.createElement("script");s.src=f+"?v=21";s.async=false;document.body.appendChild(s)});
