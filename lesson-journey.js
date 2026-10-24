@@ -97,6 +97,15 @@ function exploreSteps(ex){
  return s;
 }
 
+function discover(key){
+ try{
+  const p=String(key||"").split("-"),dk=p[0]+"."+p[1]+"."+p.slice(2).join("-");
+  const d=((window.PEBBLE_DISCOVER||{})[kid]||{})[dk];
+  if(!Array.isArray(d)||d.length<2)return null;
+  return d.filter(x=>Array.isArray(x)&&x[1]).map(([emoji,text])=>({emoji,text}));
+ }catch(e){return null}
+}
+
 function mount(c,html,stage){
  app().innerHTML='<main class="pj-root" aria-label="Lesson">'+
   '<div class="pj-top"><button type="button" class="pj-btn" id="pj-back">← '+esc(c.o.backLabel||"Back")+'</button>'+road(stage,c.skipped)+'</div>'+html+'</main>';
@@ -109,7 +118,7 @@ const $id=id=>document.getElementById(id);
 function learn(c,i,replay){
  const card=c.cards[i],last=i===c.cards.length-1;
  const next=!last?"Next →":replay?"Start my turn →":"Let's explore →";
- mount(c,'<section class="pj-panel pj-center"><div class="pj-emoji" aria-hidden="true">'+esc(c.L.icon)+'</div>'+
+ mount(c,'<section class="pj-panel pj-center"><div class="pj-emoji'+(card.emoji?' big':'')+'" aria-hidden="true">'+esc(card.emoji||c.L.icon)+'</div>'+
   (card.title?'<span class="pj-eyebrow">'+esc(card.title)+'</span>':'')+
   '<h1 class="pj-text" data-pj-focus>'+esc(card.text)+'</h1>'+
   (c.cards.length>1?'<div class="pj-dots" role="img" aria-label="Card '+(i+1)+' of '+c.cards.length+'">'+c.cards.map((_,k)=>'<i'+(k===i?' class="on"':'')+'></i>').join("")+'</div>':'')+
@@ -192,6 +201,7 @@ function finish(c,res){
  c.o.onFinish({ids:c.own.map(t=>t.id),firstTry:res.filter(r=>r.first).length,misses:res.reduce((n,r)=>n+r.wrong,0)});
  try{
   const root=app();if(!root)return;
+  root.querySelectorAll(".studio-example,.curr-example").forEach(el=>{if(/away from the screen/i.test(el.textContent))el.remove()});
   root.insertAdjacentHTML("afterbegin",'<div class="pj-finish-top">'+road(CELEBRATE,c.skipped)+
    '<div class="pj-cele" role="status"><span aria-hidden="true">🎉</span><div>You did all five steps!'+(stk?'<br>New sticker: '+stk:'')+'</div></div></div>');
   sfx("win");
@@ -252,7 +262,7 @@ function run(o){
  const c={o,L,A,own:mk(order.slice(0,ownCount)),tog,
   skipped:tog.length?[]:[PRACTISE],
   ex:exploreSteps(L.example),
-  cards:o.returning?[{title:"Remember this?",text:L.teach}]:learnCards(L)};
+  cards:o.returning?[{title:"Remember this?",text:L.teach}]:(discover(o.key)||learnCards(L))};
  learn(c,0,false);
 }
 
