@@ -11,5 +11,3 @@ Live: https://pebble-island.vercel.app
 - Prefer a new file over editing a shared one.
 - Do not commit the family code, the hub password or any child data.
 - Test on a preview deployment before merging.
-
-Link test: 2026-10-24T05:39:10Z
