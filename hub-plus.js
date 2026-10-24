@@ -123,15 +123,15 @@ function coverage(k){const by=islandStats(k);const since=Date.now()-7*DAY;
   const rows=Object.entries(AREAS).map(([a,ws])=>({a,n:wk.filter(e=>ws.includes(e.world)).length+ls.filter(x=>LESSON_AREA[x.r.area]===a).reduce((t,x)=>t+x.n,0),
     total:ws.reduce((s,w)=>s+((by[w]||{}).n||0),0)+lessonSessions(k).filter(x=>LESSON_AREA[x.r.area]===a).reduce((t,x)=>t+x.n,0)}));
   const tech=ls.filter(x=>x.r.area==="technologies").reduce((t,x)=>t+x.n,0),techAll=lessonSessions(k).filter(x=>x.r.area==="technologies").reduce((t,x)=>t+x.n,0);
-  rows.push({a:"Technologies (Curiosity Lab, Years 2 and 5)",n:tech,total:techAll});return rows}
+  rows.push({a:"Technologies (Curiosity Lab)",n:tech,total:techAll});return rows}
 
 const tag=r=>`<span class="tag ${r.due?"review":r.touched?r.status.kind:"new"}">${r.due?"Review due":r.touched?esc(r.status.label):"Not started"}</span>`;
 const SUBJ=[["all","All subjects"],["maths","Maths"],["english","English"],["science","Science"],["hass","HASS"],["technologies","Tech"]];
 const ORDER=["maths","english","science","hass","technologies"];
-const YEARS=[0,1,2,3,4,5];
+const YEARS=[0,1,2,3,4,5,6];
 let lf={subj:"all",yr:"now"},rng=30;
 const nowYear=(k,area)=>pathArea(area)?pathYear(k):labYear(k);
-const NOTE_Y="Science, HASS and Tech lessons exist for Years 2 and 5 only.";
+const NOTE_Y="";
 
 function lessonList(rows){
   return rows.length?`<div class="llist">${rows.map(r=>`<div class="lrow"><div class="lt"><b>${esc(r.les.icon||"")} ${esc(r.les.title)}</b><small>${esc(NICE[r.area]||r.area)} · ${yrLabel(r.y)} · ${esc(r.les.code||"")}</small></div><div class="ls">${tag(r)}<small>${r.s&&r.s.sessions?`Practised ${num(r.s.sessions)}×${r.s.lastAt?`, last ${day(r.s.lastAt)}`:""}. ${esc(A.dueText(r.s))}.`:r.touched?"Completed in an earlier version of the app.":"No practice yet."}</small></div></div>`).join("")}</div>`:`<p class="sub">Nothing to show.</p>`}
@@ -156,7 +156,7 @@ function lessonsSection(k){
   const subjChips=SUBJ.map(([v,l])=>chip("fs",v,l,lf.subj===v)).join("");
   const yrChips=[["now","Current year"]].concat(YEARS.map(y=>[String(y),yrLabel(y)]),[["all","All years"]]).map(([v,l])=>chip("fy",v,l,String(lf.yr)===v,v!=="now"&&v!=="all"&&!all.some(r=>(lf.subj==="all"||r.area===lf.subj)&&r.y===+v))).join("");
   const yopt=(list,cur)=>(list.includes(cur)?list:list.concat(cur).sort((a,b)=>a-b)).map(y=>`<option value="${y}" ${y===cur?"selected":""}>${yrLabel(y)}</option>`).join("");
-  const settings=`<div class="noprint lset"><label>Maths and English year for ${nm}: <select id="pathyr">${yopt(YEARS,py)}</select></label><label>Science, HASS and Tech year for ${nm}: <select id="labyr">${yopt([2,5],ly)}</select></label><small>This changes what ${nm} sees on this tablet. To change it on a kid's own tablet, open this hub on that tablet.</small></div>`;
+  const settings=`<div class="noprint lset"><label>Maths and English year for ${nm}: <select id="pathyr">${yopt(YEARS,py)}</select></label><label>Science, HASS and Tech year for ${nm}: <select id="labyr">${yopt(YEARS,ly)}</select></label><small>This changes what ${nm} sees on this tablet. To change it on a kid's own tablet, open this hub on that tablet.</small></div>`;
   return`<div class="hc" id="labsec"><h3>Lessons</h3>${summary}<h4>Progress by subject and year</h4>${grid}<h4>Lesson list</h4><div class="chips">${subjChips}</div><div class="chips">${yrChips}</div><div id="llist">${rows.length?lessonList(rows):`<p class="sub">${emptyMsg}</p>`}</div>${settings}</div>`}
 
 function rangeStats(k,days){const since=days?Date.now()-days*DAY:0;const s=sessions(k).filter(x=>x.start>since),l=lessonSessions(k).filter(x=>x.at>since);

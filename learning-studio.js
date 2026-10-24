@@ -2,7 +2,7 @@
 "use strict";
 const B=window.PEBBLE_QCAA_LESSONS,A=window.PEBBLE_ADAPTIVE;
 if(!B||!A||!document.getElementById("app"))return;
-const TITLE="Pebble Learning Path",NAMES={maths:"Mathematics",english:"English"},SYMBOLS={maths:"🔢",english:"📖"},YRS=[0,1,2,3,4,5];
+const TITLE="Pebble Learning Path",NAMES={maths:"Mathematics",english:"English"},SYMBOLS={maths:"🔢",english:"📖"},YRS=[0,1,2,3,4,5,6];
 const LABEL=y=>Number(y)===0?"Prep":"Year "+y,app=()=>document.getElementById("app");
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const route={page:"dashboard",area:null,index:0,kid:0,year:2};
