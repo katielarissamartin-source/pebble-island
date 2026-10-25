@@ -12,10 +12,19 @@ const readOn=()=>{try{return S.settings.jRead!==false}catch(e){return true}};
 const say=t=>{if(readOn())try{speak(t,"soft")}catch(e){}};
 const store=()=>{try{save()}catch(e){}};
 const age=k=>(S.kids[k]&&S.kids[k].age)||7;
-const eligible=k=>k===1||age(k)>=9;
 const dino=k=>k===1;
+const young=k=>k===0||(k!==1&&age(k)<9);
+const uni=k=>k===0;
+const lessonYear=k=>young(k)?(age(k)<=5?0:2):4;
 
 function theme(k){
+ if(young(k))return uni(k)?{
+  young:true,name:"Sparkle's Magic Lab",ico:"🦄",small:"star gem",roller:"star gem",goal:"magic basket",
+  intro:"Help Sparkle test how things move."
+ }:{
+  young:true,name:"Push and Pull Lab",ico:"🧪",small:"ball",roller:"ball",goal:"basket",
+  intro:"Let's test how things move."
+ };
  return dino(k)?{
   name:"Dino Physics Lab",ico:"🦖",big:"big stone block",small:"small stone block",light:"feather",roller:"dino egg",goal:"nest",
   intro:"Help the dinosaurs test how things move."
@@ -25,7 +34,29 @@ function theme(k){
  };
 }
 
-function rounds(t){
+function rounds(t,k){
+ if(t.young){const L=lessonYear(k)===0?"push0":"forces";return[
+  {lesson:L,kind:"push",
+   q:"A small push or a big push. Which goes further?",
+   opts:["Small push","Big push"],ans:1,
+   why:"The big push. A big push makes it go further."},
+  {lesson:L,kind:"pull",
+   q:"The rope moves the cart. Is it a push or a pull?",
+   opts:["Push","Pull"],ans:1,
+   why:"A pull. A pull brings things closer."},
+  {lesson:L,kind:"squash",
+   q:"Push down on the play dough. What happens?",
+   opts:["It goes flat","It gets bigger","Nothing"],ans:0,
+   why:"It goes flat. A push can change the shape."},
+  {lesson:L,kind:"floors",
+   q:"Which floor lets the "+t.roller+" roll furthest?",
+   opts:["Ice","Wood","Grass"],ans:0,
+   why:"Ice. It is smooth, so the "+t.roller+" goes far."},
+  {lesson:L,kind:"throw",
+   q:"Throw the "+t.small+" up. What happens?",
+   opts:["It floats","It comes down"],ans:1,
+   why:"It comes down. Gravity pulls it down."}
+ ]}
  return[
   {lesson:"gravity4",kind:"drop2",a:"big",b:"small",
    q:"Drop a "+t.big+" and a "+t.small+". Which lands first?",
@@ -115,8 +146,13 @@ function feather(x,y,s,rot){
  cx.fillStyle="#e2b34a";cx.beginPath();cx.ellipse(0,0,s*.6,s*.2,0,0,7);cx.fill();
  cx.strokeStyle="#8a6a22";cx.lineWidth=2;cx.beginPath();cx.moveTo(-s*.7,0);cx.lineTo(s*.6,0);cx.stroke();cx.restore();
 }
+function gem(x,y,r){
+ cx.fillStyle="#d96fb4";cx.beginPath();for(let i=0;i<10;i++){const a=-Math.PI/2+i*Math.PI/5,rr=i%2?r*.5:r;cx.lineTo(x+Math.cos(a)*rr,y-r+Math.sin(a)*rr)}cx.closePath();cx.fill();
+ cx.fillStyle="rgba(255,255,255,.6)";cx.beginPath();cx.arc(x-r*.2,y-r*1.2,r*.18,0,7);cx.fill();
+}
 function thing(k,which,x,y,rot){
  const s=W*.08;
+ if(young(k)&&(which==="small"||which==="roller"))return uni(k)?gem(x,y,s*.4):ball(x,y,s*.35,"#e08a2e");
  if(which==="big")return dino(k)?block(x,y,s*1.4):ball(x,y,s*.7);
  if(which==="small")return dino(k)?block(x,y,s*.7):ball(x,y,s*.35);
  if(which==="light")return dino(k)?feather(x,y,s,rot):leaf(x,y,s,rot);
@@ -124,6 +160,7 @@ function thing(k,which,x,y,rot){
 }
 function goal(k,x){
  const y=GY(),w=W*.1;
+ if(uni(k)){cx.strokeStyle="#9b59b6";cx.lineWidth=4;cx.beginPath();cx.moveTo(x-w*.5,y-w*.45);cx.lineTo(x-w*.4,y);cx.lineTo(x+w*.4,y);cx.lineTo(x+w*.5,y-w*.45);cx.stroke();cx.fillStyle="#f2b544";cx.font=Math.round(w*.4)+"px system-ui";cx.textAlign="center";cx.fillText("✨",x,y-w*.55);return}
  if(dino(k)){cx.fillStyle="#8a5a2b";cx.beginPath();cx.ellipse(x,y-4,w*.6,w*.22,0,0,7);cx.fill();cx.fillStyle="#b07a40";cx.beginPath();cx.ellipse(x,y-8,w*.45,w*.12,0,0,7);cx.fill()}
  else{cx.strokeStyle="#7a5230";cx.lineWidth=4;cx.beginPath();cx.moveTo(x-w*.5,y-w*.45);cx.lineTo(x-w*.4,y);cx.lineTo(x+w*.4,y);cx.lineTo(x+w*.5,y-w*.45);cx.stroke()}
 }
@@ -173,6 +210,17 @@ function scene(k,r,u){
   cx.fillStyle="#c89a62";cx.fillRect(0,y1-6,W,6);
   block(x0+W*.2*ease(u),y1,W*.08,"#a0784a");block(x0+W*.7*ease(u),y2,W*.08,"#a0784a");
   label("Small push",W*.85,y1-14);label("Big push",W*.85,y2-14);
+ }else if(r.kind==="pull"){
+  const y=H*.7,x=W*.75-W*.45*(1-Math.pow(1-u,2));
+  cx.fillStyle="#c89a62";cx.fillRect(0,y,W,5);
+  cx.strokeStyle="#7a5230";cx.lineWidth=3;cx.beginPath();cx.moveTo(W*.12,y-W*.05);cx.lineTo(x-W*.07,y-W*.05);cx.stroke();
+  cx.fillStyle="#f2b544";cx.fillRect(W*.08,y-W*.12,W*.04,W*.12);
+  cx.fillStyle=uni(k)?"#c98fe0":"#3d8fb0";cx.fillRect(x-W*.07,y-W*.11,W*.14,W*.08);
+  cx.fillStyle="#333";[x-W*.045,x+W*.045].forEach(a=>{cx.beginPath();cx.arc(a,y-W*.025,W*.022,0,7);cx.fill()});
+ }else if(r.kind==="squash"){
+  const y=GY(),d=Math.min(1,u*1.4),hb=W*.12*(1-d*.65),wb=W*.12*(1+d*.9);
+  cx.fillStyle=uni(k)?"#f4a6cf":"#e9a35a";cx.beginPath();cx.ellipse(W*.5,y-hb/2,wb/2,hb/2,0,0,7);cx.fill();
+  block(W*.5,y-hb-2,W*.12,"#a0784a");
  }else if(r.kind==="throw"){
   const top=H*.12,h=gy-top,v=u<.5?1-Math.pow(1-u*2,2):1-Math.pow((u-.5)*2,2);
   thing(k,"small",W*.5,gy-h*v);
@@ -191,7 +239,7 @@ function start(){
  const k=who();if(k===null||!S.kids||!S.kids[k])return;
  try{round=null}catch(e){}
  document.body.classList.remove("adult");
- K=k;T=theme(k);R=rounds(T);ix=0;res={gravity4:{q:0,ok:0},friction4:{q:0,ok:0}};
+ K=k;T=theme(k);R=rounds(T,k);ix=0;res={};R.forEach(r=>res[r.lesson]={q:0,ok:0});
  frame('<h1>'+T.ico+' '+esc(T.name)+'</h1><p class="pl-p">'+esc(T.intro)+'</p><p class="pl-p">First you guess. Then we test it.</p><canvas class="pl-cv" aria-hidden="true"></canvas><button type="button" class="pl-btn pl-go" id="pl-start">Let\'s go →</button>');
  canvas();scene(K,R[0],0);say(T.intro+" First you guess. Then we test it.");
  document.getElementById("pl-start").onclick=()=>{tap();ask()};
@@ -222,14 +270,16 @@ function test(pick,btn){
 function record(){
  const A=window.PEBBLE_ADAPTIVE;
  Object.keys(res).forEach(id=>{const x=res[id];if(!x.q||!A)return;
-  try{A.recordSession(S,K,4,"science",id,{questions:x.q,firstTry:x.ok,misses:x.q-x.ok,questionIds:[]})}catch(e){}});
+  try{A.recordSession(S,K,lessonYear(K),"science",id,{questions:x.q,firstTry:x.ok,misses:x.q-x.ok,questionIds:[]})}catch(e){}});
  S.physicsLab=S.physicsLab||{};const p=S.physicsLab[K]=S.physicsLab[K]||{plays:0,goals:0,lastAt:0};
  p.plays++;p.lastAt=Date.now();store();
 }
 
 const TARGETS=[[3,"Grass"],[4,"Wood"],[8,"Ice"],[2,"Wood"],[6,"Wood"],[12,"Ice"],[2,"Grass"],[4,"Ice"]];
 let ch=null;
+const PUSHES={Small:3,Medium:6,Big:9};
 function challenge(){
+ if(T.young)return challengeYoung();
  const p=(S.physicsLab&&S.physicsLab[K])||{goals:0};
  ch={h:"Low",f:"Wood",n:0,t:TARGETS[(p.goals||0)%TARGETS.length][0],busy:false};
  const opt=(grp,keys)=>'<div class="pl-row"><span class="pl-lab">'+grp+'</span>'+keys.map(x=>'<button type="button" class="pl-btn" data-'+grp.toLowerCase()+'="'+x+'">'+x+'</button>').join("")+'</div>';
@@ -263,9 +313,32 @@ function roll(){
  });
 }
 
+let cy=null;
+function challengeYoung(){
+ const p=(S.physicsLab&&S.physicsLab[K])||{goals:0},tg=[3,6,9];
+ cy={p:"Small",n:0,t:tg[(p.goals||0)%3],busy:false};
+ frame('<h1>Get the '+esc(T.roller)+' in the '+esc(T.goal)+'</h1><p class="pl-p">Pick a push. Then tap Roll.</p><canvas class="pl-cv" aria-hidden="true"></canvas><div class="pl-row"><span class="pl-lab">Push</span>'+Object.keys(PUSHES).map(x=>'<button type="button" class="pl-btn" data-push="'+x+'">'+x+'</button>').join("")+'</div><button type="button" class="pl-btn pl-go" id="pl-roll">Roll!</button><p class="pl-p" id="pl-msg" aria-live="polite"></p>');
+ canvas();say("Get the "+T.roller+" in the "+T.goal+". Pick a push. Then tap Roll.");
+ const draw=u=>{sky();cx.fillStyle="#c89a62";cx.fillRect(0,GY()-8,W,8);goal(K,W*.1+cy.t*UNIT());const d=u===null?0:PUSHES[cy.p]*(1-Math.pow(1-u,2));thing(K,"roller",W*.1+d*UNIT(),GY()-8)};
+ const sync=()=>{app().querySelectorAll("[data-push]").forEach(b=>b.classList.toggle("on",b.dataset.push===cy.p));draw(null)};
+ app().querySelectorAll("[data-push]").forEach(b=>b.onclick=()=>{if(cy.busy)return;tap();cy.p=b.dataset.push;sync()});
+ sync();
+ document.getElementById("pl-roll").onclick=()=>{
+  if(cy.busy)return;tap();cy.busy=true;const msg=document.getElementById("pl-msg");msg.textContent="";
+  play(1400+PUSHES[cy.p]*90,draw,()=>{
+   cy.busy=false;const d=PUSHES[cy.p];let t;
+   if(d===cy.t){win();cy.n++;const q=S.physicsLab[K];q.goals=(q.goals||0)+1;store();
+    t=cy.n>=3?"Three! You are a super scientist.":"In the "+T.goal+"! Here is a new one.";msg.textContent=t;say(t);
+    if(cy.n>=3){const b=document.getElementById("pl-roll");b.textContent="All done →";b.onclick=()=>{tap();home()};return}
+    cy.t=tg[q.goals%3];setTimeout(()=>draw(null),900);
+   }else{t=d<cy.t?"Not far enough. Try a bigger push.":"Too far! Try a smaller push.";msg.textContent=t;say(t)}
+  });
+ };
+}
+
 function addCard(){
  const k=who(),root=app().querySelector(".td-root");
- if(!root||k===null||!eligible(k)||root.querySelector("#pl-card"))return;
+ if(!root||k===null||root.querySelector("#pl-card"))return;
  const t=theme(k),b=document.createElement("button");
  b.type="button";b.className="td-big td-island";b.id="pl-card";
  b.innerHTML='<span class="td-eye">Science game</span><span class="td-row"><span class="td-ic" aria-hidden="true">'+t.ico+'</span><span>'+esc(t.name)+'</span></span><span class="td-go">Play →</span>';
