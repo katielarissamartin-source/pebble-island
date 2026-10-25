@@ -1,6 +1,6 @@
 PEBBLE_EXTRA(2,"science",[
 ["living",
-["What living things need","🌱","AC9S2H01","Know what living things need.","Living things need food, water, air and a safe place to live. Plants also need light. A rock is not living. It does not eat or grow.","A puppy needs food, water, air and a home.","Name 3 living things and 1 non-living thing near you.",[
+["What living things need","🌱","AC9S1U01","Know what living things need.","Living things need food, water, air and a safe place to live. Plants also need light. A rock is not living. It does not eat or grow.","A puppy needs food, water, air and a home.","Name 3 living things and 1 non-living thing near you.",[
 ["Which is a living thing?","A rabbit","A rock","A chair","A rabbit eats, grows and breathes."],
 ["What do all animals need?","Food, water and air","Toys and TV","Paint and glue","These are basic needs."],
 ["A plant needs light, water and...","Air","Candy","A phone","Plants need air too."],
@@ -17,7 +17,7 @@ PEBBLE_EXTRA(2,"science",[
 ["Which is NOT living?","A stone","A fern","A bee","A stone does not grow or eat."]]]],
 
 ["habitats",
-["Where animals live","🌳","AC9S2I01","Match animals to habitats.","A habitat is where an animal lives. It has the food, water and shelter the animal needs. Fish live in water. Camels live in deserts. Frogs live near ponds.","A koala lives in a gum tree habitat.","Draw an animal in its habitat.",[
+["Where animals live","🌳","AC9S1U01","Match animals to habitats.","A habitat is where an animal lives. It has the food, water and shelter the animal needs. Fish live in water. Camels live in deserts. Frogs live near ponds.","A koala lives in a gum tree habitat.","Draw an animal in its habitat.",[
 ["What is a habitat?","Where an animal lives","What an animal eats","How fast it runs","A habitat is a home."],
 ["Where do fish live?","In water","In a desert","In the sky","Fish breathe in water."],
 ["Which animal lives in a desert?","A camel","A fish","A penguin","Camels cope with dry places."],
@@ -34,7 +34,7 @@ PEBBLE_EXTRA(2,"science",[
 ["Many sea turtles live in the...","Ocean","Desert","Snowfield","Sea turtles swim in the ocean."]]]],
 
 ["plantparts",
-["Parts of a plant","🌻","AC9S2I03","Name plant parts and what they do.","Roots hold the plant and take in water. The stem holds the plant up. Leaves catch sunlight. Flowers make seeds.","A sunflower has roots, a stem, leaves and a flower.","Look at a plant. Find the roots, stem and leaves.",[
+["Parts of a plant","🌻","AC9SFU01","Name plant parts and what they do.","Roots hold the plant and take in water. The stem holds the plant up. Leaves catch sunlight. Flowers make seeds.","A sunflower has roots, a stem, leaves and a flower.","Look at a plant. Find the roots, stem and leaves.",[
 ["Which part takes in water?","Roots","Flower","Leaf","Roots take water from the soil."],
 ["Which part holds the plant up?","Stem","Roots","Seed","The stem holds it up."],
 ["Which part catches sunlight?","Leaves","Roots","Stem","Leaves catch light."],
@@ -51,7 +51,7 @@ PEBBLE_EXTRA(2,"science",[
 ["Which part makes seeds?","Flower","Roots","Stem","Flowers make seeds."]]]],
 
 ["lifecycle",
-["Life cycles","🦋","AC9S2I04","Follow a life cycle.","A life cycle shows how a living thing grows and changes. A butterfly starts as an egg. Then it is a caterpillar. Then a pupa. Then a butterfly.","A chick hatches from an egg and grows into a hen.","Draw the 4 stages of a butterfly.",[
+["Life cycles","🦋","AC9S3U01","Follow a life cycle.","A life cycle shows how a living thing grows and changes. A butterfly starts as an egg. Then it is a caterpillar. Then a pupa. Then a butterfly.","A chick hatches from an egg and grows into a hen.","Draw the 4 stages of a butterfly.",[
 ["What hatches from a butterfly egg?","A caterpillar","A butterfly","A chick","A caterpillar comes first."],
 ["What does a caterpillar become?","A butterfly","A frog","A bird","It becomes a butterfly after the pupa."],
 ["What hatches from a hen's egg?","A chick","A kitten","A puppy","A chick hatches."],
@@ -68,7 +68,7 @@ PEBBLE_EXTRA(2,"science",[
 ["What is a life cycle?","How a living thing grows and changes","A bicycle","A kind of weather","It is the stages of life."]]]],
 
 ["forces",
-["Push and pull","🚪","AC9S2U02","Know that pushes and pulls are forces.","A force is a push or a pull. A force can start something moving, stop it, speed it up or change its direction. Rough ground slows things down.","You push a door to open it. You pull a drawer.","Find 3 things to push and 3 things to pull.",[
+["Push and pull","🚪","AC9S1U03","Know that pushes and pulls are forces.","A force is a push or a pull. A force can start something moving, stop it, speed it up or change its direction. Rough ground slows things down.","You push a door to open it. You pull a drawer.","Find 3 things to push and 3 things to pull.",[
 ["Opening a door by pushing is a...","Force","Colour","Sound","A push is a force."],
 ["Pulling a wagon is a...","Pull","Push","Spin","Pulling is a force."],
 ["A force can...","Start or stop movement","Make time","Paint a wall","Forces change movement."],
@@ -102,7 +102,7 @@ PEBBLE_EXTRA(2,"science",[
 ["Why is it hard to see in a dark cave?","There is no light","It is loud","It is cold","We need light to see."]]]],
 
 ["weather",
-["Weather and seasons","⛅","AC9S2U01","Describe weather and clothes.","Weather can be sunny, cloudy, rainy, windy or stormy. We choose clothes for the weather. A rain gauge measures rain. A thermometer measures how hot or cold it is.","On a rainy day, wear a raincoat.","Draw today's weather. Write one word for it.",[
+["Weather and seasons","⛅","AC9S1U02","Describe weather and clothes.","Weather can be sunny, cloudy, rainy, windy or stormy. We choose clothes for the weather. A rain gauge measures rain. A thermometer measures how hot or cold it is.","On a rainy day, wear a raincoat.","Draw today's weather. Write one word for it.",[
 ["Which clothes suit a rainy day?","A raincoat","A swimsuit","Shorts","A raincoat keeps you dry."],
 ["A rain gauge measures...","Rain","Wind","Sun","It collects rain."],
 ["A thermometer measures...","How hot or cold","How loud","How fast","It shows temperature."],
