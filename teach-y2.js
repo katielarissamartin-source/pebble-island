@@ -121,7 +121,7 @@ K.add("2.english",{
  ],
  mainidea:[
   L("🐝","The main idea is what a text is mostly about. Details tell us more."),
-  HS("Tap the word that every sentence is about.",["Bees make honey.","Bees live in hives.","Bees visit flowers."],[0,1,2],"Tap every sentence. They all share one word."),
+  HS("Tap each sentence that is about bees.",["Bees make honey.","Bees live in hives.","Bees visit flowers."],[0,1,2],"Every sentence is about bees. So bees is the main idea."),
   S("Main idea or detail?",["Main idea","Detail"],[["Bees",0],["make honey",1],["live in hives",1],["visit flowers",1]])
  ]
 });
