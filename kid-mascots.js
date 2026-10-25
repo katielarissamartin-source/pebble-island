@@ -51,7 +51,7 @@ function apply(){
   m.onclick=info?function(){try{SFX.tap()}catch(e){}const t=pick(info.lines);pip("happy",t);try{speak(t,"happy")}catch(e){}}:orig;
 }
 const hatCss=document.createElement("style");
-hatCss.textContent='#mascot[data-mascot="unicorn"] #hat{left:24%!important;top:-2px!important;transform:translateX(-50%) rotate(-20deg)!important;font-size:30px!important}';
+hatCss.textContent='#mascot[data-mascot="unicorn"] #hat{left:17%!important;top:4px!important;transform:translateX(-50%) rotate(-28deg)!important;font-size:24px!important}';
 document.head.appendChild(hatCss);
 window.PEBBLE_MASCOT_APPLY=apply;
 apply();

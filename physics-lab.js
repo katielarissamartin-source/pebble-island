@@ -291,7 +291,7 @@ function scene(k,r,u){
   cx.fillStyle="#eee";cx.fillRect(mx+W*.02,y-W*.14,W*.03,W*.04);cx.fillRect(mx+W*.02,y-W*.04,W*.03,W*.04);
   cx.fillStyle="#6d7178";cx.fillRect(nx,y-W*.1,W*.1,W*.02);
   block(W*.78,y,W*.09,"#b07a40");
-  label("Nail",W*.55,y-W*.13);label("Wood",W*.78,y-W*.12);
+  label("Nail",nx+W*.05,y-W*.13);label("Wood",W*.78,y-W*.12);
  }else if(r.kind==="chute"){
   const top=H*.2,fall=gy-top,ya=top+fall*Math.min(1,u*.55),yb=top+fall*Math.min(1,u*1.05);
   [[W*.33,ya,W*.2],[W*.67,yb,W*.09]].forEach(([x,y,c])=>{

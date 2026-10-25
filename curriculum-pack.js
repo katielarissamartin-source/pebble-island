@@ -217,7 +217,7 @@ function home(){
 function course(a){
  area=a;active=null;
  const names={science:"Science Lab",hass:"Our World",technologies:"Tech & Design"};
- layout(top(names[a],"Curiosity Lab")+'<p class="curr-sub">Pick a mini-lesson. A lesson includes a simple explanation and two questions you can retry.</p><div class="curr-lessons">'+list(a).map((l,i)=>'<button type="button" class="curr-lesson '+(completed(a,l)?"complete":"")+'" data-lesson="'+i+'"><span class="em" aria-hidden="true">'+l.icon+'</span><strong>'+safe(l.title)+'</strong><span>'+safe(l.goal)+'</span><small>'+safe(l.code)+' · '+(completed(a,l)?"✓ Learned":"Ready to learn")+'</small></button>').join("")+'</div>');
+ layout(top(names[a],"Curiosity Lab")+'<p class="curr-sub">Pick a mini-lesson. A lesson includes a simple explanation and two questions you can retry.</p><div class="curr-lessons">'+list(a).map((l,i)=>'<button type="button" class="curr-lesson '+(completed(a,l)?"complete":"")+'" data-lesson="'+i+'"><span class="em" aria-hidden="true">'+l.icon+'</span><strong>'+safe(l.title)+'</strong><span>'+safe(l.goal)+'</span><small>'+(completed(a,l)?"✓ Learned":"Ready to learn")+'</small></button>').join("")+'</div>');
  app().querySelectorAll("[data-lesson]").forEach(b=>b.onclick=()=>start(a,Number(b.dataset.lesson)));
 }
 function start(a,i){
@@ -226,7 +226,7 @@ function start(a,i){
 }
 function teach(){
  const l=active;
- layout(top(l.icon+" "+l.title,"Lessons")+'<div class="curr-head"><span class="curr-label">First, learn · '+safe(l.code)+'</span><h2>'+safe(l.goal)+'</h2><p class="curr-teach">'+safe(l.teach)+'</p><div class="curr-example"><b>See an example</b>'+safe(l.example)+'</div><div class="curr-actions"><button class="curr-secondary" id="qhear">🔊 Read aloud</button><button class="curr-primary" id="qstart">I am ready to try →</button></div></div>');
+ layout(top(l.icon+" "+l.title,"Lessons")+'<div class="curr-head"><span class="curr-label">First, learn</span><h2>'+safe(l.goal)+'</h2><p class="curr-teach">'+safe(l.teach)+'</p><div class="curr-example"><b>See an example</b>'+safe(l.example)+'</div><div class="curr-actions"><button class="curr-secondary" id="qhear">🔊 Read aloud</button><button class="curr-primary" id="qstart">I am ready to try →</button></div></div>');
  document.getElementById("qhear").onclick=()=>{if(typeof speak==="function")speak(l.teach+" "+l.example,"soft")};
  document.getElementById("qstart").onclick=()=>question();
 }
@@ -252,7 +252,7 @@ function finish(){
  const l=active,key=token(area,l),progress=record(),first=!progress[key]?.done;
  progress[key]={done:true,tries:(progress[key]?.tries||0)+1,lastMistakes:mistakes};
  if(first){S.progress[kid]=S.progress[kid]||{};S.progress[kid].curriculum=S.progress[kid].curriculum||{stars:0};S.progress[kid].curriculum.stars++;}save();
- layout(top("Nice learning!","Lessons")+'<div class="curr-head"><span class="curr-label">Lesson complete</span><h2>'+safe(l.icon+" "+l.title)+'</h2><p class="curr-teach">'+(first?"⭐ You earned a new learning star.":"✓ You revised a lesson you have learned.")+'</p><div class="curr-example"><b>Try this away from the screen</b>'+safe(l.tryIt)+'</div><p class="curr-meta">Practised: '+safe(l.code)+' · '+mistakes+' incorrect attempt'+(mistakes===1?"":"s")+' · Your progress is saved on this device.</p><div class="curr-actions"><button class="curr-primary" id="qmore">Choose another lesson</button><button class="curr-secondary" id="qrepeat">Practise again</button></div></div>');
+ layout(top("Nice learning!","Lessons")+'<div class="curr-head"><span class="curr-label">Lesson complete</span><h2>'+safe(l.icon+" "+l.title)+'</h2><p class="curr-teach">'+(first?"⭐ You earned a new learning star.":"✓ You revised a lesson you have learned.")+'</p><div class="curr-example"><b>Try this away from the screen</b>'+safe(l.tryIt)+'</div><p class="curr-meta">Your progress is saved on this device.</p><div class="curr-actions"><button class="curr-primary" id="qmore">Choose another lesson</button><button class="curr-secondary" id="qrepeat">Practise again</button></div></div>');
  document.getElementById("qmore").onclick=()=>course(area);
  document.getElementById("qrepeat").onclick=()=>start(area,list(area).findIndex(v=>v.id===l.id));
  if(typeof SFX!=="undefined")SFX.win();
