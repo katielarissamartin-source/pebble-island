@@ -10,11 +10,50 @@ const say=t=>{try{if(typeof speak==="function")speak(t,"soft")}catch(e){}};
 const sfx=n=>{try{if(typeof SFX!=="undefined"&&SFX[n])SFX[n]()}catch(e){}};
 const mascot=t=>{try{if(typeof pip==="function")pip("happy",t)}catch(e){}};
 
+const WK_CSS=[".pj-work{margin:8px 0 0;padding-left:1.4em}.pj-work li{margin:5px 0}.pj-work li:last-child{font-weight:800}",
+".pj-dots{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:8px 0;font:800 1.3rem var(--display)}",
+".pj-dots i{width:22px;height:22px;border-radius:50%;background:#3d8fb0;display:inline-block}.pj-dots i.b{background:#e08a2e}.pj-dots i.x{background:#c9dbe2;position:relative}.pj-dots i.x::after{content:'';position:absolute;left:-2px;right:-2px;top:9px;height:4px;background:#b0413e;transform:rotate(-35deg)}",
+".pj-groups{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}.pj-groups span{display:flex;flex-wrap:wrap;gap:4px;max-width:96px;border:2px dashed #648795;border-radius:12px;padding:6px}.pj-groups i{width:16px;height:16px;border-radius:50%;background:#3d8fb0;display:inline-block}",
+".pj-showme{margin-top:4px}"].join("\n");
+const OPS={"+":"+","-":"-","−":"-","–":"-","×":"x","x":"x","*":"x","÷":"/","/":"/"};
+function findSum(t){const m=String(t||"").match(/(\d+)\s*([+\-−–×x*÷\/])\s*(\d+)\s*=\s*(\d+)/);if(!m)return null;const a=+m[1],b=+m[3],c=+m[4],op=OPS[m[2]];
+ const ok=op==="+"?a+b===c:op==="-"?a-b===c:op==="x"?a*b===c:b&&a/b===c;return ok?{a,b,c,op}:null}
+const dots=(n,cls)=>Array.from({length:n},()=>'<i class="'+(cls||"")+'"></i>').join("");
+function findExpr(t){const m=String(t||"").match(/(\d+)\s*([+\-−–×x*÷\/])\s*(\d+)\s*(?:=\s*(?:\?|_+|$)|\?|$)/);if(!m)return null;const a=+m[1],b=+m[3],op=OPS[m[2]];
+ const c=op==="+"?a+b:op==="-"?a-b:op==="x"?a*b:(b&&a%b===0?a/b:NaN);return Number.isFinite(c)&&c>=0?{a,b,c,op}:null}
+const GENERIC=/^(take your time|look again|have another go|think carefully|read it again)/i;
+function workSteps(q){
+ const ans=q.choices[q.correct],num=Number(String(ans).replace(/[^\d.]/g,""));
+ let w=findExpr(q.prompt)||findSum(q.explain)||findSum(q.prompt);
+ if(w&&String(ans).match(/\d/)&&num!==w.c)w=null;
+ if(w){const{a,b,c,op}=w;let vis="",st;
+  if(op==="+"){
+   if(a+b<=20){vis='<div class="pj-dots">'+dots(a)+'<span>+</span>'+dots(b,"b")+'</div>';st=["Start with "+a+".","Add "+b+" more.","Count them all: "+a+" + "+b+" = "+c+"."]}
+   else if(a>=10&&b>=10&&a<100&&b<100){const T=Math.floor(a/10)*10+Math.floor(b/10)*10,O=a%10+b%10;st=["Split into tens and ones.","Tens: "+Math.floor(a/10)*10+" + "+Math.floor(b/10)*10+" = "+T+".","Ones: "+a%10+" + "+b%10+" = "+O+".",T+" + "+O+" = "+c+"."]}
+   else st=["Start at "+a+".","Count on "+b+".",a+" + "+b+" = "+c+"."];
+  }else if(op==="-"){
+   if(a<=20){vis='<div class="pj-dots">'+dots(c)+dots(b,"x")+'</div>';st=["Start with "+a+".","Take away "+b+".","Count what is left: "+c+"."]}
+   else st=["Start at "+a+".","Take away "+b+".",a+" − "+b+" = "+c+".","Check: "+c+" + "+b+" = "+a+"."];
+  }else if(op==="x"){
+   if(a<=10&&b<=10)vis='<div class="pj-groups">'+Array.from({length:a},()=>'<span>'+dots(b)+'</span>').join("")+'</div>';
+   const cnt=a<=10?Array.from({length:a},(_,i)=>b*(i+1)).join(", "):"";
+   st=[a+" groups of "+b+"."].concat(cnt?["Count by "+b+": "+cnt+"."]:[]).concat([a+" × "+b+" = "+c+"."]);
+  }else st=["Share "+a+" into "+b+" equal groups.","Each group gets "+c+".","Check: "+b+" × "+c+" = "+a+"."];
+  return{vis,st};
+ }
+ const st=[];
+ if(q.hint&&q.hint!==q.explain&&!GENERIC.test(q.hint))st.push("Think: "+q.hint);
+ if(q.explain)st.push(q.explain);
+ st.push("So the answer is "+ans+".");
+ return{vis:"",st};
+}
+function workHtml(q){const w=workSteps(q);return'<div><b>Here is the working out:</b>'+w.vis+'<ol class="pj-work">'+w.st.map(x=>"<li>"+esc(x)+"</li>").join("")+'</ol></div>'}
+
 const STAGES=[["📖","Learn"],["🔍","Explore"],["✏️","Practise"],["✅","Check"],["🎉","Celebrate"]];
 const LEARN=0,EXPLORE=1,PRACTISE=2,CHECK=3,CELEBRATE=4;
 
 const css=document.createElement("style");
-css.textContent=[
+css.textContent=WK_CSS+"\n"+[
 ".pj-root{max-width:760px;width:100%;margin:0 auto;display:grid;gap:16px;line-height:1.55}",
 ".pj-root *{box-sizing:border-box}",
 ".pj-root h1{margin:0;background:none!important;-webkit-text-fill-color:currentColor!important;color:var(--ink)!important;letter-spacing:0}",
@@ -216,7 +255,7 @@ function ask(c,tasks,i,mode,results,done){
  let wrong=0,answered=false;
  mount(c,'<div class="pj-progress" role="progressbar" aria-label="Questions" aria-valuemin="0" aria-valuemax="'+total+'" aria-valuenow="'+i+'"><i style="width:'+Math.round(100*i/total)+'%"></i></div>'+
   '<section class="pj-panel"><span class="pj-eyebrow">'+label+(total>1?' · '+(i+1)+' of '+total:'')+'</span><h1 class="pj-q" data-pj-focus>'+esc(q.prompt)+'</h1>'+
-  '<div class="pj-tools"><button type="button" class="pj-btn" id="pj-hear">🔊 Read to me</button>'+(hints?'<button type="button" class="pj-btn" id="pj-hint">💡 Show me a hint</button>':'')+'</div>'+
+  '<div class="pj-tools"><button type="button" class="pj-btn" id="pj-hear">🔊 Read to me</button>'+(hints?'<button type="button" class="pj-btn" id="pj-hint">💡 Show me a hint</button>':'')+(mode==="practise"?'<button type="button" class="pj-btn pj-showme" id="pj-show">👀 Watch me work it out</button>':'')+'</div>'+
   '<div class="pj-hintbox" id="pj-hintbox" hidden></div>'+
   '<div class="pj-answers">'+q.choices.map((ch,k)=>'<button type="button" class="pj-answer" data-k="'+k+'">'+esc(ch)+'</button>').join("")+'</div>'+
   '<div class="pj-feedback" id="pj-fb" role="status" aria-live="polite" hidden></div>'+
@@ -225,6 +264,7 @@ function ask(c,tasks,i,mode,results,done){
  const showHint=()=>{hb.hidden=false;hb.textContent="Hint: "+q.hint};
  $id("pj-hear").onclick=()=>say(q.prompt+" "+q.choices.join(". "));
  if(hints)$id("pj-hint").onclick=showHint;
+ const sh=$id("pj-show");if(sh)sh.onclick=()=>{if(answered)return;sfx("tap");wrong++;btns[q.correct].classList.add("right");fb.hidden=false;fb.className="pj-feedback";fb.innerHTML="<strong>Let's work it out together.</strong>"+workHtml(q);say(workSteps(q).st.join(" "));sh.disabled=true;end()};
  const end=()=>{
   answered=true;results.push({id:t.id,first:wrong===0,wrong});
   btns.forEach(b=>b.disabled=true);
@@ -236,13 +276,13 @@ function ask(c,tasks,i,mode,results,done){
   const k=Number(b.dataset.k);fb.hidden=false;
   if(k===q.correct){
    b.classList.add("right");fb.className="pj-feedback right";
-   fb.innerHTML="<strong>"+(wrong?"You worked it out!":"Yes!")+"</strong> "+esc(q.explain);
+   fb.innerHTML="<strong>"+(wrong?"You worked it out!":"Yes!")+"</strong>"+workHtml(q);if(readOn())say(workSteps(q).st.join(" "));
    sfx("good");end();
   }else{
    wrong++;b.classList.add("wrong");b.disabled=true;fb.className="pj-feedback";
    if(wrong>=2||btns.filter(x=>!x.disabled).length<=1){
     btns[q.correct].classList.add("right");
-    fb.innerHTML="<strong>Good try.</strong> The answer is <b>"+esc(q.choices[q.correct])+"</b>. "+esc(q.explain);end();
+    fb.innerHTML="<strong>Good try.</strong> The answer is <b>"+esc(q.choices[q.correct])+"</b>."+workHtml(q);if(readOn())say(workSteps(q).st.join(" "));end();
    }else{
     fb.innerHTML="<strong>Not quite. Have another go.</strong>";
     if(hints)showHint();
@@ -266,6 +306,7 @@ function run(o){
  learn(c,0,false);
 }
 
+window.PEBBLE_JOURNEY_WORK={workSteps,findSum};
 window.PEBBLE_JOURNEY={run,version:2,stages:STAGES.map(s=>s[1])};
 
 if(typeof parent==="function"){
