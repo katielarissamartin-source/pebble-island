@@ -35,60 +35,114 @@ function theme(k){
 }
 
 function rounds(t,k){
- if(t.young){const L=lessonYear(k)===0?"push0":"forces";return[
-  {lesson:L,kind:"push",
+ if(t.young){const L=lessonYear(k)===0?"push0":"forces",F=uni(k)?"unicorns":"friends";return pick6(k,[
+  {id:"ypush",lesson:L,kind:"push",
    q:"A small push or a big push. Which goes further?",
    opts:["Small push","Big push"],ans:1,
    why:"The big push. A big push makes it go further."},
-  {lesson:L,kind:"pull",
+  {id:"ypull",lesson:L,kind:"pull",
    q:"The rope moves the cart. Is it a push or a pull?",
    opts:["Push","Pull"],ans:1,
    why:"A pull. A pull brings things closer."},
-  {lesson:L,kind:"squash",
+  {id:"ysquash",lesson:L,kind:"squash",
    q:"Push down on the play dough. What happens?",
    opts:["It goes flat","It gets bigger","Nothing"],ans:0,
    why:"It goes flat. A push can change the shape."},
-  {lesson:L,kind:"floors",
+  {id:"yfloors",lesson:L,kind:"floors",
    q:"Which floor lets the "+t.roller+" roll furthest?",
    opts:["Ice","Wood","Grass"],ans:0,
    why:"Ice. It is smooth, so the "+t.roller+" goes far."},
-  {lesson:L,kind:"throw",
+  {id:"ystops",work:["Grass is bumpy: lots of friction.","Ice is smooth: a little friction.","Bumpy slows it fast.","So grass stops it first."],lesson:L,kind:"floors",
+   q:"Which floor stops the "+t.roller+" first?",
+   opts:["Ice","Grass"],ans:1,
+   why:"Grass. It is bumpy, so the "+t.roller+" slows down fast."},
+  {id:"ythrow",lesson:L,kind:"throw",
    q:"Throw the "+t.small+" up. What happens?",
    opts:["It floats","It comes down"],ans:1,
-   why:"It comes down. Gravity pulls it down."}
- ]}
- return[
-  {lesson:"gravity4",kind:"drop2",a:"big",b:"small",
+   why:"It comes down. Gravity pulls it down."},
+  {id:"ymass",learn:"Heavy things are harder to push.",work:["Same push on both boxes.","The light box is easy to push.","So the light box goes further."],lesson:L,kind:"pushmass",
+   q:"Same push. A heavy box and a light box. Which goes further?",
+   opts:["Heavy box","Light box"],ans:1,
+   why:"The light box. Light things are easier to push."},
+  {id:"ymagnet",learn:"A magnet pulls some metal things.",work:["The nail is metal.","The magnet pulls it.","Wood is not metal, so it stays."],lesson:L,kind:"magnet",
+   q:"The magnet is near a nail and a wood block. Which one moves?",
+   opts:["The nail","The wood"],ans:0,
+   why:"The nail. A magnet pulls some metal things."},
+  {id:"yramp",work:["A low hill is a short way down: slow.","A high hill is a long way down: fast.","Fast goes further. High hill wins."],lesson:L,kind:"heights",
+   q:"Low hill or high hill. Which makes the "+t.roller+" go further?",
+   opts:["Low hill","High hill"],ans:1,
+   why:"The high hill. It goes faster, so it goes further."},
+  {id:"ytug",learn:"A bigger pull wins.",work:["One pulls left.","Two pull right.","Two is more than one.","So the rope goes right."],lesson:L,kind:"tug",l:1,r:2,
+   q:"One "+(uni(k)?"unicorn":"friend")+" pulls left. Two pull right. Which way does the rope go?",
+   opts:["Left","Right","It stays still"],ans:1,
+   why:"Right. Two pulling is a bigger pull."}
+ ])}
+ const pool=[
+  {id:"drop",lesson:"gravity4",kind:"drop2",a:"big",b:"small",
    q:"Drop a "+t.big+" and a "+t.small+". Which lands first?",
    opts:["The big one","The small one","Same time"],ans:2,
    why:"They land together. Gravity pulls them down at the same speed."},
-  {lesson:"gravity4",kind:"drop2",a:"small",b:"light",
+  {id:"air",lesson:"gravity4",kind:"drop2",a:"small",b:"light",
    q:"Drop a "+t.small+" and a "+t.light+". Which lands first?",
    opts:["The "+t.small,"The "+t.light,"Same time"],ans:0,
    why:"The "+t.light+" is slower. Air pushes up on it. That push is called air resistance."},
-  {lesson:"friction4",kind:"floors",
+  {id:"chute",learn:"Air pushes back on falling things. A wide parachute catches lots of air.",work:["Gravity pulls both down.","The big parachute catches more air.","More air pushing up means it falls slower.","So the big parachute lands last."],lesson:"gravity4",kind:"chute",
+   q:"Two "+t.roller+"s fall with parachutes. Which lands last?",
+   opts:["Big parachute","Small parachute","Same time"],ans:0,
+   why:"The big parachute. It catches more air, so air resistance slows it more."},
+  {id:"floors",lesson:"friction4",kind:"floors",
    q:"The "+t.roller+" rolls onto three floors. Which floor lets it go furthest?",
    opts:["Ice","Wood","Grass"],ans:0,
    why:"Ice is smooth. Smooth means less friction, so it goes further."},
-  {lesson:"friction4",kind:"heights",
+  {id:"stops",work:["Grass is very rough: lots of friction.","Wood is a bit rough: some friction.","Ice is smooth: a little friction.","More friction slows it faster. Grass stops it first."],lesson:"friction4",kind:"floors",
+   q:"Which floor stops the "+t.roller+" soonest?",
+   opts:["Ice","Wood","Grass"],ans:2,
+   why:"Grass is rough. More friction slows it down quickly."},
+  {id:"ramp",lesson:"friction4",kind:"heights",
    q:"Low ramp or high ramp. Which sends the "+t.roller+" further?",
    opts:["Low ramp","High ramp","Same"],ans:1,
    why:"The high ramp. Gravity speeds it up for longer, so it goes faster."},
-  {lesson:"friction4",kind:"push",
+  {id:"push",lesson:"friction4",kind:"push",
    q:"A small push or a big push. Which makes the block slide further?",
    opts:["Small push","Big push","Same"],ans:1,
    why:"The big push. A bigger force makes it move faster and further."},
-  {lesson:"gravity4",kind:"throw",
+  {id:"mass",learn:"Heavy things are harder to move than light things.",work:["Both blocks get the same push.","The heavy block is hard to move.","The light block is easy to move.","So the light block slides further."],lesson:"friction4",kind:"pushmass",
+   q:"The same push hits a heavy block and a light block. Which slides further?",
+   opts:["Heavy block","Light block","Same"],ans:1,
+   why:"The light block. The same push moves a light thing more than a heavy thing."},
+  {id:"magnet",learn:"A magnet can pull some metals, like iron. It works without touching.",work:["The nail is made of iron.","The magnet pulls iron.","Wood is not a metal.","So only the nail moves."],lesson:"gravity4",kind:"magnet",
+   q:"A magnet is near an iron nail and a wood block. Which one moves?",
+   opts:["The iron nail","The wood block","Both"],ans:0,
+   why:"The iron nail. Magnets pull some metals, like iron. They pull without touching."},
+  {id:"tug",learn:"Two pulls the same size cancel out. They are balanced.",work:["Three pull left.","Three pull right.","The pulls are the same size.","So the rope stays still."],lesson:"friction4",kind:"tug",
+   q:"Three dinos pull each end of a rope. What happens?",
+   opts:["It goes left","It goes right","It stays still"],ans:2,
+   why:"It stays still. Both pulls are the same size. These are called balanced forces."},
+  {id:"tug2",learn:"When one pull is bigger, things move that way.",work:["Two pull left.","Four pull right.","Four is more than two.","So the rope goes right."],lesson:"friction4",kind:"tug",l:2,r:4,
+   q:"Two dinos pull left. Four dinos pull right. What happens?",
+   opts:["It goes left","It goes right","It stays still"],ans:1,
+   why:"It goes right. The bigger pull wins. These are unbalanced forces."},
+  {id:"throw",lesson:"gravity4",kind:"throw",
    q:"Throw the "+t.small+" up high. What happens?",
    opts:["It floats","It comes back down","It keeps going up"],ans:1,
    why:"It comes back down. Gravity always pulls it toward the ground."}
  ];
+ if(!dino(k))pool.forEach(r=>{r.q=r.q.replace(/dinos/g,"kids")});
+ return pick6(k,pool);
+}
+function pick6(k,pool){
+ const p=(S.physicsLab&&S.physicsLab[k])||{},seen=p.seen||[];
+ const fresh=pool.filter(r=>seen.indexOf(r.id)<0),old=pool.filter(r=>seen.indexOf(r.id)>=0);
+ const mix=a=>a.map(x=>[Math.random(),x]).sort((a,b)=>a[0]-b[0]).map(x=>x[1]);
+ return mix(fresh).concat(mix(old)).slice(0,6);
 }
 
 const css=document.createElement("style");
 css.textContent=[
 ".pl-root{max-width:720px;width:100%;margin:0 auto;display:grid;gap:14px;padding-bottom:110px;color:#14262c}",
 ".pl-root *{box-sizing:border-box}",
+".pl-root,.td-root,.pj-root,.studio-root{background:rgba(255,255,255,.96)!important;border-radius:24px;padding:16px 18px 24px!important;margin-bottom:110px!important;box-shadow:0 6px 24px rgba(0,0,0,.25);color:#14262c!important;--ink:#14262c;--soft:#33515a}",
+".pj-root>p,.pj-root>h1,.pj-root>h2,.studio-root>p,.studio-root>h1,.studio-root>h2,.pl-root p,.pl-root h1,.td-root h1,.td-root h2,.td-root p,.td-root>span,.td-root .td-sub{color:#14262c!important;-webkit-text-fill-color:#14262c!important;opacity:1!important}",
 ".pl-root h1{margin:6px 0 0;font:800 clamp(1.5rem,5vw,2rem)/1.2 var(--display);color:#14262c!important;background:none!important;-webkit-text-fill-color:currentColor!important}",
 ".pl-q{margin:0;font:800 clamp(1.2rem,4vw,1.5rem)/1.35 var(--display)}",
 ".pl-p{margin:0;font-size:1.15rem;line-height:1.45}",
@@ -226,19 +280,58 @@ function scene(k,r,u){
   const y=GY(),d=Math.min(1,u*1.4),hb=W*.12*(1-d*.65),wb=W*.12*(1+d*.9);
   cx.fillStyle=uni(k)?"#f4a6cf":"#e9a35a";cx.beginPath();cx.ellipse(W*.5,y-hb/2,wb/2,hb/2,0,0,7);cx.fill();
   block(W*.5,y-hb-2,W*.12,"#a0784a");
+ }else if(r.kind==="pushmass"){
+  const y1=H*.45,y2=H*.9,x0=W*.12,e=1-Math.pow(1-u,2);
+  cx.fillStyle="#c89a62";cx.fillRect(0,y1-6,W,6);
+  block(x0+W*.22*e,y1,W*.13,"#6d7178");block(x0+W*.62*e,y2,W*.07,"#a0784a");
+  label("Heavy",W*.85,y1-14);label("Light",W*.85,y2-14);
+ }else if(r.kind==="magnet"){
+  const y=GY(),mx=W*.2,e=Math.min(1,u*1.3),nx=W*.5-(W*.5-mx-W*.08)*e*e;
+  cx.fillStyle="#d9534f";cx.fillRect(mx-W*.06,y-W*.14,W*.05,W*.14);cx.fillRect(mx-W*.06,y-W*.14,W*.11,W*.04);cx.fillRect(mx-W*.06,y-W*.04,W*.11,W*.04);
+  cx.fillStyle="#eee";cx.fillRect(mx+W*.02,y-W*.14,W*.03,W*.04);cx.fillRect(mx+W*.02,y-W*.04,W*.03,W*.04);
+  cx.fillStyle="#6d7178";cx.fillRect(nx,y-W*.1,W*.1,W*.02);
+  block(W*.78,y,W*.09,"#b07a40");
+  label("Nail",W*.55,y-W*.13);label("Wood",W*.78,y-W*.12);
+ }else if(r.kind==="chute"){
+  const top=H*.2,fall=gy-top,ya=top+fall*Math.min(1,u*.55),yb=top+fall*Math.min(1,u*1.05);
+  [[W*.33,ya,W*.2],[W*.67,yb,W*.09]].forEach(([x,y,c])=>{
+   cx.fillStyle=dino(k)?"#e2b34a":"#d96fb4";cx.beginPath();cx.arc(x,y-W*.12,c/2,Math.PI,0);cx.fill();
+   cx.strokeStyle="#555";cx.lineWidth=1.5;cx.beginPath();cx.moveTo(x-c/2,y-W*.12);cx.lineTo(x,y-W*.03);cx.lineTo(x+c/2,y-W*.12);cx.stroke();
+   thing(k,"roller",x,y);
+  });
+  label("Big",W*.33,H*.1);label("Small",W*.67,H*.1);
+ }else if(r.kind==="tug"){
+  tugDraw(k,r.l||3,r.r||3,u);
  }else if(r.kind==="throw"){
   const top=H*.12,h=gy-top,v=u<.5?1-Math.pow(1-u*2,2):1-Math.pow((u-.5)*2,2);
   thing(k,"small",W*.5,gy-h*v);
  }
 }
 
+function dinoFig(k,x,y,s,face){
+ cx.fillStyle=dino(k)?"#5fae4e":uni(k)?"#f4a6cf":"#e08a2e";cx.fillRect(x-s/2,y-s,s,s);
+ if(uni(k)){cx.fillStyle="#f2b544";cx.beginPath();const hx=face>0?x+s*.55:x-s*.55;cx.moveTo(hx-s*.08,y-s*1.35);cx.lineTo(hx+s*.08,y-s*1.35);cx.lineTo(hx+face*s*.05,y-s*1.75);cx.fill();cx.fillStyle="#f4a6cf"}
+ cx.fillRect(face>0?x+s*.2:x-s*.75,y-s*1.35,s*.55,s*.45);
+ cx.fillStyle="#14262c";cx.beginPath();cx.arc(x+face*s*.6,y-s*1.15,s*.07,0,7);cx.fill();
+}
+function tugDraw(k,l,r,u){
+ sky();const y=GY(),net=r-l,shift=net*W*.035*(1-Math.pow(1-u,2))+(net?0:Math.sin(u*20)*2);
+ cx.strokeStyle="#7a5230";cx.lineWidth=4;cx.beginPath();cx.moveTo(W*.05+shift,y-W*.05);cx.lineTo(W*.95+shift,y-W*.05);cx.stroke();
+ cx.fillStyle="#d9534f";cx.fillRect(W*.5-3+shift,y-W*.09,6,W*.08);
+ cx.fillStyle="#fff";cx.fillRect(W*.5-1,y-W*.11,2,W*.11);
+ const s=W*.05;
+ for(let i=0;i<l;i++)dinoFig(k,W*.42-i*W*.065+shift,y,s,-1);
+ for(let i=0;i<r;i++)dinoFig(k,W*.58+i*W*.065+shift,y,s,1);
+}
 function guide(t){return'<div class="pl-guide"><span aria-hidden="true">\u{1F422}</span><div>'+t+'</div></div>'}
 function steps(a){return'<ol class="pl-work">'+a.map(x=>'<li>'+esc(x)+'</li>').join("")+'</ol>'}
 function learnFact(r){
+ if(r.learn)return r.learn;
  if(r.kind==="drop2")return r.b==="light"?"Air pushes back on things as they fall. Wide, light things feel it most.":"Gravity is a pull. It pulls everything down to the ground.";
  return{floors:"Friction is a rubbing force. It slows things down. Rough floors rub more.",heights:"Gravity pulls the turtle down the ramp. It speeds up all the way down.",push:"A push is a force. A force makes things start to move.",pull:"A push moves things away. A pull brings things closer.",squash:"Forces can move things. They can also change their shape.",throw:"Gravity pulls on things all the time, even when they fly up."}[r.kind]||"";
 }
 function working(r){
+ if(r.work)return r.work;
  if(r.kind==="drop2")return r.b==="light"?["Gravity pulls both down.","Air pushes up on the wide "+T.light+".","The "+T.small+" is small, so air hardly slows it.","So the "+T.small+" lands first."]:["Gravity pulls both blocks down.","They are the same shape, so air pushes the same.","So they fall at the same speed and land together."];
  return{floors:["Ice is smooth: a little friction.","Wood is a bit rough: some friction.","Grass is very rough: lots of friction.","Less friction means it goes further. Ice wins."],
   heights:["Low ramp: a short way down, so a slow speed.","High ramp: a long way down, so a fast speed.","Faster at the bottom means it goes further."],
@@ -292,16 +385,17 @@ function record(){
  Object.keys(res).forEach(id=>{const x=res[id];if(!x.q||!A)return;
   try{A.recordSession(S,K,lessonYear(K),"science",id,{questions:x.q,firstTry:x.ok,misses:x.q-x.ok,questionIds:[]})}catch(e){}});
  S.physicsLab=S.physicsLab||{};const p=S.physicsLab[K]=S.physicsLab[K]||{plays:0,goals:0,lastAt:0};
- p.plays++;p.lastAt=Date.now();store();
+ p.plays++;p.lastAt=Date.now();p.seen=(p.seen||[]).concat(R.map(r=>r.id).filter(Boolean)).slice(-8);store();
 }
 
-const TARGETS=[[3,"Grass"],[4,"Wood"],[8,"Ice"],[2,"Wood"],[6,"Wood"],[12,"Ice"],[2,"Grass"],[4,"Ice"]];
+const TARGETS=[1,2,3,4,6,8,12];
+const nextT=last=>{let t;do{t=TARGETS[Math.floor(Math.random()*TARGETS.length)]}while(t===last);return t};
 let ch=null;
 const PUSHES={Small:3,Medium:6,Big:9};
 function challenge(){
  if(T.young)return challengeYoung();
  const p=(S.physicsLab&&S.physicsLab[K])||{goals:0};
- ch={h:"Low",f:"Wood",n:0,t:TARGETS[(p.goals||0)%TARGETS.length][0],busy:false};
+ ch={h:"Low",f:"Wood",n:0,t:nextT(0),busy:false};
  const opt=(grp,keys,lab)=>'<div class="pl-row"><span class="pl-lab">'+grp+'</span>'+keys.map(x=>'<button type="button" class="pl-btn" data-'+grp.toLowerCase()+'="'+x+'">'+esc(lab(x))+'</button>').join("")+'</div>';
  frame('<h1>Get the '+esc(T.roller)+' in the '+esc(T.goal)+'</h1>'+guide('<b>Learn:</b> Distance = ramp number × floor number. Ice is slippery, so it is ×4. Grass is rough, so it is ×1.')+'<p class="pl-p">Pick a ramp and a floor. Then tap Roll.</p><canvas class="pl-cv" aria-hidden="true"></canvas>'+opt("Ramp",Object.keys(HEIGHTS),x=>x+" "+HEIGHTS[x])+opt("Floor",Object.keys(FLOORS),x=>x+" ×"+FMUL[x])+'<button type="button" class="pl-btn pl-go" id="pl-roll">Roll!</button><p class="pl-p" id="pl-msg" aria-live="polite"></p><div id="pl-work"></div>');
  canvas();say("Get the "+T.roller+" in the "+T.goal+". Pick a ramp and a floor. Then tap Roll.");
@@ -325,10 +419,10 @@ function roll(){
   document.getElementById("pl-work").innerHTML=steps(wk);
   if(Math.abs(off)<.6){
    win();ch.n++;const p=S.physicsLab[K];p.goals=(p.goals||0)+1;store();
-   t=ch.n>=3?"Three in a row! You are a real scientist.":"In the "+T.goal+"! Here is a new one.";
+   t=ch.n>=3?"Three in the "+T.goal+"! Now try a tug of war.":"In the "+T.goal+"! Here is a new one.";
    msg.textContent=t;say(t);
-   if(ch.n>=3){const b=document.getElementById("pl-roll");b.textContent="All done →";b.onclick=()=>{tap();home()};return}
-   ch.t=TARGETS[p.goals%TARGETS.length][0];setTimeout(()=>drawCh(0,false),900);
+   if(ch.n>=3){const b=document.getElementById("pl-roll");b.textContent="Next: Tug of war →";b.onclick=()=>{tap();tugGame()};return}
+   ch.t=nextT(ch.t);setTimeout(()=>drawCh(0,false),900);
   }else{
    t=off<0?"Not far enough. Try a higher ramp or a smoother floor.":"Too far! Try a lower ramp or a rougher floor.";
    msg.textContent=t;say(wk.join(" ")+" "+t);
@@ -336,10 +430,41 @@ function roll(){
  });
 }
 
+let tg=null;
+const TUGS=[["Make the rope stay still.",0],["Make the rope go right.",1],["Make the rope go left.",-1]];
+function tugGame(){
+ const order=[0,1,2].map(i=>[Math.random(),i]).sort((a,b)=>a[0]-b[0]).map(x=>x[1]);
+ tg={order,i:0,r:3,busy:false};tugRound();
+}
+function tugRound(){
+ tg.l=T.young?1+Math.floor(Math.random()*3):2+Math.floor(Math.random()*3);tg.r=3;
+ const task=TUGS[tg.order[tg.i]],who_=dino(K)?"dinos":uni(K)?"unicorns":"kids";
+ const one=tg.l===1?who_.replace(/s$/,"")+" pulls":who_+" pull";
+ frame('<h1>Tug of war</h1><p class="pl-q">'+esc(tg.l+" "+one+" left. "+task[0])+'</p><p class="pl-p">How many '+who_+' pull right?</p><canvas class="pl-cv" aria-hidden="true"></canvas><div class="pl-row"><span class="pl-lab">Right</span>'+(T.young?[1,2,3,4]:[1,2,3,4,5,6]).map(n=>'<button type="button" class="pl-btn" data-n="'+n+'">'+n+'</button>').join("")+'</div><button type="button" class="pl-btn pl-go" id="pl-pull">Pull!</button><p class="pl-p" id="pl-msg" aria-live="polite"></p>');
+ canvas();say(tg.l+" "+one+" left. "+task[0]+" How many pull right?");
+ const sync=()=>{app().querySelectorAll("[data-n]").forEach(b=>b.classList.toggle("on",+b.dataset.n===tg.r));tugDraw(K,tg.l,tg.r,0)};
+ app().querySelectorAll("[data-n]").forEach(b=>b.onclick=()=>{if(tg.busy)return;tap();tg.r=+b.dataset.n;sync()});
+ sync();
+ document.getElementById("pl-pull").onclick=()=>{
+  if(tg.busy)return;tap();tg.busy=true;const msg=document.getElementById("pl-msg");msg.textContent="";
+  play(1600,u=>tugDraw(K,tg.l,tg.r,u),()=>{
+   tg.busy=false;const net=Math.sign(tg.r-tg.l),ok=net===task[1];let t;
+   if(ok){win();tg.i++;
+    t=task[1]===0?"Balanced! Same pull on both sides, so it stays still.":"Yes! The bigger team wins. The forces are unbalanced.";
+    msg.textContent=t;say(t);const b=document.getElementById("pl-pull");
+    if(tg.i>=3){b.textContent="All done →";b.onclick=()=>{tap();home()}}else{b.textContent="Next →";b.onclick=()=>{tap();tugRound()}}
+   }else{
+    t=net===0?"It stayed still. The teams are the same size.":net>0?"It went right. The right team is bigger.":"It went left. The left team is bigger.";
+    msg.textContent=t+" Try again.";say(t+" Try again.");
+   }
+  });
+ };
+}
+
 let cy=null;
 function challengeYoung(){
- const p=(S.physicsLab&&S.physicsLab[K])||{goals:0},tg=[3,6,9];
- cy={p:"Small",n:0,t:tg[(p.goals||0)%3],busy:false};
+ const p=(S.physicsLab&&S.physicsLab[K])||{goals:0},tgs=[3,6,9];
+ cy={p:"Small",n:0,t:tgs[Math.floor(Math.random()*3)],busy:false};
  frame('<h1>Get the '+esc(T.roller)+' in the '+esc(T.goal)+'</h1>'+guide('<b>Learn:</b> A bigger push makes it go further. Count the steps on the ruler.')+'<p class="pl-p">Pick a push. Then tap Roll.</p><canvas class="pl-cv" aria-hidden="true"></canvas><div class="pl-row"><span class="pl-lab">Push</span>'+Object.keys(PUSHES).map(x=>'<button type="button" class="pl-btn" data-push="'+x+'">'+x+' '+PUSHES[x]+'</button>').join("")+'</div><button type="button" class="pl-btn pl-go" id="pl-roll">Roll!</button><p class="pl-p" id="pl-msg" aria-live="polite"></p><div id="pl-work"></div>');
  canvas();say("Get the "+T.roller+" in the "+T.goal+". Pick a push. Then tap Roll.");
  const draw=u=>{sky();ruler(W*.1);cx.fillStyle="#c89a62";cx.fillRect(0,GY()-8,W,8);goal(K,W*.1+cy.t*UNIT());const d=u===null?0:PUSHES[cy.p]*(1-Math.pow(1-u,2));thing(K,"roller",W*.1+d*UNIT(),GY()-8)};
@@ -352,9 +477,9 @@ function challengeYoung(){
    cy.busy=false;const d=PUSHES[cy.p];let t;
    document.getElementById("pl-work").innerHTML=steps([cy.p+" push = "+d+" steps.","The "+T.goal+" is at "+cy.t+" steps.",d===cy.t?d+" is the same as "+cy.t+". In!":d+" is "+(d<cy.t?"less":"more")+" than "+cy.t+"."]);
    if(d===cy.t){win();cy.n++;const q=S.physicsLab[K];q.goals=(q.goals||0)+1;store();
-    t=cy.n>=3?"Three! You are a super scientist.":"In the "+T.goal+"! Here is a new one.";msg.textContent=t;say(t);
-    if(cy.n>=3){const b=document.getElementById("pl-roll");b.textContent="All done →";b.onclick=()=>{tap();home()};return}
-    cy.t=tg[q.goals%3];setTimeout(()=>draw(null),900);
+    t=cy.n>=3?"Three! Now try a tug of war.":"In the "+T.goal+"! Here is a new one.";msg.textContent=t;say(t);
+    if(cy.n>=3){const b=document.getElementById("pl-roll");b.textContent="Next: Tug of war →";b.onclick=()=>{tap();tugGame()};return}
+    {const o=tgs.filter(x=>x!==cy.t);cy.t=o[Math.floor(Math.random()*o.length)]}setTimeout(()=>draw(null),900);
    }else{t=d<cy.t?"Not far enough. Try a bigger push.":"Too far! Try a smaller push.";msg.textContent=t;say(cy.p+" push is "+d+" steps. "+t)}
   });
  };
