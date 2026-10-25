@@ -236,7 +236,7 @@ function view(){
   $("#hrefresh").onclick=async()=>{$("#hrefresh").textContent="Refreshing…";const d=await load();EV=d.ev;M=d.m;INFO=d.info;view()};
   $$("[data-who]").forEach(b=>b.onclick=()=>{who=+b.dataset.who;view()});$$("[data-tab]").forEach(b=>b.onclick=()=>{tab=b.dataset.tab;view()});
   if($("#prt"))$("#prt").onclick=()=>{try{print()}catch(e){}};
-  if($("#cpy"))$("#cpy").onclick=()=>{const t=($("#rep")||$(".hub .hc")).innerText;navigator.clipboard&&navigator.clipboard.writeText(t).then(()=>$("#cpy").textContent="✓ Copied")};
+  if($("#cpy"))$("#cpy").onclick=()=>{const t=($("#rep")||$(".hub .hc")).innerText;const done=()=>$("#cpy").textContent="✓ Copied",old=()=>{try{const x=document.createElement("textarea");x.value=t;x.style.position="fixed";x.style.opacity="0";document.body.appendChild(x);x.select();const ok=document.execCommand("copy");x.remove();ok?done():$("#cpy").textContent="Copy didn't work"}catch(e){$("#cpy").textContent="Copy didn't work"}};try{navigator.clipboard?navigator.clipboard.writeText(t).then(done,old):old()}catch(e){old()}};
   const sel=$("#labyr");if(sel)sel.onchange=e=>{S.curriculumYear=S.curriculumYear||{};S.curriculumYear[k]=+e.target.value;M.labYear[k]=+e.target.value;save();view()};
   const psel=$("#pathyr");if(psel)psel.onchange=e=>{S.pathwayYear=S.pathwayYear||{};S.pathwayYear[k]=+e.target.value;M.pathYear[k]=+e.target.value;save();view()};
   $$("[data-fs]").forEach(b=>b.onclick=()=>{lf.subj=b.dataset.fs;view()});$$("[data-fy]").forEach(b=>b.onclick=()=>{lf.yr=b.dataset.fy;view()});
