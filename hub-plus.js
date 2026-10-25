@@ -226,10 +226,11 @@ function view(){
     <div class="noprint" style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap"><button class="big" id="prt">🖨️ Print / save PDF</button><button class="big ghost" id="cpy">📋 Copy text</button></div></div>`}
   const srcline=`Data: ${esc(INFO.where)}${INFO.backups?` · merged with the latest backup from ${INFO.backups} tablet${INFO.backups===1?"":"s"} (newest ${day(INFO.newest)} ${clock(INFO.newest)})`:""}${INFO.note?` · ${esc(INFO.note)}`:""}`;
   document.body.classList.add("adult");
-  $("#app").innerHTML=`<div class="hub" data-tidy="1"><div class="top noprint"><button class="pill" id="hback">← Home</button><button class="pill" id="hrefresh">Refresh</button></div><h2>Audrey's Hub</h2><p class="srcline noprint">${srcline}</p>
+  $("#app").innerHTML=`<div class="hub" data-tidy="1"><div class="top noprint"><button class="pill" id="hback">← Home</button><button class="pill" id="hrefresh">Refresh</button><button class="pill" id="hpw">Change password</button></div><h2>Audrey's Hub</h2><p class="srcline noprint">${srcline}</p>
    <div class="tabs kids noprint">${S.kids.map((x,i)=>`<button data-who="${i}" class="${i===who?"on":""}">${esc(x.face)} ${esc(x.name)}</button>`).join("")}</div>
    <div class="tabs noprint">${TABS.map(([t,n])=>`<button data-tab="${t}" class="${t===tab?"on":""}">${n}</button>`).join("")}</div><p class="explain noprint">${EXPLAIN[tab]}</p>${body}${tab==="lessons"?"":'<div id="labsec" hidden></div>'}</div>`;
   $("#hback").onclick=()=>{try{typeof SFX!=="undefined"&&SFX.tap()}catch(e){}kid=null;render()};
+  $("#hpw").onclick=()=>window.PEBBLE_HUB_PW.change();
   $("#hrefresh").onclick=async()=>{$("#hrefresh").textContent="Refreshing…";const d=await load();EV=d.ev;M=d.m;INFO=d.info;view()};
   $$("[data-who]").forEach(b=>b.onclick=()=>{who=+b.dataset.who;view()});$$("[data-tab]").forEach(b=>b.onclick=()=>{tab=b.dataset.tab;view()});
   if($("#prt"))$("#prt").onclick=()=>{try{print()}catch(e){}};
@@ -242,11 +243,34 @@ function view(){
   if(tab==="chat"){(async()=>{let ms=[];if(S.family){try{ms=(await PI.rpc("pi_messages",{p_key:S.family,p_after:0})).reverse().map(m=>({from:m.from_kid,t:m.body,at:m.created_at}))}catch(e){}}else ms=(S.chat||[]).map(m=>({from:m.from,t:m.t||m.text,at:m.at}));
     const el=$("#hchat");if(el)el.innerHTML=ms.length?`<table>${ms.slice(-100).map(m=>`<tr><td>${m.at?day(m.at)+" "+clock(m.at):""}</td><td>${esc((S.kids[m.from]||{}).name||"?")}</td><td>${esc(m.t||"")}</td></tr>`).join("")}</table>`:"No messages yet."})()}}
 
+async function pwHash(v){v="pi-hub:"+v.trim();try{const b=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(v));return[...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,"0")).join("")}catch(e){let h=5381;for(const c of v)h=(h*33^c.charCodeAt(0))>>>0;return"d"+h.toString(16)}}
+function hubSet(){S.settings=S.settings||{};return S.settings}
+function pwSetup(next,msg){
+  $("#app").innerHTML=`<div class="pwgate"><h2>Choose a hub password</h2><p>${msg||"Pick a new password for Audrey's Hub on this tablet. At least 6 letters or numbers."}</p><input id="pw1" type="password" autocomplete="new-password" aria-label="New password" placeholder="New password"><input id="pw2" type="password" autocomplete="new-password" aria-label="Type it again" placeholder="Type it again" style="margin-top:8px"><div class="err" id="pwerr"></div><div class="row"><button class="ghost" id="pwx">Back</button><button id="pwok">Save</button></div></div>`;
+  const ok=async()=>{const a=$("#pw1").value.trim(),b=$("#pw2").value.trim();
+    if(a.length<6){$("#pwerr").textContent="Use at least 6 letters or numbers.";return}
+    if(a.toLowerCase()==="password"){$("#pwerr").textContent="Pick something other than \"password\".";return}
+    if(a!==b){$("#pwerr").textContent="Those don't match. Try again.";$("#pw2").value="";return}
+    hubSet().hubHash=await pwHash(a);save();next()};
+  $("#pwok").onclick=ok;$("#pw2").onkeydown=e=>{if(e.key==="Enter")ok()};$("#pwx").onclick=()=>{document.body.classList.remove("adult");render()};setTimeout(()=>$("#pw1")&&$("#pw1").focus(),50)}
+async function hubOpen(){
+  $("#app").innerHTML=`<div class="pwgate"><h2>Loading Audrey's Hub…</h2><p>Collecting progress from every tablet.</p></div>`;
+  try{const d=await load();EV=d.ev;M=d.m;INFO=d.info;who=Math.min(who,S.kids.length-1);view()}
+  catch(e){$("#app").innerHTML=`<div class="pwgate"><h2>The hub couldn't load</h2><p>${esc(e&&e.message||e)}</p><div class="row"><button id="pwback">Back</button></div></div>`;$("#pwback").onclick=()=>{kid=null;render()}}}
+window.PEBBLE_HUB_PW={change:()=>pwSetup(hubOpen,"Pick a new password for Audrey's Hub on this tablet.")};
 window.openHub=function(){document.body.classList.add("adult");
-  $("#app").innerHTML=`<div class="pwgate"><h2>Audrey's Hub</h2><p>Enter the password to see learning reports.</p><input id="pw" type="password" autocomplete="off" aria-label="Password" placeholder="Password"><div class="err" id="pwerr"></div><div class="row"><button class="ghost" id="pwx">Back</button><button id="pwok">Open</button></div></div>`;
-  const go=async()=>{if($("#pw").value.trim().toLowerCase()!=="password"){$("#pwerr").textContent="That's not right. Try again.";$("#pw").value="";return}
-    $("#app").innerHTML=`<div class="pwgate"><h2>Loading Audrey's Hub…</h2><p>Collecting progress from every tablet.</p></div>`;
-    try{const d=await load();EV=d.ev;M=d.m;INFO=d.info;who=Math.min(who,S.kids.length-1);view()}
-    catch(e){$("#app").innerHTML=`<div class="pwgate"><h2>The hub couldn't load</h2><p>${esc(e&&e.message||e)}</p><div class="row"><button id="pwback">Back</button></div></div>`;$("#pwback").onclick=()=>{kid=null;render()}}};
-  $("#pwok").onclick=go;$("#pw").onkeydown=e=>{if(e.key==="Enter")go()};$("#pwx").onclick=()=>{document.body.classList.remove("adult");render()};setTimeout(()=>$("#pw")&&$("#pw").focus(),50)};
+  const has=!!hubSet().hubHash;
+  $("#app").innerHTML=`<div class="pwgate"><h2>Audrey's Hub</h2><p>Enter the password to see learning reports.</p><input id="pw" type="password" autocomplete="off" aria-label="Password" placeholder="Password"><div class="err" id="pwerr"></div><div class="row"><button class="ghost" id="pwx">Back</button><button id="pwok">Open</button></div>${has?`<p style="margin-top:14px"><button class="ghost" id="pwforgot">Forgot password?</button></p>`:""}</div>`;
+  const go=async()=>{const v=$("#pw").value,h=hubSet().hubHash;
+    const good=h?(await pwHash(v))===h:v.trim().toLowerCase()==="password";
+    if(!good){$("#pwerr").textContent="That's not right. Try again.";$("#pw").value="";return}
+    if(!h){pwSetup(hubOpen);return}
+    hubOpen()};
+  $("#pwok").onclick=go;$("#pw").onkeydown=e=>{if(e.key==="Enter")go()};$("#pwx").onclick=()=>{document.body.classList.remove("adult");render()};
+  const f=$("#pwforgot");if(f)f.onclick=()=>{
+    if(!S.family){$("#pwerr").textContent="Restore a backup from Grown-ups, or ask KT to reset it.";return}
+    $("#app").innerHTML=`<div class="pwgate"><h2>Reset the hub password</h2><p>Type this tablet's family code to choose a new password.</p><input id="fc" type="password" autocomplete="off" aria-label="Family code" placeholder="Family code"><div class="err" id="pwerr"></div><div class="row"><button class="ghost" id="pwx">Back</button><button id="pwok">Next</button></div></div>`;
+    const n=()=>{if($("#fc").value.trim()!==String(S.family).trim()){$("#pwerr").textContent="That's not the family code.";return}pwSetup(hubOpen)};
+    $("#pwok").onclick=n;$("#fc").onkeydown=e=>{if(e.key==="Enter")n()};$("#pwx").onclick=()=>window.openHub()};
+  setTimeout(()=>$("#pw")&&$("#pw").focus(),50)};
 })();
