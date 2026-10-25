@@ -119,7 +119,7 @@ PEBBLE_EXTRA(3,"maths",[
 ["Votes: T. rex 5, Triceratops 8, Stegosaurus 3. Which has the most?","Triceratops","T. rex","Stegosaurus","8 is the biggest number."]]]],
 
 ["perimeter",
-["Length around a shape","📏","AC9M3M02","Measure the distance around a shape.","Perimeter is the distance around the edge of a shape. Add up all the sides. A rectangle 4 cm by 2 cm has sides 4, 2, 4, 2. 4 + 2 + 4 + 2 = 12 cm.","A square with sides of 3 cm has a perimeter of 3 + 3 + 3 + 3 = 12 cm.","Measure the sides of a book. Add them up.",[
+["Length around a shape","📏","AC9M4M02","Measure the distance around a shape.","Perimeter is the distance around the edge of a shape. Add up all the sides. A rectangle 4 cm by 2 cm has sides 4, 2, 4, 2. 4 + 2 + 4 + 2 = 12 cm.","A square with sides of 3 cm has a perimeter of 3 + 3 + 3 + 3 = 12 cm.","Measure the sides of a book. Add them up.",[
 ["A square has 5 cm sides. Its perimeter is...","20 cm","10 cm","25 cm","5 + 5 + 5 + 5 = 20."],
 ["A rectangle is 6 cm by 2 cm. Perimeter?","16 cm","8 cm","12 cm","6 + 2 + 6 + 2 = 16."],
 ["A triangle has sides 3, 4 and 5 cm. Perimeter?","12 cm","9 cm","15 cm","3 + 4 + 5 = 12."],

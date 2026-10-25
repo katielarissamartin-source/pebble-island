@@ -1,6 +1,6 @@
 PEBBLE_EXTRA(2,"maths",[
 ["skipcount",
-["Skip counting","🦘","AC9M2A01","Count by 2s, 5s and 10s.","Skip counting is counting in jumps. Count by 2s: 2, 4, 6, 8. Count by 5s: 5, 10, 15. Count by 10s: 10, 20, 30.","Your fingers on two hands: count by 5s. 5, 10.","Count your steps to the door by 2s.",[
+["Skip counting","🦘","AC9M1A01","Count by 2s, 5s and 10s.","Skip counting is counting in jumps. Count by 2s: 2, 4, 6, 8. Count by 5s: 5, 10, 15. Count by 10s: 10, 20, 30.","Your fingers on two hands: count by 5s. 5, 10.","Count your steps to the door by 2s.",[
 ["Count by 2s: 2, 4, 6, __","8","7","10","Add 2 to 6 to get 8."],
 ["Count by 5s: 5, 10, __","15","12","20","Add 5 to 10 to get 15."],
 ["Count by 10s: 10, 20, 30, __","40","31","50","Add 10 each time."],

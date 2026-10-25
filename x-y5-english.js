@@ -51,7 +51,7 @@ PEBBLE_EXTRA(5,"english",[
 ["What does '-ful' mean in 'careful'?","full of","without","not","Careful means full of care."]]]],
 
 ["synonyms",
-["Same and opposite words","🔁","AC9E5LA08","Use synonyms and antonyms.","A synonym is a word with a similar meaning. Big and huge are synonyms. An antonym is a word with the opposite meaning. Hot and cold are antonyms. A thesaurus lists synonyms.","Happy and glad are synonyms. Happy and sad are antonyms.","Find 3 synonyms for 'big'.",[
+["Same and opposite words","🔁","AC9E4LA11","Use synonyms and antonyms.","A synonym is a word with a similar meaning. Big and huge are synonyms. An antonym is a word with the opposite meaning. Hot and cold are antonyms. A thesaurus lists synonyms.","Happy and glad are synonyms. Happy and sad are antonyms.","Find 3 synonyms for 'big'.",[
 ["Which is a synonym for 'big'?","huge","tiny","slow","Huge means very big."],
 ["Which is an antonym for 'hot'?","cold","warm","burning","Cold is the opposite."],
 ["Which is a synonym for 'happy'?","glad","angry","tired","Glad means happy."],
@@ -102,7 +102,7 @@ PEBBLE_EXTRA(5,"english",[
 ["Why check a fact?","To make sure it is true","To make it longer","To hide it","Checking proves facts."]]]],
 
 ["speech",
-["Writing speech","💬","AC9E5LA03","Punctuate speech with quotation marks.","Quotation marks show the exact words someone says. They go around the spoken words. A comma or other mark comes before the closing quote. Start a new line when a new person speaks.","\"I am hungry,\" said Mia.","Write a short chat between two people with quotation marks.",[
+["Writing speech","💬","AC9E5LY06","Punctuate speech with quotation marks.","Quotation marks show the exact words someone says. They go around the spoken words. A comma or other mark comes before the closing quote. Start a new line when a new person speaks.","\"I am hungry,\" said Mia.","Write a short chat between two people with quotation marks.",[
 ["What do quotation marks show?","The exact words someone says","The title","A list","They go around spoken words."],
 ["Which is correct?","\"Come here,\" said Mum.","Come here, said Mum.","\"Come here, said Mum.","Quotation marks go around the speech."],
 ["When a new person speaks, you...","Start a new line","Stop writing","Use capitals only","A new speaker gets a new line."],
@@ -119,7 +119,7 @@ PEBBLE_EXTRA(5,"english",[
 ["Which word is a speech verb?","shouted","yellow","table","Shouted tells how someone spoke."]]]],
 
 ["homophones",
-["Words that sound the same","👂","AC9E5LY08","Spell common homophones.","Homophones sound the same but mean different things. There, their and they're. To, too and two. Here and hear. Check the meaning before you spell.","'Their dog is over there.' 'They're coming.'","Write a sentence for each: there, their, they're.",[
+["Words that sound the same","👂","AC9E4LY11","Spell common homophones.","Homophones sound the same but mean different things. There, their and they're. To, too and two. Here and hear. Check the meaning before you spell.","'Their dog is over there.' 'They're coming.'","Write a sentence for each: there, their, they're.",[
 ["Which is correct? '___ going to the park.'","They're","Their","There","They're means they are."],
 ["Which is correct? 'I went ___ the shop.'","to","too","two","To shows direction."],
 ["Which is correct? 'I can ___ you.'","hear","here","hair","Hear is for your ears."],
