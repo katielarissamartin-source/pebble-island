@@ -185,7 +185,7 @@ function addLearn(){
  const list=TIPS[r.w];if(!list)return;
  const tip=list[(r.n||0)%list.length];
  const d=document.createElement("div");d.className="iw-learn";
- d.innerHTML='<span aria-hidden="true">\u{1F422}</span><div><b>Learn:</b> '+esc(tip)+'</div>';
+ d.innerHTML='<span aria-hidden="true">'+(typeof kid!=="undefined"&&kid===0?"\u{1F984}":"\u{1F422}")+'</span><div><b>Learn:</b> '+esc(tip)+'</div>';
  row.parentNode.insertBefore(d,row);
 }
 try{new MutationObserver(addLearn).observe(document.getElementById("app"),{childList:true,subtree:true})}catch(e){}
