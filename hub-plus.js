@@ -31,6 +31,7 @@ const defPathYear=k=>{const a=ageOf(k);return a>=10?5:a>=9?4:a>=8?3:a>=7?2:a>=6?
 const defLabYear=k=>ageOf(k)>=9?5:2;
 
 let tab="overview",who=0,M=null,EV=[],INFO={};
+const EXT=window.PEBBLE_HUB_EXT=window.PEBBLE_HUB_EXT||{tabs:[],banners:[]};
 
 function rankOf(p){return[num(p.best),num(p.lvl),num(p.stars)]}
 function beats(a,b){for(let i=0;i<3;i++){if(a[i]!==b[i])return a[i]>b[i]}return false}
@@ -61,7 +62,7 @@ async function load(){
   if(S.family&&window.PI){
     try{
       await PIflush();
-      const since=new Date(Date.now()-120*DAY).toISOString();
+      const since=new Date(Date.now()-400*DAY).toISOString();
       const rows=await PI.rpc("pi_events",{p_key:S.family,p_since:since});
       if(Array.isArray(rows)){
         const keyOf=e=>[e.kid,e.kind,e.world,e.level,+new Date(e.at)].join("|");
@@ -179,7 +180,8 @@ function view(){
   const ans=wk.reduce((a,s)=>a+s.n,0)+lwk.reduce((a,x)=>a+x.n,0),ok=wk.reduce((a,s)=>a+s.ok,0)+lwk.reduce((a,x)=>a+x.ok,0);
   const dueAll=all.filter(r=>r.due).length,lessonDone=all.filter(r=>r.done).length;
   const lnext=lessonNext(k);
-  let body="";
+  let body="";const ex=EXT.tabs.find(x=>x.id===tab);
+  if(ex){try{body=ex.render(k)}catch(e){body=`<div class="hc"><p>This section could not load: ${esc(e&&e.message||e)}</p></div>`}}
   if(tab==="overview"){
     const days=[...Array(7)].map((_,i)=>{const d=new Date();d.setHours(0,0,0,0);d.setDate(d.getDate()-6+i);const t=+d;
       return{d,m:ss.filter(s=>s.start>=t&&s.start<t+DAY).reduce((a,s)=>a+s.dur,0)+ls.filter(x=>x.at>=t&&x.at<t+DAY).reduce((a,x)=>a+mins(x.r)*60000,0)}});
@@ -228,7 +230,7 @@ function view(){
   document.body.classList.add("adult");
   $("#app").innerHTML=`<div class="hub" data-tidy="1"><div class="top noprint"><button class="pill" id="hback">← Home</button><button class="pill" id="hrefresh">Refresh</button><button class="pill" id="hpw">Change password</button></div><h2>Audrey's Hub</h2><p class="srcline noprint">${srcline}</p>
    <div class="tabs kids noprint">${S.kids.map((x,i)=>`<button data-who="${i}" class="${i===who?"on":""}">${esc(x.face)} ${esc(x.name)}</button>`).join("")}</div>
-   <div class="tabs noprint">${TABS.map(([t,n])=>`<button data-tab="${t}" class="${t===tab?"on":""}">${n}</button>`).join("")}</div><p class="explain noprint">${EXPLAIN[tab]}</p>${body}${tab==="lessons"?"":'<div id="labsec" hidden></div>'}</div>`;
+   <div class="tabs noprint">${EXT.tabs.reduce((t,x)=>{t.splice(Math.min(x.at==null?t.length:x.at,t.length),0,[x.id,x.label]);return t},TABS.slice()).map(([t,n])=>`<button data-tab="${t}" class="${t===tab?"on":""}">${n}</button>`).join("")}</div>${EXT.banners.map(f=>{try{return f(k)||""}catch(e){return""}}).join("")}<p class="explain noprint">${EXPLAIN[tab]||(ex&&ex.explain)||""}</p>${body}${tab==="lessons"?"":'<div id="labsec" hidden></div>'}</div>`;
   $("#hback").onclick=()=>{try{typeof SFX!=="undefined"&&SFX.tap()}catch(e){}kid=null;render()};
   $("#hpw").onclick=()=>window.PEBBLE_HUB_PW.change();
   $("#hrefresh").onclick=async()=>{$("#hrefresh").textContent="Refreshing…";const d=await load();EV=d.ev;M=d.m;INFO=d.info;view()};
@@ -241,7 +243,10 @@ function view(){
   $$("[data-rng]").forEach(b=>b.onclick=()=>{rng=+b.dataset.rng;view()});
   $$("[data-cell]").forEach(b=>b.onclick=()=>{const c=b.dataset.cell.split("|");lf.subj=c[0];lf.yr=c[1];view();const el=$("#llist");try{el&&el.scrollIntoView({block:"center"})}catch(e){}});
   if(tab==="chat"){(async()=>{let ms=[];if(S.family){try{ms=(await PI.rpc("pi_messages",{p_key:S.family,p_after:0})).reverse().map(m=>({from:m.from_kid,t:m.body,at:m.created_at}))}catch(e){}}else ms=(S.chat||[]).map(m=>({from:m.from,t:m.t||m.text,at:m.at}));
-    const el=$("#hchat");if(el)el.innerHTML=ms.length?`<table>${ms.slice(-100).map(m=>`<tr><td>${m.at?day(m.at)+" "+clock(m.at):""}</td><td>${esc((S.kids[m.from]||{}).name||"?")}</td><td>${esc(m.t||"")}</td></tr>`).join("")}</table>`:"No messages yet."})()}}
+    const el=$("#hchat");if(el)el.innerHTML=ms.length?`<table>${ms.slice(-100).map(m=>`<tr><td>${m.at?day(m.at)+" "+clock(m.at):""}</td><td>${esc((S.kids[m.from]||{}).name||"?")}</td><td>${esc(m.t||"")}</td></tr>`).join("")}</table>`:"No messages yet."})()}
+  if(ex&&ex.bind){try{ex.bind(k)}catch(e){}}
+  $$("[data-hubtab]").forEach(b=>b.onclick=()=>{tab=b.dataset.hubtab;view();try{scrollTo(0,0)}catch(e){}})}
+window.PEBBLE_HUB_API={state:()=>({M,EV,INFO,who,tab}),view:()=>view(),_setWho:i=>{who=i},sessions,islandStats,acquired,lessons,lessonSessions,feelings,pathYear,labYear,esc,day,fmt,yrLabel,NICE,LESSON_AREA,mins};
 
 async function pwHash(v){v="pi-hub:"+v.trim();try{const b=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(v));return[...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,"0")).join("")}catch(e){let h=5381;for(const c of v)h=(h*33^c.charCodeAt(0))>>>0;return"d"+h.toString(16)}}
 function hubSet(){S.settings=S.settings||{};return S.settings}

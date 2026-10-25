@@ -217,7 +217,7 @@ function journeyStore(){S.journey=S.journey||{};S.journey.faces=S.journey.faces|
 function log(c,f){
  try{
   const j=journeyStore(),m=j.faces[kid]||(j.faces[kid]={});
-  const e=m[c.o.key]||(m[c.o.key]={got:0,nearly:0,again:0});e[f]++;e.last=Date.now();save();
+  const e=m[c.o.key]||(m[c.o.key]={got:0,nearly:0,again:0});e[f]++;e.last=Date.now();save();try{window.logEv&&logEv("face",{world:c.o.key,data:{f}})}catch(e){}
  }catch(err){}
 }
 
