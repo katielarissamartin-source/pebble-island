@@ -74,17 +74,17 @@ function hook(ctx){
    '<button type="button" class="pj-btn primary" id="pt-next"'+(s.type==="look"?'':' hidden')+'>'+(last?"Let's explore →":"Next →")+'</button></div></section>');
   const q=sel=>root.querySelector(sel);
   const body=q(".pt-body"),fbEl=q(".pt-fb"),next=q("#pt-next"),help=q("#pt-help");
-  let finished=s.type==="look";
+  let finished=s.type==="look",helped=false;
   const api={
    fb(t,ok){fbEl.textContent=t||"";fbEl.className="pt-fb"+(ok?" ok":"");if(t)speak(t)},
-   done(t){if(finished)return;finished=true;ctx.sfx("good");api.fb((t||s.done||yay()),true);if(help)help.hidden=true;next.hidden=false;try{next.focus({preventScroll:true})}catch(e){}},
+   done(t){if(finished)return;finished=true;try{window.logEv&&ctx.kid!=null&&logEv("showme_step",{kid:ctx.kid,world:ctx.key,level:i+1,ok:!helped})}catch(e){}ctx.sfx("good");api.fb((t||s.done||yay()),true);if(help)help.hidden=true;next.hidden=false;try{next.focus({preventScroll:true})}catch(e){}},
    pop(el){if(!calm()&&el){el.classList.remove("pt-pop");void el.offsetWidth;el.classList.add("pt-pop")}},
    tap:()=>ctx.sfx("tap"),speak
   };
   const r=RENDER[s.type](s,body,api)||{};
   q("#pt-hear").onclick=()=>ctx.say([s.say].concat(r.extra?[r.extra()]:[]).concat(fbEl.textContent?[fbEl.textContent]:[]).join(" "));
   q("#pt-back").onclick=()=>i?show(i-1):ctx.back();
-  if(help)help.onclick=()=>{if(r.solve)r.solve();api.done(s.done||"Here is how it works.")};
+  if(help)help.onclick=()=>{helped=true;try{window.logEv&&ctx.kid!=null&&logEv("showme_help",{kid:ctx.kid,world:ctx.key,level:i+1})}catch(e){}if(r.solve)r.solve();api.done(s.done||"Here is how it works.")};
   next.onclick=()=>last?ctx.done():show(i+1);
   speak(s.say);
  }

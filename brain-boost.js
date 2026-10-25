@@ -223,6 +223,7 @@ function answer(btn,q){
  app().querySelectorAll("[data-o]").forEach(b=>{b.disabled=true;if(b.textContent===q.ans)b.classList.add("good")});
  if(!right)btn.classList.add("bad");
  res.push(right);
+ try{window.logEv&&logEv("boost",{kid:K,world:q.id,level:q.L,ok:right,ms:Math.round(secs*1000)})}catch(e){}
  const ev=update(M,q.id,right,secs,age(K)<9?9:7);
  if(ev==="up")ups.push(q.id);
  if(right){sfx("good");try{window.PEBBLE_FAIR&&PEBBLE_FAIR.src("boost");addCoins(boss?3:2);window.PEBBLE_FAIR&&PEBBLE_FAIR.after()}catch(e){}}

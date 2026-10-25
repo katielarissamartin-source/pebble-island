@@ -466,8 +466,10 @@ function shell(title){closeOv();const o=document.createElement("div");o.classNam
  document.body.appendChild(o);OV=o;return o}
 function steps(o,i){o.querySelector(".ite-steps").innerHTML=["👀 Watch me","🤝 Try it with me","⭐ Your turn"].map((t,j)=>`<b class="${j===i?"on":""}">${t}</b>`).join("")}
 
+const lg=(kind,o)=>{try{window.logEv&&window.logEv(kind,o)}catch(e){}};
 function openLesson(w,l,mode,onDone){
  const les=lessonFor(w,l);if(!les){onDone&&onDone();return false}
+ lg("teach",{world:w,level:capLevel(w,l),data:{mode:mode==="auto"?"auto":"show"}});
  const o=shell("{m} shows you how");const body=o.querySelector(".ite-body");let sayNow="";
  o.querySelector(".ite-say").onclick=()=>{tap();say(sayNow)};
  const speakIt=t=>{sayNow=t;if(readOn())setTimeout(()=>{if(OV===o)say(t)},mode==="auto"?550:150)};
@@ -551,6 +553,7 @@ function openReteach(w,q,L){
  const les=lessonFor(w,L);
  if(!r||!r.lines||!r.lines.filter(Boolean).length){if(!les)return;r={lines:[les.watch[0].s],show:les.watch[0].v}}
  const lines=r.lines.filter(Boolean);
+ lg("reteach",{world:w,level:L});
  const o=shell("Let me show you");o.querySelector(".ite-steps").remove();const body=o.querySelector(".ite-body");
  body.innerHTML=`${r.show?`<div class="ite-vis">${r.show}</div>`:""}<ol class="ite-lines">${lines.map((l,i)=>`<li${i?' hidden':''}>${esc(l)}</li>`).join("")}</ol><div class="ite-nav">${les?'<button class="ite-btn ghost" id="ite-lesson" type="button">👀 Show me the lesson</button>':""}<button class="ite-btn" id="ite-more" type="button">${lines.length>1?"Next →":"I'll try again →"}</button></div>`;
  const lis=[...body.querySelectorAll("li")];let i=0;const t=()=>lis.slice(0,i+1).map(x=>x.textContent).join(" ");
