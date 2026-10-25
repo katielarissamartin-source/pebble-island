@@ -64,10 +64,10 @@ PEBBLE_EXTRA(4,"science",[
 ["Gravity pulls things...","Toward Earth","Away from Earth","Sideways","Gravity pulls down."],
 ["Gravity works...","Without touching","Only by touching","Only on water","Gravity is a non-contact force."],
 ["Why does a feather fall slowly?","Air slows it","No gravity","Magic","Air resistance slows it."]]],
-["Gravity in blocks","⛏️","Gravity is a force that pulls things toward Earth. It makes things fall. Gravity works without touching. A heavier object does not fall faster in air than a lighter one if air resistance is the same. Weight is the pull of gravity on you.","Minecraft sand falls because the game has gravity. Real gravity pulls everything down.","Drop two objects of the same shape. Which lands first?",[
+["Gravity in blocks","⛏️","Gravity is a force that pulls things toward Earth. It makes things fall. Gravity works without touching. A heavier object does not fall faster in air than a lighter one if air resistance is the same. Weight is the pull of gravity on you.","Sand in a block game falls because the game has gravity. Real gravity pulls everything down.","Drop two objects of the same shape. Which lands first?",[
 ["Gravity pulls things...","Toward Earth","Away from Earth","Sideways","Gravity pulls down."],
 ["Gravity works...","Without touching","Only by touching","Only on water","Gravity is a non-contact force."],
-["Why does sand fall in Minecraft?","The game has gravity","No gravity","Magic","The game copies gravity."]]]],
+["Why does sand fall in your block world?","The game has gravity","No gravity","Magic","The game copies gravity."]]]],
 
 ["friction4",
 ["Friction","🛷","AC9S4U03","Explain how friction slows movement.","Friction is a force that slows things when two surfaces rub. Rough surfaces have more friction. Smooth surfaces have less. Friction makes heat. Shoes have grip to give friction so you do not slip.","A skateboard slides far on smooth tiles and stops quickly on grass.","Slide a toy on carpet and on tiles. Compare.",[
@@ -120,7 +120,7 @@ PEBBLE_EXTRA(4,"science",[
 ["Hot melted rock underground is...","Magma","Water","Sand","Magma is melted rock."],
 ["Melted rock on the surface is...","Lava","Ice","Soil","Lava is on the surface."],
 ["Earthquakes happen when...","Plates slip","Clouds crash","Rain falls","Plates move."]]],
-["Lava and the Nether","🔥","Earth's crust is made of big moving pieces called plates. Earthquakes happen when plates slip. Volcanoes erupt when hot melted rock, magma, escapes through the crust. Magma that reaches the surface is called lava. These changes happen quickly.","In Minecraft lava is dangerous. Real lava is hot enough to melt rock.","Make a model volcano with an adult.",[
+["Lava and the Nether","🔥","Earth's crust is made of big moving pieces called plates. Earthquakes happen when plates slip. Volcanoes erupt when hot melted rock, magma, escapes through the crust. Magma that reaches the surface is called lava. These changes happen quickly.","In your block world lava is dangerous. Real lava is hot enough to melt rock.","Make a model volcano with an adult.",[
 ["Hot melted rock underground is...","Magma","Water","Sand","Magma is melted rock."],
 ["Melted rock on the surface is...","Lava","Ice","Soil","Lava is on the surface."],
 ["Earthquakes happen when...","Plates slip","Clouds crash","Rain falls","Plates move."]]]],
@@ -148,7 +148,7 @@ PEBBLE_EXTRA(4,"science",[
 ["A sponge is...","Absorbent","Waterproof","Hard","Sponges soak up water."],
 ["A castle wall needs to be...","Strong","Weak","Soft","Walls need strength."],
 ["To compare strength you should...","Test them","Guess","Ask no one","Tests give evidence."]]],
-["Blocks and materials","🧱","Materials have properties we can describe: hard or soft, rough or smooth, flexible or stiff, waterproof or absorbent, strong or weak. We choose materials that suit a job. Testing helps us compare.","In Minecraft, stone is harder than dirt. Real materials differ too.","Test which material is most absorbent.",[
+["Blocks and materials","🧱","Materials have properties we can describe: hard or soft, rough or smooth, flexible or stiff, waterproof or absorbent, strong or weak. We choose materials that suit a job. Testing helps us compare.","In your block world, stone is harder than dirt. Real materials differ too.","Test which material is most absorbent.",[
 ["A sponge is...","Absorbent","Waterproof","Hard","Sponges soak up water."],
 ["A bridge needs to be...","Strong","Weak","Soft","Bridges need strength."],
 ["To compare strength you should...","Test them","Guess","Ask no one","Tests give evidence."]]]],

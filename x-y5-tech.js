@@ -44,7 +44,7 @@ PEBBLE_EXTRA(5,"technologies",[
 ["What stores a website?","A server","A pencil","A cloud in the sky","Servers hold websites."],
 ["Data on the internet is sent as...","Small packets","One giant box","Paper","Packets are small pieces."],
 ["What does Wi-Fi do?","Connects devices without cables","Charges phones","Cooks food","Wi-Fi is wireless."]]],
-["The server world","🌐","The internet is a network of connected computers. Data is split into small packets and sent over wires, cables or Wi-Fi. A server stores websites. A browser asks a server for a page. Wi-Fi connects devices without cables. A Minecraft server is also a computer.","You open a website. Your browser asks a server. The server sends the page back.","Draw a picture of your tablet, Wi-Fi and a server.",[
+["The server world","🌐","The internet is a network of connected computers. Data is split into small packets and sent over wires, cables or Wi-Fi. A server stores websites. A browser asks a server for a page. Wi-Fi connects devices without cables. A game server is also a computer.","You open a website. Your browser asks a server. The server sends the page back.","Draw a picture of your tablet, Wi-Fi and a server.",[
 ["What is the internet?","A network of connected computers","One big computer","A TV show","The internet connects computers."],
 ["What stores a website?","A server","A pencil","A cloud in the sky","Servers hold websites."],
 ["Data on the internet is sent as...","Small packets","One giant box","Paper","Packets are small pieces."],
@@ -78,7 +78,7 @@ PEBBLE_EXTRA(5,"technologies",[
 ["A steadier castle has a...","Wide base","Narrow base","Tiny base","A wide base is steadier."],
 ["Which material is strong for castle walls?","Stone","Paper","Tissue","Stone is strong."],
 ["A load on a bridge pushes...","Down","Up","Nowhere","Weight pushes down."]]],
-["Build strong","🌉","A structure holds weight. Triangles make strong shapes. A wide base is steadier than a narrow base. Materials matter: steel and concrete are strong. Forces act on structures: loads push down. In Minecraft, blocks stay up magically. Real buildings need good design.","A triangle truss holds a bridge up.","Build a bridge with paper. Test how many coins it holds.",[
+["Build strong","🌉","A structure holds weight. Triangles make strong shapes. A wide base is steadier than a narrow base. Materials matter: steel and concrete are strong. Forces act on structures: loads push down. In your block world, blocks stay up magically. Real buildings need good design.","A triangle truss holds a bridge up.","Build a bridge with paper. Test how many coins it holds.",[
 ["Which shape is strong in a structure?","Triangle","Circle","Wave","Triangles resist bending."],
 ["A steadier tower has a...","Wide base","Narrow base","Tiny base","A wide base is steadier."],
 ["Which material is strong for bridges?","Steel","Paper","Tissue","Steel is strong."],
@@ -129,7 +129,7 @@ PEBBLE_EXTRA(5,"technologies",[
 ["What is the robot cycle?","Sense, think, act","Eat, sleep, play","Run, hide, rest","Robots sense, think, act."],
 ["What do motors do?","Make the robot move","Think for it","See for it","Motors act."],
 ["A touch sensor tells a robot...","When it hits something","The time","The weather","It senses contact."]]],
-["Redstone robots","🤖","A robot uses sensors to notice things, a program to decide, and motors to act. A light sensor can tell dark from light. A touch sensor can tell when something is hit. The cycle is sense, think, act. In Minecraft, redstone can sense and act too.","A robot vacuum senses a wall, decides to turn, and moves away.","Describe a robot that could help at home.",[
+["Redstone robots","🤖","A robot uses sensors to notice things, a program to decide, and motors to act. A light sensor can tell dark from light. A touch sensor can tell when something is hit. The cycle is sense, think, act. In your block world, redstone can sense and act too.","A robot vacuum senses a wall, decides to turn, and moves away.","Describe a robot that could help at home.",[
 ["What does a robot sensor do?","Notices something","Makes noise only","Eats","Sensors notice things."],
 ["What is the robot cycle?","Sense, think, act","Eat, sleep, play","Run, hide, rest","Robots sense, think, act."],
 ["What do motors do?","Make the robot move","Think for it","See for it","Motors act."],

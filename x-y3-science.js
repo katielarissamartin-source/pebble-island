@@ -36,7 +36,7 @@ PEBBLE_EXTRA(3,"science",[
 ["Which is NOT needed by a flower?","Glitter","Water","Light","Plants need light, water and air."],
 ["What do roots do?","Take in water","Catch light","Make petals","Roots drink."],
 ["A flower in a dark cupboard becomes...","Pale and weak","Strong","Bigger","Plants need light."]]],
-["Crop and plant needs","🌿","Plants need light, water, air and space to grow. Roots take in water. Leaves catch light. A plant in a dark cupboard grows pale and weak.","Wheat in a Minecraft farm needs light and water nearby to grow.","Plant a bean. Put it in light. Check each day.",[
+["Crop and plant needs","🌿","Plants need light, water, air and space to grow. Roots take in water. Leaves catch light. A plant in a dark cupboard grows pale and weak.","Wheat in a block farm needs light and water nearby to grow.","Plant a bean. Put it in light. Check each day.",[
 ["Which is NOT needed by a plant?","Redstone","Water","Light","Plants need light, water and air."],
 ["What do roots do?","Take in water","Catch light","Make seeds","Roots drink."],
 ["A plant in a dark cupboard becomes...","Pale and weak","Strong","Bigger","Plants need light."]]]],
@@ -50,7 +50,7 @@ PEBBLE_EXTRA(3,"science",[
 ["Our biggest heat source is the...","Sun","Moon","Wind","The Sun warms Earth."],
 ["Heat moves from...","Hot to cold","Cold to hot","Nowhere","Heat flows to the cooler thing."],
 ["A thermometer measures...","Temperature","Weight","Sound","It shows how hot or cold."]]],
-["Lava and furnace heat","🌋","Heat is a kind of energy. The Sun is our biggest heat source. Fire, stoves and rubbing hands also make heat. Heat moves from hot things to cold things. A thermometer measures temperature.","Lava is very hot. It warms the rock next to it. In Minecraft a furnace smelts ore with fire.","With an adult, feel a cold and a warm cup. Say which is hotter.",[
+["Lava and furnace heat","🌋","Heat is a kind of energy. The Sun is our biggest heat source. Fire, stoves and rubbing hands also make heat. Heat moves from hot things to cold things. A thermometer measures temperature.","Lava is very hot. It warms the rock next to it. In your block world a furnace smelts ore with fire.","With an adult, feel a cold and a warm cup. Say which is hotter.",[
 ["Our biggest heat source is the...","Sun","Moon","Wind","The Sun warms Earth."],
 ["Heat moves from...","Hot to cold","Cold to hot","Nowhere","Heat flows to the cooler thing."],
 ["A thermometer measures...","Temperature","Weight","Sound","It shows how hot or cold."]]]],
@@ -64,7 +64,7 @@ PEBBLE_EXTRA(3,"science",[
 ["Day and night happen because...","Earth spins","The Sun moves","Clouds hide it","Earth spins every 24 hours."],
 ["How long does one spin take?","24 hours","1 hour","1 week","A day is 24 hours."],
 ["When your side faces away from the Sun it is...","Night","Day","Summer","Facing away means night."]]],
-["Day, night and the game clock","☀️","Earth spins once every 24 hours. When your side faces the Sun it is day. When it faces away it is night. The Sun does not move round Earth. It only looks that way.","In Minecraft a day is short. On Earth one day is 24 hours.","Spin a ball under a torch. Watch day and night.",[
+["Day, night and the game clock","☀️","Earth spins once every 24 hours. When your side faces the Sun it is day. When it faces away it is night. The Sun does not move round Earth. It only looks that way.","In your block world a day is short. On Earth one day is 24 hours.","Spin a ball under a torch. Watch day and night.",[
 ["Day and night happen because...","Earth spins","The Sun moves","Clouds hide it","Earth spins every 24 hours."],
 ["How long does one spin take?","24 hours","1 hour","1 week","A day is 24 hours."],
 ["When your side faces away from the Sun it is...","Night","Day","Summer","Facing away means night."]]]],
@@ -106,7 +106,7 @@ PEBBLE_EXTRA(3,"science",[
 ["Soil is made of tiny bits of...","Rock and dead plants","Plastic","Metal","Soil has rock and plant bits."],
 ["Which soil feels gritty?","Sandy","Clay","Water","Sand is gritty."],
 ["Why is soil useful?","Plants grow in it","It makes noise","It floats","Soil helps plants grow."]]],
-["Dirt, sand and clay","⛏️","Soil is made of tiny bits of rock, dead plants, water and air. Worms and bugs live in soil. Different soils feel different: sandy, clay or loam. Soil helps plants grow.","In Minecraft dirt, sand and clay are different blocks. Real soils are different too.","With an adult, feel two kinds of soil. Say how they feel.",[
+["Dirt, sand and clay","⛏️","Soil is made of tiny bits of rock, dead plants, water and air. Worms and bugs live in soil. Different soils feel different: sandy, clay or loam. Soil helps plants grow.","In your block world dirt, sand and clay are different blocks. Real soils are different too.","With an adult, feel two kinds of soil. Say how they feel.",[
 ["Soil is made of tiny bits of...","Rock and dead plants","Plastic","Metal","Soil has rock and plant bits."],
 ["Which soil feels gritty?","Sandy","Clay","Water","Sand is gritty."],
 ["Why is soil useful?","Plants grow in it","It makes noise","It floats","Soil helps plants grow."]]]],

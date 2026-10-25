@@ -112,7 +112,7 @@ PEBBLE_EXTRA(2,"science",[
 ["A rain gauge measures...","Rain","Wind","Sun","It collects rain."],
 ["A thermometer measures...","How hot or cold","How loud","How fast","It shows temperature."],
 ["A rainbow needs sun and...","Rain","Snow","Wind","Sunlight in raindrops makes a rainbow."]]],
-["Block weather","⛅","Weather can be sunny, cloudy, rainy, windy or stormy. We choose clothes for the weather. A rain gauge measures rain. A thermometer measures how hot or cold it is. In Minecraft, rain and thunder are weather too.","On a stormy day, stay inside.","Draw today's weather. Write one word for it.",[
+["Block weather","⛅","Weather can be sunny, cloudy, rainy, windy or stormy. We choose clothes for the weather. A rain gauge measures rain. A thermometer measures how hot or cold it is. In your block world, rain and thunder are weather too.","On a stormy day, stay inside.","Draw today's weather. Write one word for it.",[
 ["Which clothes suit a rainy day?","A raincoat","A swimsuit","Shorts","A raincoat keeps you dry."],
 ["A rain gauge measures...","Rain","Wind","Sun","It collects rain."],
 ["A thermometer measures...","How hot or cold","How loud","How fast","It shows temperature."],
@@ -129,7 +129,7 @@ PEBBLE_EXTRA(2,"science",[
 ["Which can be poured?","A liquid","A solid","A crown","Liquids flow."],
 ["An ice castle is made of...","Solid ice","Liquid ice","Sound","Frozen water is a solid."],
 ["Water in a potion bottle takes the shape of...","The bottle","A ball","A star","A liquid takes the container's shape."]]],
-["Lava and stone","🧊","A solid keeps its own shape. A liquid takes the shape of its container. Water is a liquid. Ice is a solid. Liquids can be poured.","In Minecraft, stone is solid. Water and lava flow like liquids.","Pour water into two different containers. What happens?",[
+["Lava and stone","🧊","A solid keeps its own shape. A liquid takes the shape of its container. Water is a liquid. Ice is a solid. Liquids can be poured.","In your block world, stone is solid. Water and lava flow like liquids.","Pour water into two different containers. What happens?",[
 ["Which keeps its own shape?","A solid","A liquid","Both","A solid keeps its shape."],
 ["Which can be poured?","A liquid","A solid","A rock","Liquids flow."],
 ["A stone block is a...","Solid","Liquid","Sound","Stone keeps its shape."],

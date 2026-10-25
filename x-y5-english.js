@@ -97,7 +97,7 @@ PEBBLE_EXTRA(5,"english",[
 ["Why check a fact?","To make sure it is true","To make it longer","To hide it","Checking proves facts."]]],
 ["Fact or hot take?","⚖️","A fact can be checked and proved. An opinion is what someone thinks or feels. Words like best, worst, boring and should often show an opinion. Persuasive writing mixes facts and opinions.","'T. rex lived long ago' is a fact. 'T. rex is the best dinosaur' is an opinion.","Write 2 facts and 2 opinions about a favourite dinosaur.",[
 ["Which is a fact?","T. rex lived millions of years ago.","T. rex is the best dinosaur.","Fossils are boring.","A fact can be checked."],
-["Which is an opinion?","Minecraft is the best game.","A triangle has 3 sides.","Fish live in water.","Best is what someone thinks."],
+["Which is an opinion?","Block games are the best.","A triangle has 3 sides.","Fish live in water.","Best is what someone thinks."],
 ["Which word often signals an opinion?","best","three","Tuesday","Best is a judgement."],
 ["Why check a fact?","To make sure it is true","To make it longer","To hide it","Checking proves facts."]]]],
 

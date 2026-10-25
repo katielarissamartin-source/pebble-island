@@ -92,7 +92,7 @@ PEBBLE_EXTRA(4,"technologies",[
 ["A sensor...","Detects things","Plays music","Draws","Sensors detect."],
 ["An automatic door uses a...","Motion sensor","Speaker","Printer","It senses movement."],
 ["A night light uses a...","Light sensor","Sound sensor","Heat sensor","It senses darkness."]]],
-["Redstone sensors","🔴","A sensor detects something in the world, like light, heat, sound or movement. A device uses sensor data to act. A night light turns on when its light sensor detects darkness. An automatic door opens when its sensor detects movement.","In Minecraft a daylight sensor senses the Sun. Real devices use light sensors too.","List three sensors in your home.",[
+["Redstone sensors","🔴","A sensor detects something in the world, like light, heat, sound or movement. A device uses sensor data to act. A night light turns on when its light sensor detects darkness. An automatic door opens when its sensor detects movement.","In your block world a daylight sensor senses the Sun. Real devices use light sensors too.","List three sensors in your home.",[
 ["A sensor...","Detects things","Plays music","Draws","Sensors detect."],
 ["An automatic door uses a...","Motion sensor","Speaker","Printer","It senses movement."],
 ["A night light uses a...","Light sensor","Sound sensor","Heat sensor","It senses darkness."]]]],
@@ -162,7 +162,7 @@ PEBBLE_EXTRA(4,"technologies",[
 ["Wool comes from...","Sheep","Plants","Factories","Wool is from animals."],
 ["Cotton comes from...","A plant","Sheep","Oil","Cotton is a plant fibre."],
 ["Nylon is...","Synthetic","Natural","Food","Nylon is made in factories."]]],
-["Fibre for a builder","🧶","Natural fibres come from plants or animals, like cotton and wool. Synthetic fibres are made in factories, like nylon. Fibres are spun into thread and woven or knitted into fabric. Food comes from farms, fishing and gardens. Choosing local or seasonal food can reduce travel and waste.","In Minecraft wool comes from sheep. Real wool is spun into thread.","Find tags on your clothes. What are they made of?",[
+["Fibre for a builder","🧶","Natural fibres come from plants or animals, like cotton and wool. Synthetic fibres are made in factories, like nylon. Fibres are spun into thread and woven or knitted into fabric. Food comes from farms, fishing and gardens. Choosing local or seasonal food can reduce travel and waste.","In your block world wool comes from sheep. Real wool is spun into thread.","Find tags on your clothes. What are they made of?",[
 ["Wool comes from...","Sheep","Plants","Factories","Wool is from animals."],
 ["Cotton comes from...","A plant","Sheep","Oil","Cotton is a plant fibre."],
 ["Nylon is...","Synthetic","Natural","Food","Nylon is made in factories."]]]]

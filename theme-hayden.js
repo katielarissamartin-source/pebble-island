@@ -1,4 +1,4 @@
-/* Hayden's themed lessons: dinosaurs and Minecraft/block-building.
+/* Hayden's themed lessons: dinosaurs and block-building.
    Same curriculum codes and lesson ids as the standard lessons; only the words change.
    Short sentences, small numbers, concrete pictures. Key = "year.area.lessonId". */
 (function(){
@@ -9,7 +9,7 @@ const T={};
 T["5.science.adapt"]=L("🦖","Built to survive","Explain how living things suit their homes.",
 "An adaptation is a feature or a behaviour that helps a living thing survive. Ankylosaurus had thick armour and a tail like a club. That helped protect it from hunters. Brachiosaurus had a very long neck to reach high leaves.",
 "Today, a cactus has a waxy skin that saves water. An echidna has spines for protection. Mangrove trees have special roots for wet, low-oxygen mud.",
-"Pick a Minecraft mob or a dinosaur. Draw one feature that helps it survive. Say why.",[
+"Pick a block-world creature or a dinosaur. Draw one feature that helps it survive. Say why.",[
 Q("How did armour help Ankylosaurus?",["It protected it from hunters","It made it rain","It turned it into a bird"],0,"Armour is an adaptation for protection.","Think safe from hunters."),
 Q("Why did Brachiosaurus have a long neck?",["To reach high leaves","To swim underground","To dig tunnels"],0,"A long neck reaches food other animals cannot.","Think food high up."),
 Q("Which is a plant adaptation for dry places?",["Roots that never touch soil","Waxy skin that saves water","Holes that leak water"],1,"Waxy skin keeps water in.","Think a desert cactus."),
@@ -18,7 +18,7 @@ Q("Why do some mangroves have special roots?",["To cope with wet, low-oxygen mud
 
 T["5.science.erosion"]=L("⛏️","Canyon builders","Tell apart weathering, erosion and deposition.",
 "Weathering breaks rock into smaller bits. Erosion carries the bits away with water, wind or ice. Deposition is when the bits settle somewhere new. Over a very long time, layers of sand and mud can bury dinosaur bones.",
-"A river carries sand downstream. When the water slows, the sand settles. That is deposition. Think of a Minecraft canyon made by water over a long time.",
+"A river carries sand downstream. When the water slows, the sand settles. That is deposition. Think of a block-world canyon made by water over a long time.",
 "Look at a creek or a pile of soil after rain. Where did the soil go? Where did it settle?",[
 Q("A river carries sand downstream. What is this?",["Erosion","Sunshine","Making metal"],0,"Moving material away is erosion.","The sand is on the move."),
 Q("The river slows and the sand settles. What is this?",["Deposition","Evaporation","Magnetism"],0,"Settling in a new place is deposition.","The sand is dropped."),
@@ -48,7 +48,7 @@ Q("Which statement about water vapour is correct?",["It is a gas made of water",
 
 T["5.hass.democracy"]=L("🗳️","Your voice matters","Understand voting and working together.",
 "In a representative democracy, people vote for someone to speak and decide for them in parliament. People can also work together, like making a petition to fix a local park.",
-"Imagine a Minecraft server. Players vote on a new rule. Most votes wins. That is a way of making a shared choice.",
+"Imagine a game server. Players vote on a new rule. Most votes wins. That is a way of making a shared choice.",
 "Make a class vote on one question. Count the votes. What won?",[
 Q("What happens in a representative democracy?",["People vote for representatives","One person decides forever","Elections are banned"],0,"Voters choose people to decide for them.","Voting."),
 Q("What is a way for people to act together?",["Start a petition","Ignore everyone","Break a playground"],0,"A petition shows many people agree.","Together."),
@@ -58,7 +58,7 @@ Q("On a server, 7 players vote yes and 3 vote no. What wins?",["Yes","No","Nothi
 
 T["5.hass.weather"]=L("🌊","Caring for places","See how communities prepare for hazards.",
 "Floods, bushfires and drought can affect people and places. Communities get ready with plans, warnings and looking after the land. Listen to the official warnings.",
-"In Queensland, flood warnings help people stay away from dangerous water. In Minecraft you build a safe base. In real life you make a safety plan.",
+"In Queensland, flood warnings help people stay away from dangerous water. In your block world you build a safe base. In real life you make a safety plan.",
 "Make a family safety plan. Where would you meet? What would you pack?",[
 Q("Floodwater covers a road. What is safest?",["Stay out and follow official advice","Walk through it","Assume shallow water is safe"],0,"Floodwater can hide dangers.","Stay out."),
 Q("How can planning help in a bushfire?",["Be ready and follow warnings","Ignore fire danger","Block the exits"],0,"Preparing helps keep people safe.","Be ready."),
@@ -68,7 +68,7 @@ Q("Why do communities share warnings early?",["So people have time to get safe",
 
 T["5.hass.resources"]=L("⛏️","Needs, wants and resources","Know the kinds of resources.",
 "Natural resources come from nature, like wood and stone. Human resources are people's skills and work. Capital resources are tools and machines that help make things.",
-"In Minecraft: wood and iron ore are natural resources. Your building skill is a human resource. A pickaxe and a furnace are capital resources.",
+"In your block world: wood and iron ore are natural resources. Your building skill is a human resource. A pickaxe and a furnace are capital resources.",
 "Pick something you made. List its natural, human and capital resources.",[
 Q("Wood from a tree is a...",["Natural resource","Capital resource","Human resource"],0,"It comes from nature.","From nature."),
 Q("A builder's skill is a...",["Human resource","Capital machine","Natural forest"],0,"Skills belong to people.","People."),

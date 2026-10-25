@@ -27,7 +27,7 @@ PEBBLE_EXTRA(3,"maths",[
 ["4 gem bags hold 10 gems each. How many gems?","40","14","400","4 x 10 = 40."],
 ["2 fairies have 6 sparkles each. How many sparkles?","12","8","26","2 x 6 = 12."],
 ["5 x 3 is the same as...","3 x 5","3 + 5","5 - 3","Swap the order and the answer stays."]]],
-["Minecraft stack times","⛏️","Multiplying is adding equal groups. 3 stacks of 5 is 5 + 5 + 5 = 15. Write 3 x 5 = 15.","4 chests with 5 blocks each is 4 x 5 = 20 blocks.","Make 3 stacks of 4 blocks. Count them.",[
+["Block stack times","⛏️","Multiplying is adding equal groups. 3 stacks of 5 is 5 + 5 + 5 = 15. Write 3 x 5 = 15.","4 chests with 5 blocks each is 4 x 5 = 20 blocks.","Make 3 stacks of 4 blocks. Count them.",[
 ["3 dino nests have 5 eggs each. How many eggs?","15","8","10","3 x 5 = 15."],
 ["4 stacks of 10 blocks. How many blocks?","40","14","400","4 x 10 = 40."],
 ["2 dinos have 6 spikes each. How many spikes?","12","8","26","2 x 6 = 12."],
@@ -81,7 +81,7 @@ PEBBLE_EXTRA(3,"maths",[
 ["Dino time and block time","⏱️","The short hand shows hours. The long hand shows minutes. Count by 5s round the clock. A digital clock shows 3:45.","The clock shows long hand on 9 and short hand near 3. It is quarter to 4. It is also 3:45.","Look at a clock. Say the time to the nearest 5 minutes.",[
 ["The long hand points to 6. Minutes past?","30","6","60","6 x 5 = 30 minutes."],
 ["The dig starts at half past 4. That is...","4:30","6:30","4:15","Half past means 30 minutes after."],
-["The Minecraft game ends at quarter to 5. That is...","4:45","5:15","4:15","Quarter to is 15 minutes before."],
+["The block game ends at quarter to 5. That is...","4:45","5:15","4:15","Quarter to is 15 minutes before."],
 ["How many minutes in 1 hour?","60","100","24","There are 60 minutes in an hour."]]]],
 
 ["shapes3",
@@ -95,7 +95,7 @@ PEBBLE_EXTRA(3,"maths",[
 ["A tower roof is a triangle. How many sides?","3","4","5","Tri means three."],
 ["A pointy flag corner is smaller than a right angle. It is...","Acute","Obtuse","Right","Smaller than a right angle is acute."],
 ["A rectangle window has how many right angles?","4","2","0","A rectangle has 4 square corners."]]],
-["Block and dino shapes","🧊","An angle is where two lines meet. A right angle is a square corner. Smaller angles are acute. Bigger ones are obtuse. A square has 4 sides and 4 right angles.","Every corner of a Minecraft block face is a right angle.","Find three right angles in your room.",[
+["Block and dino shapes","🧊","An angle is where two lines meet. A right angle is a square corner. Smaller angles are acute. Bigger ones are obtuse. A square has 4 sides and 4 right angles.","Every corner of a building block face is a right angle.","Find three right angles in your room.",[
 ["A corner of a block face is a...","Right angle","Acute angle","Straight line","A right angle is a square corner."],
 ["A dino plate has a triangle shape. How many sides?","3","4","5","Tri means three."],
 ["A sharp tooth tip is smaller than a right angle. It is...","Acute","Obtuse","Right","Smaller than a right angle is acute."],
