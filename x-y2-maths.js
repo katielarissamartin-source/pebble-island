@@ -12,7 +12,7 @@ PEBBLE_EXTRA(2,"maths",[
 ["A princess counts by 5s. What comes after 20?","25","22","30","20 + 5 = 25."]]],
 ["Dino footprint counting","🦖","Count in jumps. Dino footprints in pairs: 2, 4, 6, 8. Blocks in fives: 5, 10, 15. Stacks of ten: 10, 20, 30.","A dino leaves 2 footprints each step. After 3 steps: 2, 4, 6.","Count your steps to the door by 2s.",[
 ["Dino footprints in 2s: 2, 4, 6, __","8","7","10","6 + 2 = 8."],
-["Minecraft blocks in 5s: 5, 10, __","15","12","20","10 + 5 = 15."],
+["Building blocks in 5s: 5, 10, __","15","12","20","10 + 5 = 15."],
 ["Stacks of 10 blocks: 10, 20, 30, __","40","31","50","30 + 10 = 40."],
 ["You count by 5s. What comes after 20?","25","22","30","20 + 5 = 25."]]]],
 
@@ -129,9 +129,9 @@ PEBBLE_EXTRA(2,"maths",[
 ["Which is a 3D shape?","Cube","Square","Circle","A cube is solid."],
 ["A crystal ball is a...","Sphere","Cube","Triangle","A crystal ball is round and solid."],
 ["How many corners does a square window have?","4","3","5","A square has 4 corners."]]],
-["Block shapes","🔷","Flat shapes are 2D: circle, triangle, square, rectangle. Solid shapes are 3D: sphere, cube, cylinder, cone. A triangle has 3 sides. A square has 4 equal sides.","A Minecraft block is a cube. A dinosaur egg is like a sphere. A tree trunk is like a cylinder.","Find one 3D shape at home. Name it.",[
+["Block shapes","🔷","Flat shapes are 2D: circle, triangle, square, rectangle. Solid shapes are 3D: sphere, cube, cylinder, cone. A triangle has 3 sides. A square has 4 equal sides.","A building block is a cube. A dinosaur egg is like a sphere. A tree trunk is like a cylinder.","Find one 3D shape at home. Name it.",[
 ["A triangle sign has how many sides?","3","4","5","Tri means three."],
-["A Minecraft block is a...","Cube","Square","Circle","A cube is solid with 6 square faces."],
+["A building block is a...","Cube","Square","Circle","A cube is solid with 6 square faces."],
 ["A dinosaur egg is a bit like a...","Sphere","Cube","Triangle","An egg is round and solid."],
 ["How many corners does a square have?","4","3","5","A square has 4 corners."]]]]
 ]);

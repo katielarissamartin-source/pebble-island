@@ -78,7 +78,7 @@ PEBBLE_EXTRA(4,"maths",[
 ["Fence needed round the 5 m by 3 m meadow?","16 m","15 m","8 m","5 + 3 + 5 + 3 = 16."],
 ["Area is measured in...","Square units","Metres only","Litres","Area uses squares."],
 ["A rectangle has area 24 and length 6. Its width is...","4","18","30","24 / 6 = 4."]]],
-["Build area","🏗️","Area is the space inside a shape, in square units. Area of a rectangle is length x width. Perimeter is the distance around. A 5 x 3 rectangle has area 15 square units and perimeter 16 units.","A Minecraft floor 6 blocks by 4 blocks has area 24 blocks.","Find the area and perimeter of a book cover.",[
+["Build area","🏗️","Area is the space inside a shape, in square units. Area of a rectangle is length x width. Perimeter is the distance around. A 5 x 3 rectangle has area 15 square units and perimeter 16 units.","A block-world floor 6 blocks by 4 blocks has area 24 blocks.","Find the area and perimeter of a book cover.",[
 ["Area of a 5 by 3 block floor?","15","16","8","5 x 3 = 15."],
 ["Fence blocks round it?","16","15","8","5 + 3 + 5 + 3 = 16."],
 ["Area is measured in...","Square units","Metres only","Litres","Area uses squares."],
@@ -95,7 +95,7 @@ PEBBLE_EXTRA(4,"maths",[
 ["A wand tip angle of 30 degrees is...","Acute","Obtuse","Right","Less than 90 is acute."],
 ["A straight rainbow edge is...","180 degrees","90 degrees","360 degrees","Half a turn is 180."],
 ["A roof angle of 120 degrees is...","Obtuse","Acute","Right","More than 90 is obtuse."]]],
-["Block angles","🧱","Angles are measured in degrees. A right angle is 90 degrees. A straight line is 180 degrees. Acute angles are less than 90. Obtuse angles are more than 90 and less than 180. A protractor measures angles.","Minecraft block corners are 90 degrees.","Find an acute and an obtuse angle in your room.",[
+["Block angles","🧱","Angles are measured in degrees. A right angle is 90 degrees. A straight line is 180 degrees. Acute angles are less than 90. Obtuse angles are more than 90 and less than 180. A protractor measures angles.","Building block corners are 90 degrees.","Find an acute and an obtuse angle in your room.",[
 ["A block corner is...","90 degrees","180 degrees","45 degrees","Right angle is 90."],
 ["A dino tooth tip of 30 degrees is...","Acute","Obtuse","Right","Less than 90 is acute."],
 ["A straight row of blocks is...","180 degrees","90 degrees","360 degrees","Half a turn is 180."],

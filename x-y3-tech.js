@@ -8,7 +8,7 @@ PEBBLE_EXTRA(3,"technologies",[
 ["An algorithm is...","A list of steps","A picture","A song","Algorithms are steps."],
 ["What happens if steps are in the wrong order?","The job may fail","It always works","Nothing","Order matters."],
 ["Computers follow steps...","Exactly","Loosely","Never","Computers do exactly what they are told."]]],
-["Build steps","🧱","An algorithm is a list of steps to do a job. The steps must be in the right order and be clear. Computers follow steps exactly. If a step is missing, the job may fail.","Build a Minecraft house: place floor, build walls, add roof, put in door.","Write steps for brushing your teeth.",[
+["Build steps","🧱","An algorithm is a list of steps to do a job. The steps must be in the right order and be clear. Computers follow steps exactly. If a step is missing, the job may fail.","Build a block house: place floor, build walls, add roof, put in door.","Write steps for brushing your teeth.",[
 ["An algorithm is...","A list of steps","A picture","A song","Algorithms are steps."],
 ["What happens if steps are in the wrong order?","The job may fail","It always works","Nothing","Order matters."],
 ["Computers follow steps...","Exactly","Loosely","Never","Computers do exactly what they are told."]]]],
@@ -78,7 +78,7 @@ PEBBLE_EXTRA(3,"technologies",[
 ["A pixel is...","A tiny coloured square","A kind of fruit","A sound","Pixels make pictures."],
 ["More pixels give...","More detail","Less detail","No picture","More squares show more."],
 ["Pixel art uses...","Squares","Circles only","Words","Pixel art uses squares."]]],
-["Pixel blocks","⬛","A digital picture is made of tiny squares called pixels. Each pixel has one colour. Many pixels together make a picture. More pixels mean more detail. Pixel art uses big, simple squares.","Minecraft looks blocky because it uses big square blocks, like big pixels.","Colour squares on grid paper to make a creeper.",[
+["Pixel blocks","⬛","A digital picture is made of tiny squares called pixels. Each pixel has one colour. Many pixels together make a picture. More pixels mean more detail. Pixel art uses big, simple squares.","Block games look blocky because they use big square blocks, like big pixels.","Colour squares on grid paper to make a creeper.",[
 ["A pixel is...","A tiny coloured square","A kind of fruit","A sound","Pixels make pictures."],
 ["More pixels give...","More detail","Less detail","No picture","More squares show more."],
 ["Pixel art uses...","Squares","Circles only","Words","Pixel art uses squares."]]]],
@@ -106,7 +106,7 @@ PEBBLE_EXTRA(3,"technologies",[
 ["A network joins...","Devices that share information","Only paper","Only pencils","Networks connect devices."],
 ["Wi-Fi joins devices...","Without wires","With a rope","With glue","Wi-Fi is wireless."],
 ["The internet is...","A huge network of networks","One computer","A single cable","The internet joins many networks."]]],
-["Server networks","📶","A network joins devices so they can share information. Wi-Fi joins devices without wires. The internet is a huge network of networks. A message is sent in small pieces and put back together at the other end.","Minecraft players on a server are connected by a network.","Count the devices at home that use Wi-Fi.",[
+["Server networks","📶","A network joins devices so they can share information. Wi-Fi joins devices without wires. The internet is a huge network of networks. A message is sent in small pieces and put back together at the other end.","Block game players on a server are connected by a network.","Count the devices at home that use Wi-Fi.",[
 ["A network joins...","Devices that share information","Only paper","Only pencils","Networks connect devices."],
 ["Wi-Fi joins devices...","Without wires","With a rope","With glue","Wi-Fi is wireless."],
 ["The internet is...","A huge network of networks","One computer","A single cable","The internet joins many networks."]]]],
@@ -148,7 +148,7 @@ PEBBLE_EXTRA(3,"technologies",[
 ["A raincoat needs a material that is...","Waterproof","Soft only","Heavy","Rain needs waterproof."],
 ["A castle wall needs materials that are...","Strong","Weak","Paper only","Walls need strength."],
 ["To compare materials you should...","Test them","Guess","Skip it","Tests compare."]]],
-["Materials in the game","🧵","Materials have properties like strong, soft, waterproof or bendy. Choose the material that suits the job. A raincoat needs waterproof fabric. A bridge needs strong materials. Test materials to compare them.","In Minecraft, obsidian is very strong. Wood is easy to cut.","Test which paper towel soaks up the most water.",[
+["Materials in the game","🧵","Materials have properties like strong, soft, waterproof or bendy. Choose the material that suits the job. A raincoat needs waterproof fabric. A bridge needs strong materials. Test materials to compare them.","In your block world, obsidian is very strong. Wood is easy to cut.","Test which paper towel soaks up the most water.",[
 ["A raincoat needs a material that is...","Waterproof","Soft only","Heavy","Rain needs waterproof."],
 ["A bridge needs materials that are...","Strong","Weak","Paper only","Bridges need strength."],
 ["To compare materials you should...","Test them","Guess","Skip it","Tests compare."]]]],
@@ -162,7 +162,7 @@ PEBBLE_EXTRA(3,"technologies",[
 ["Bread starts as...","Wheat","Milk","Rock","Bread comes from wheat."],
 ["Food travels from farm to shop by...","Truck or ship","Magic","Wind","Food is transported."],
 ["We can reduce food waste by...","Planning meals","Throwing it away","Buying too much","Planning helps."]]],
-["Farm to crafting table","🥕","Food is grown or raised on farms and gardens. It is picked, packed, moved by truck or ship and sold in shops. Wheat is milled into flour and baked into bread. Food waste can be reduced by planning meals.","In Minecraft you plant wheat, harvest it and craft bread. Real farms do the same with machines.","Draw a food's journey from farm to plate.",[
+["Farm to crafting table","🥕","Food is grown or raised on farms and gardens. It is picked, packed, moved by truck or ship and sold in shops. Wheat is milled into flour and baked into bread. Food waste can be reduced by planning meals.","In your block world you plant wheat, harvest it and craft bread. Real farms do the same with machines.","Draw a food's journey from farm to plate.",[
 ["Bread starts as...","Wheat","Milk","Rock","Bread comes from wheat."],
 ["Food travels from farm to shop by...","Truck or ship","Magic","Wind","Food is transported."],
 ["We can reduce food waste by...","Planning meals","Throwing it away","Buying too much","Planning helps."]]]]

@@ -10,7 +10,7 @@ PEBBLE_EXTRA(5,"maths",[
 ["Which hoard is bigger: 450 200 or 405 200 gems?","450 200","405 200","They are equal","5 ten thousands beat 0 ten thousands."],
 ["Write two hundred and five thousand in digits.","205 000","250 000","2 005 000","205 thousands is 205 000."],
 ["Round 4 762 gems to the nearest hundred.","4 800","4 700","5 000","62 is more than 50, so round up."]]],
-["Block counting","🔢","Place value goes up in tens: ones, tens, hundreds, thousands, ten thousands, hundred thousands. In 352 140, the 5 is in the ten thousands place. Its value is 50 000. A big Minecraft build can use 352 140 blocks. Round by looking at the digit to the right.","A giant castle with 4 762 blocks is about 4 800 blocks, rounded to the nearest hundred.","Write a number with 6 digits. Say the value of each digit.",[
+["Block counting","🔢","Place value goes up in tens: ones, tens, hundreds, thousands, ten thousands, hundred thousands. In 352 140, the 5 is in the ten thousands place. Its value is 50 000. A big block build can use 352 140 blocks. Round by looking at the digit to the right.","A giant castle with 4 762 blocks is about 4 800 blocks, rounded to the nearest hundred.","Write a number with 6 digits. Say the value of each digit.",[
 ["A build has 352 140 blocks. What is the value of the 5?","50 000","5 000","500 000","The 5 is in the ten thousands place."],
 ["Which build is bigger: 450 200 or 405 200 blocks?","450 200","405 200","They are equal","5 ten thousands beat 0 ten thousands."],
 ["Write two hundred and five thousand in digits.","205 000","250 000","2 005 000","205 thousands is 205 000."],
@@ -78,7 +78,7 @@ PEBBLE_EXTRA(5,"maths",[
 ["The same garden. What is its area?","24 square m","20 square m","10 square m","6 × 4 = 24."],
 ["A square stable has sides of 5 m. What is its area?","25 square m","20 square m","10 square m","5 × 5 = 25."],
 ["A rectangle is 10 by 3. What is its area?","30","26","13","10 × 3 = 30."]]],
-["Build area and perimeter","📏","Perimeter is the distance around a shape. Add all the sides. Area is the space inside. For a rectangle, area = length × width. A 6 by 4 rectangle has perimeter 20 and area 24.","A Minecraft base is 6 blocks by 4. A wall around it is 20 blocks. The floor is 24 blocks.","Measure a book. Find its perimeter.",[
+["Build area and perimeter","📏","Perimeter is the distance around a shape. Add all the sides. Area is the space inside. For a rectangle, area = length × width. A 6 by 4 rectangle has perimeter 20 and area 24.","A block-world base is 6 blocks by 4. A wall around it is 20 blocks. The floor is 24 blocks.","Measure a book. Find its perimeter.",[
 ["A base is 6 blocks by 4. What is the wall length (perimeter)?","20 blocks","24 blocks","10 blocks","6 + 4 + 6 + 4 = 20."],
 ["The same base. How many floor blocks (area)?","24","20","10","6 × 4 = 24."],
 ["A square base has sides of 5. What is its area?","25","20","10","5 × 5 = 25."],
@@ -95,7 +95,7 @@ PEBBLE_EXTRA(5,"maths",[
 ["A fairy wing opens 50°. That is...","Acute","Obtuse","Right","Less than 90° is acute."],
 ["A door opens 120°. That is...","Obtuse","Acute","Right","Between 90° and 180° is obtuse."],
 ["A straight line is how many degrees?","180","90","360","A straight angle is 180°."]]],
-["Block angles","📐","An angle is a turn. A right angle is 90°. An acute angle is less than 90°. An obtuse angle is more than 90° and less than 180°. A straight line is 180°. Angles in a triangle add to 180°.","A Minecraft wall corner is a right angle. 90°.","Find 3 right angles at home.",[
+["Block angles","📐","An angle is a turn. A right angle is 90°. An acute angle is less than 90°. An obtuse angle is more than 90° and less than 180°. A straight line is 180°. Angles in a triangle add to 180°.","A block-world wall corner is a right angle. 90°.","Find 3 right angles at home.",[
 ["A wall corner is a right angle. How many degrees?","90","180","45","A right angle is 90°."],
 ["A dino jaw opens 50°. That is...","Acute","Obtuse","Right","Less than 90° is acute."],
 ["A door opens 120°. That is...","Obtuse","Acute","Right","Between 90° and 180° is obtuse."],
@@ -112,7 +112,7 @@ PEBBLE_EXTRA(5,"maths",[
 ["The unicorn parade is at 18:30. That is...","6:30 pm","8:30 am","6:30 am","18 − 12 = 6, so 6:30 pm."],
 ["A show goes from 9:15 to 10:00. How long?","45 minutes","15 minutes","1 hour","From 9:15 to 10:00 is 45 minutes."],
 ["00:00 is...","Midnight","Noon","6 pm","00:00 is the start of the day."]]],
-["Game clock 24","⏰","The 24-hour clock uses 00:00 to 23:59. After 12:00 noon, add 12. 3 pm is 15:00. 6:30 pm is 18:30. 00:00 is midnight. To find a duration, count the time between two clocks.","Minecraft night starts after sunset. A real clock at 18:30 is 6:30 pm.","Write the time you wake up in 24-hour time.",[
+["Game clock 24","⏰","The 24-hour clock uses 00:00 to 23:59. After 12:00 noon, add 12. 3 pm is 15:00. 6:30 pm is 18:30. 00:00 is midnight. To find a duration, count the time between two clocks.","Night in a block game starts after sunset. A real clock at 18:30 is 6:30 pm.","Write the time you wake up in 24-hour time.",[
 ["A museum opens a dino show at 3 pm. In 24-hour time that is...","15:00","03:00","13:00","3 + 12 = 15."],
 ["18:30 is...","6:30 pm","8:30 am","6:30 am","18 − 12 = 6, so 6:30 pm."],
 ["A game session goes from 9:15 to 10:00. How long?","45 minutes","15 minutes","1 hour","From 9:15 to 10:00 is 45 minutes."],
@@ -129,7 +129,7 @@ PEBBLE_EXTRA(5,"maths",[
 ["Which number comes first in coordinates?","Across (x)","Up (y)","The biggest","Across, then up."],
 ["From (1, 1) to (1, 4), how many steps up?","3","4","1","4 − 1 = 3."],
 ["The point (0, 5) is on the...","Up line (y axis)","Across line (x axis)","Nowhere","0 across means it is on the y axis."]]],
-["Map grid","📍","A grid uses two numbers to find a place. The first number goes across (x). The second goes up (y). The point (3, 2) is 3 across and 2 up. The point (0, 0) is the start. Minecraft maps use coordinates too.","A dig site is at (3, 2). Go 3 across and 2 up.","Draw a grid. Mark (2, 3) with an X.",[
+["Map grid","📍","A grid uses two numbers to find a place. The first number goes across (x). The second goes up (y). The point (3, 2) is 3 across and 2 up. The point (0, 0) is the start. Block game maps use coordinates too.","A dig site is at (3, 2). Go 3 across and 2 up.","Draw a grid. Mark (2, 3) with an X.",[
 ["The dig site is at (3, 2). Where is it?","3 across, 2 up","2 across, 3 up","3 up, 3 across","The first number is across."],
 ["Which number comes first in coordinates?","Across (x)","Up (y)","The biggest","Across, then up."],
 ["From (1, 1) to (1, 4), how many steps up?","3","4","1","4 − 1 = 3."],

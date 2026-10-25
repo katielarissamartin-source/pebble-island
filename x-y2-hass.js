@@ -61,7 +61,7 @@ PEBBLE_EXTRA(2,"hass",[
 ["Which is a built feature?","A bridge","A hill","A beach","People build bridges."],
 ["A mountain is...","Natural","Built","Both","Mountains form by nature."],
 ["A castle is...","Built","Natural","Both","People build castles."]]],
-["Natural and built in the world","🏞️","Natural features are made by nature, like rivers, hills and beaches. Built features are made by people, like roads, bridges and houses. Many places have both. In Minecraft, you place built features on a natural world.","A cave is natural. A house you build is built.","Walk outside. List 3 natural and 3 built things.",[
+["Natural and built in the world","🏞️","Natural features are made by nature, like rivers, hills and beaches. Built features are made by people, like roads, bridges and houses. Many places have both. In your block world, you place built features on a natural world.","A cave is natural. A house you build is built.","Walk outside. List 3 natural and 3 built things.",[
 ["Which is a natural feature?","A river","A road","A house","Rivers form by themselves."],
 ["Which is a built feature?","A bridge","A hill","A beach","People build bridges."],
 ["A cave is...","Natural","Built","Both","Caves form by nature."],
@@ -112,7 +112,7 @@ PEBBLE_EXTRA(2,"hass",[
 ["How can you save water?","Turn off the tap when not using it","Leave it running","Pour it on the path","Taps waste water when left on."],
 ["What does recycling help to do?","Save materials","Make more rubbish","Make noise","Recycling reuses materials."],
 ["Planting a tree helps...","Animals and air","Nothing","Only cars","Trees give homes and clean air."]]],
-["Caring for the world","♻️","We can care for places by putting rubbish in a bin, saving water and planting trees. Recycling helps save materials. Everyone can help. In Minecraft you replant trees. Real trees need replanting too.","Turn off the tap while you brush your teeth to save water.","Do one caring act today. Tell someone.",[
+["Caring for the world","♻️","We can care for places by putting rubbish in a bin, saving water and planting trees. Recycling helps save materials. Everyone can help. In your block world you replant trees. Real trees need replanting too.","Turn off the tap while you brush your teeth to save water.","Do one caring act today. Tell someone.",[
 ["Where does rubbish go?","In a bin","On the ground","In a river","Bins keep places clean."],
 ["How can you save water?","Turn off the tap when not using it","Leave it running","Pour it on the path","Taps waste water when left on."],
 ["What does recycling help to do?","Save materials","Make more rubbish","Make noise","Recycling reuses materials."],

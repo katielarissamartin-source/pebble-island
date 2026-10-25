@@ -78,7 +78,7 @@ PEBBLE_EXTRA(2,"technologies",[
 ["A castle wall should be made of...","Strong stone","Paper","Wool","It needs to hold weight."],
 ["Which is soft?","A pillow","A brick","A spoon","A pillow is soft."],
 ["Why choose different materials?","They suit different jobs","They are all the same","To be silly","Features matter."]]],
-["Build materials","🧱","Materials have different features. Some are strong, soft, waterproof or flexible. We pick materials that suit the job. In Minecraft, stone is stronger than wood. Real houses need strong materials.","Stone is strong. Wool is soft.","Find one hard and one soft thing. Say what each is good for.",[
+["Build materials","🧱","Materials have different features. Some are strong, soft, waterproof or flexible. We pick materials that suit the job. In your block world, stone is stronger than wood. Real houses need strong materials.","Stone is strong. Wool is soft.","Find one hard and one soft thing. Say what each is good for.",[
 ["Which material is waterproof?","Plastic","Paper","Tissue","Plastic keeps water out."],
 ["A bridge should be made of...","Strong materials","Paper","Wool","It needs to hold weight."],
 ["Which is soft?","Wool","A brick","A spoon","Wool is soft."],
@@ -112,7 +112,7 @@ PEBBLE_EXTRA(2,"technologies",[
 ["Which is a healthy drink?","Water","Soft drink","Lolly water","Water is best."],
 ["Which is a fruit?","Apple","Bread","Chicken","An apple is a fruit."],
 ["Why eat healthy food?","It gives our bodies energy","It makes us tired","It has no use","Food gives energy."]]],
-["Survival food","🥗","Healthy food gives our bodies energy. We eat vegetables, fruit, grains, dairy and protein. Water helps us stay healthy. In Minecraft, you eat to refill your hunger bar. Real bodies need food for energy too.","A plate with vegetables, rice and chicken is a healthy meal.","Plan a healthy lunch with 3 food groups.",[
+["Survival food","🥗","Healthy food gives our bodies energy. We eat vegetables, fruit, grains, dairy and protein. Water helps us stay healthy. In your block world, you eat to refill your hunger bar. Real bodies need food for energy too.","A plate with vegetables, rice and chicken is a healthy meal.","Plan a healthy lunch with 3 food groups.",[
 ["Which is a vegetable?","Carrot","Cake","Chip packet","A carrot is a vegetable."],
 ["Which is a healthy drink?","Water","Soft drink","Lolly water","Water is best."],
 ["Which is a fruit?","Apple","Bread","Chicken","An apple is a fruit."],
@@ -129,7 +129,7 @@ PEBBLE_EXTRA(2,"technologies",[
 ["An automatic door opens because of...","A sensor","Magic","A song","A sensor notices you."],
 ["A night light turns on in the dark. It senses...","Light","Sound only","Colour only","It senses how dark it is."],
 ["Why are sensors useful?","They help machines work by themselves","They make noise","They break things","Machines can react."]]],
-["Redstone sensors","🚪","A sensor can notice something, like movement, light or heat. Sensors help machines work by themselves. In Minecraft, a pressure plate is like a sensor. It notices when you step on it.","An automatic door opens when you walk close.","Find 2 machines that use sensors.",[
+["Redstone sensors","🚪","A sensor can notice something, like movement, light or heat. Sensors help machines work by themselves. In your block world, a pressure plate is like a sensor. It notices when you step on it.","An automatic door opens when you walk close.","Find 2 machines that use sensors.",[
 ["What does a sensor do?","Notices something","Eats food","Tells jokes","Sensors detect things."],
 ["An automatic door opens because of...","A sensor","Magic","A song","A sensor notices you."],
 ["A night light turns on in the dark. It senses...","Light","Sound only","Colour only","It senses how dark it is."],
