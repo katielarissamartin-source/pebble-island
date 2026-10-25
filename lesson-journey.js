@@ -153,6 +153,7 @@ function mount(c,html,stage){
  try{window.scrollTo(0,0)}catch(e){}
 }
 const $id=id=>document.getElementById(id);
+const HOOKS={};
 
 function learn(c,i,replay){
  const card=c.cards[i],last=i===c.cards.length-1;
@@ -164,8 +165,13 @@ function learn(c,i,replay){
   '<div class="pj-actions"><button type="button" class="pj-btn" id="pj-hear">🔊 Read to me</button>'+(i>0?'<button type="button" class="pj-btn" id="pj-prev">← Back</button>':'')+'<button type="button" class="pj-btn primary" id="pj-next">'+next+'</button></div></section>',LEARN);
  $id("pj-hear").onclick=()=>say(card.text);
  if(i>0)$id("pj-prev").onclick=()=>learn(c,i-1,replay);
- $id("pj-next").onclick=()=>{if(!last)learn(c,i+1,replay);else if(replay)turn(c);else explore(c,0)};
+ $id("pj-next").onclick=()=>{if(!last)return learn(c,i+1,replay);const go=replay?()=>turn(c):()=>explore(c,0);if(!showMe(c,go,replay))go()};
  if(readOn())setTimeout(()=>say(card.text),200);
+}
+
+function showMe(c,go,replay){
+ const h=HOOKS.showMe;if(typeof h!=="function")return false;
+ try{return h({key:c.o.key,lesson:c.L,kid:typeof kid!=="undefined"?kid:null,mount:html=>{mount(c,html,LEARN);return app()},back:()=>learn(c,c.cards.length-1,replay),done:go,say,sfx,readOn})===true}catch(e){return false}
 }
 
 function explore(c,shown){
@@ -307,7 +313,7 @@ function run(o){
 }
 
 window.PEBBLE_JOURNEY_WORK={workSteps,findSum};
-window.PEBBLE_JOURNEY={run,version:2,stages:STAGES.map(s=>s[1])};
+window.PEBBLE_JOURNEY={run,version:2,stages:STAGES.map(s=>s[1]),hooks:HOOKS};
 
 if(typeof parent==="function"){
  const _parent=parent;
