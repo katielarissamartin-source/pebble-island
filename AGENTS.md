@@ -25,7 +25,7 @@ Real children use this app every day on tablets. Do not break the live site.
 
 ## File ownership
 Prefer a new file over editing a shared one.
-- Claude: `hub-plus.js` (Audrey's Hub), `lesson-journey.js`, `themed-engine.js`, `kid-mascots.js`, `theme-ivy.js`, `theme-hayden.js`, `physics-lab.js`.
+- Claude: `hub-plus.js` (Audrey's Hub), `lesson-journey.js`, `themed-engine.js`, `kid-mascots.js`, `theme-ivy.js`, `theme-hayden.js`, `physics-lab.js`, `island-working.js`.
 - ChatGPT: `island-subjects.js`, `parent-clarity.js`, `curriculum-audit.js`, `year6-curriculum.js`, and files it adds.
 - Shared, one tool at a time: `index.html`, `sw.js`, `care.js`, `part-a.js`, `part-b.js`, `curriculum-pack.js`, `learning-studio.js`, `lessons-extra.js`, the `x-y*-*.js` lesson files.
 
