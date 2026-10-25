@@ -80,6 +80,35 @@ const STAGES=["Egg","Baby","Little","Big","Super","Legend"];
 const stage=l=>l<2?0:l<4?1:l<6?2:l<9?3:l<13?4:5;
 const petIco=k=>uni(k)?"🦄":dino(k)?"🐢":"🐣";
 const petName=k=>uni(k)?"Sparkle":dino(k)?"Shelly":"Pebble";
+const PW=[0,120,160,200,235,265];
+function petArt(k,sg){
+ const w=PW[sg],sp=sg>=4,lg=sg===5,g='<defs><radialGradient id="rpgl"><stop offset="0" stop-color="#fff7b0"/><stop offset="1" stop-color="#fff7b0" stop-opacity="0"/></radialGradient></defs>'+(lg?'<ellipse cx="100" cy="90" rx="98" ry="80" fill="url(#rpgl)"/>':'')+(sg>=3?'<text x="18" y="40" font-size="16">✨</text><text x="168" y="30" font-size="14">✨</text>':'');
+ let b;
+ if(uni(k)){const mane=sg>=3?'#b06cf0':'#f39ad2',tail=sg>=3?'<path d="M48 92 q-30 6 -30 40 q14 -12 22 -10 q-8 14 0 26 q10 -26 18 -40" fill="#7ac8f5"/>':'';
+ b=(sp?'<path d="M95 78 q-10 -50 -55 -46 q20 18 18 40 z" fill="#fff" stroke="#e0b8f0" stroke-width="3"/><path d="M95 78 q-4 -36 -34 -38" fill="none" stroke="#e0b8f0" stroke-width="2"/>':'')
+ +'<path d="M50 90 q-28 4 -28 34 q12 -8 20 -6 q-6 12 2 22 q8 -24 16 -36" fill="'+mane+'"/>'+tail
+ +'<rect x="62" y="110" width="12" height="44" rx="6" fill="#fff" stroke="#e7c9e6" stroke-width="3"/><rect x="82" y="112" width="12" height="42" rx="6" fill="#f7eef7" stroke="#e7c9e6" stroke-width="3"/><rect x="112" y="112" width="12" height="42" rx="6" fill="#f7eef7" stroke="#e7c9e6" stroke-width="3"/><rect x="130" y="110" width="12" height="44" rx="6" fill="#fff" stroke="#e7c9e6" stroke-width="3"/>'
+ +'<rect x="60" y="148" width="16" height="9" rx="3" fill="#c79be8"/><rect x="128" y="148" width="16" height="9" rx="3" fill="#c79be8"/><rect x="80" y="148" width="16" height="9" rx="3" fill="#c79be8"/><rect x="110" y="148" width="16" height="9" rx="3" fill="#c79be8"/>'
+ +'<ellipse cx="100" cy="104" rx="50" ry="28" fill="#fff" stroke="#e7c9e6" stroke-width="3"/>'
+ +'<path d="M128 96 q8 -30 22 -44 l20 14 q-12 16 -18 42 z" fill="#fff" stroke="#e7c9e6" stroke-width="3"/>'
+ +'<ellipse cx="164" cy="58" rx="22" ry="16" fill="#fff" stroke="#e7c9e6" stroke-width="3"/><ellipse cx="181" cy="64" rx="7" ry="6" fill="#ffd6ea"/>'
+ +'<path d="M156 44 l6 -32 l8 30 z" fill="#ffd23f" stroke="#e0a800" stroke-width="2"/><path d="M158 34 l9 -3 M159 25 l7 -2" stroke="#e0a800" stroke-width="2"/>'
+ +'<path d="M150 46 l-4 -12 l12 8 z" fill="#ffd6ea"/>'
+ +'<path d="M152 44 q-18 6 -20 26 q-2 14 -10 26 q14 -4 20 -16 q-6 18 -2 30 q10 -18 14 -40 q4 -14 8 -24" fill="'+mane+'"/>'
+ +'<circle cx="168" cy="54" r="4" fill="#2b2140"/><circle cx="169.5" cy="52.5" r="1.4" fill="#fff"/><path d="M172 66 q4 3 8 1" stroke="#c0628f" stroke-width="2" fill="none"/>'
+ +(lg?'<path d="M60 86 l4 -8 l4 8 l-4 8 z M100 80 l3 -6 l3 6 l-3 6 z" fill="#fff36b"/>':'');}
+ else{const sh=sg>=4?'#3d9a5b':'#56b06d',pt=sg>=3?'#2f7a47':'#3f8f57';
+ b='<path d="M44 120 q-16 4 -20 12 q12 2 22 -4 z" fill="#8fd18c" stroke="#4e8f4f" stroke-width="3"/>'
+ +'<rect x="56" y="118" width="22" height="34" rx="11" fill="#8fd18c" stroke="#4e8f4f" stroke-width="3"/><rect x="126" y="118" width="22" height="34" rx="11" fill="#8fd18c" stroke="#4e8f4f" stroke-width="3"/>'
+ +'<path d="M150 112 q22 -6 30 -26 q10 -4 16 6 q2 18 -14 26 q-14 8 -28 6 z" fill="#8fd18c" stroke="#4e8f4f" stroke-width="3"/>'
+ +'<circle cx="184" cy="92" r="4.5" fill="#1d2b22"/><circle cx="185.5" cy="90.5" r="1.5" fill="#fff"/><path d="M186 104 q5 2 9 -2" stroke="#2f5f30" stroke-width="2" fill="none"/>'
+ +'<path d="M36 124 q4 -74 66 -76 q62 2 66 76 z" fill="'+sh+'" stroke="#2c6a3e" stroke-width="4"/>'
+ +'<path d="M102 56 l18 18 l-6 26 h-24 l-6 -26 z" fill="'+pt+'"/><path d="M60 84 l20 -6 l6 22 l-20 14 l-14 -8 z M144 84 l-20 -6 l-6 22 l20 14 l14 -8 z" fill="'+pt+'"/>'
+ +'<path d="M32 124 h140 q4 6 -2 10 h-136 q-6 -4 -2 -10 z" fill="#d9c27a" stroke="#a78f45" stroke-width="3"/>'
+ +(sp?'<circle cx="102" cy="78" r="6" fill="#7ee0ff" stroke="#fff" stroke-width="2"/><circle cx="68" cy="96" r="4" fill="#ffd23f"/><circle cx="136" cy="96" r="4" fill="#ffd23f"/>':'')
+ +(lg?'<path d="M168 82 l4 -12 l5 8 l5 -10 l4 10 l5 -8 l2 14 z" fill="#ffd23f" stroke="#e0a800" stroke-width="2"/>':'');}
+ return '<svg viewBox="0 0 200 160" width="'+w+'" height="'+Math.round(w*.8)+'" style="display:block;overflow:visible">'+g+b+'</svg>';
+}
 function decay(r){const p=r.pet,h=(Date.now()-(p.at||Date.now()))/36e5;if(h>3){const d=Math.floor(h/3);p.food=Math.max(2,p.food-d);p.joy=Math.max(2,p.joy-d);p.at=Date.now()}}
 
 const css=document.createElement("style");
@@ -105,10 +134,10 @@ css.textContent=`
 .rp-stk small{position:absolute;bottom:3px;left:6px;font:800 .75rem var(--display);color:#33515a}
 @keyframes rpglow{0%,100%{box-shadow:0 0 0 rgba(242,181,68,.0)}50%{box-shadow:0 0 18px rgba(242,181,68,.8)}}
 .rp-wig{animation:rpwig .6s}@keyframes rpwig{0%,100%{transform:rotate(0)}25%{transform:rotate(-12deg) scale(1.15)}75%{transform:rotate(12deg) scale(1.15)}}
-.rp-pet{position:relative;height:240px;border-radius:22px;background:linear-gradient(#cfeefa,#f2fbff 70%,#bfe3a0 70%);display:flex;align-items:flex-end;justify-content:center;overflow:hidden}
+.rp-pet{position:relative;height:300px;border-radius:22px;background:linear-gradient(#cfeefa,#f2fbff 70%,#bfe3a0 70%);display:flex;align-items:flex-end;justify-content:center;overflow:hidden}
 .rp-pet.u{background:linear-gradient(#f9dcf0,#fff3fb 70%,#d9c8f5 70%)}
 .rp-pb{position:relative;margin-bottom:22px;cursor:pointer;line-height:1;transition:transform .3s}
-.rp-pb .w{position:absolute;left:50%;top:-.25em;transform:translateX(-50%);font-size:.42em}
+.rp-pb .w{position:absolute;left:50%;top:-.25em;font-size:2.4rem!important;transform:translateX(-50%);font-size:.42em}
 .rp-pb.jump{animation:rpjump .7s}.rp-pb.spin{animation:rpspin .8s}.rp-pb.dance{animation:rpdance 1s}
 @keyframes rpjump{0%,100%{transform:translateY(0)}40%{transform:translateY(-70px)}}
 @keyframes rpspin{to{transform:rotate(360deg)}}
@@ -154,7 +183,7 @@ function albumPage(ai){
 function pet(){
  const k=prep();if(k===null)return;const r=st(k);decay(r);store();
  const sg=stage(r.lvl),sz=[3.2,3.8,4.6,5.6,6.4,7.2][sg],side_=uni(k)?0:dino(k)?1:2;
- const ico=sg===0?"🥚":petIco(k),nm=petName(k);
+ const ico=sg===0?"🥚":(uni(k)||dino(k))?petArt(k,sg):petIco(k),nm=petName(k);
  const nextAt=[2,4,6,9,13][sg];
  const wears=WEARS[side_].filter(w=>w[1]<=r.lvl);
  const m=(l,v,c)=>'<div class="rp-m">'+l+'<i><b style="width:'+v*10+'%;background:'+c+'"></b></i></div>';
