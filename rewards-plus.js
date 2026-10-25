@@ -72,7 +72,7 @@ function album(k,n,why,quiet){
  return got;
 }
 
-try{const _aw=awardSticker;awardSticker=function(){const out=_aw.apply(this,arguments);try{const k=who();if(k!==null){const r=st(k);if(Math.random()<.5||r.lvl>=3)album(k,1,null,true)}}catch(e){}return out}}catch(e){}
+try{const _aw=awardSticker;awardSticker=function(){const out=_aw.apply(this,arguments);try{const k=who();if(k!==null&&!(window.PEBBLE_FAIR&&PEBBLE_FAIR.quiet)){const r=st(k);if(Math.random()<.5||r.lvl>=3)album(k,1,null,true)}}catch(e){}return out}}catch(e){}
 
 const FOODS={0:[["🍓","Strawberry",3],["🧁","Cupcake",5],["🌈","Rainbow cake",9]],1:[["🥬","Leaves",3],["🍉","Melon",5],["🐟","Fish",9]],2:[["🍎","Apple",3],["🍪","Biscuit",5],["🥕","Carrot",4]]};
 const WEARS={0:[["🎀",1],["🌸",2],["👑",4],["⭐",6],["🦋",8],["💎",10]],1:[["🧢",1],["🌿",2],["⛑️",4],["🕶️",6],["🎒",8],["👑",10]],2:[["🎀",1],["🧢",2],["👑",5]]};
