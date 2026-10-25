@@ -191,6 +191,12 @@ function programDrafts(k){const D={},name=nm(k),r=RS(k);
     D["r_"+a]=app?"Pebble Island app (tablet); [books, materials, websites].":a==="HPE"?"Pebble Island Feelings Hut (wellbeing only); [sport, outdoor play].":"[Resources.]";
     D["m_"+a]=app?"Pebble Island hub records (first-try accuracy, lessons completed), dated work samples, parent observation.":"[How you will monitor progress.]"});return D}
 const fv=(k,key,D)=>{const f=RS(k).f;return f[key]!==undefined?f[key]:(D[key]||"")};
+const SS_CODE={Mathematics:"maths",English:"english",Science:"science",HASS:"hass",Technologies:"technologies"};
+function ssYear(k,a){const r=RS(k);r.ssy=r.ssy||{};if(r.ssy[a]!==undefined&&r.ssy[a]!=="")return+r.ssy[a];const y=a==="Mathematics"||a==="English"?H.pathYear(k)+1:H.labYear(k)+1;return Math.max(0,Math.min(6,y))}
+function scope(k,a){const code=SS_CODE[a];if(!code)return null;const y=ssYear(k,a);let rows=[];try{rows=H.lessons(k).filter(r=>r.y===y&&r.area===code)}catch(e){}
+  const n=rows.length,terms=[0,1,2,3].map(t=>rows.slice(Math.floor(t*n/4),Math.floor((t+1)*n/4)).map(r=>({title:r.les.title,codes:codes(r.les.code),st:r.done?"done":r.touched?"started":""})));
+  return{y,n,terms,done:rows.filter(r=>r.done).length}}
+const ssItem=l=>l.title+(l.codes.length?" ("+l.codes.join(", ")+")":"")+(l.st==="done"?" ✓":l.st==="started"?" (started)":"");
 
 function model(k,imgs){
   const r=RS(k),P=reportPeriod(k),st=stats(k,P.from,P.to),D=drafts(k,st),PD=programDrafts(k),name=r.legal||nm(k);
@@ -225,6 +231,11 @@ function model(k,imgs){
   out.push({t:"h2",x:"Summary of the educational program for next year"});
   [["goals","Goals"],["learner","Overview of the learner"],["env","Home learning environment"],["social","Social opportunities"]].forEach(([id,h])=>{out.push({t:"h3",x:h});p(fv(k,"p_"+id,{["p_"+id]:PD[id]}))});
   AC.forEach(a=>{out.push({t:"h3",x:AC_LONG[a]||a});out.push({t:"tbl",noHead:true,head:["",""],rows:[["Teaching (topics, strategies)",fv(k,"p_t_"+a,{["p_t_"+a]:PD["t_"+a]})],["Learning (activities, skills)",fv(k,"p_l_"+a,{["p_l_"+a]:PD["l_"+a]})],["Resources",fv(k,"p_r_"+a,{["p_r_"+a]:PD["r_"+a]})],["Monitoring and progress",fv(k,"p_m_"+a,{["p_m_"+a]:PD["m_"+a]})]]})});
+  out.push({t:"h2",x:"Scope and sequence"});
+  p("Topics planned for each term. App areas list the Pebble Island lessons for the chosen year, in teaching order. ✓ = already completed in the app. Queensland school terms are about 10 weeks each.",{i:1});
+  AC.forEach(a=>{const sc=scope(k,a),note=fv(k,"ss_"+a,{});out.push({t:"h3",x:(AC_LONG[a]||a)+(sc?" ("+yrLabel(sc.y)+")":"")});
+    if(sc&&sc.n)out.push({t:"tbl",head:["Term","Topics"],rows:sc.terms.map((T,i)=>["Term "+(i+1),T.map(ssItem).join("; ")||"—"])});
+    p(note||(sc&&sc.n?"":"[Parent: list topics for each term.]"))});
   out.push({t:"h2",x:"Checklist"});
   CHK.forEach(([id,t])=>p((r.chk[id]?"☑ ":"☐ ")+t));
   p("Approved form: "+FORM_URL);p("Reporting information: "+PAGE_URL);
@@ -315,7 +326,7 @@ async function shareAll(k,msg){
   msg(`This device can't share files directly, so the files were downloaded. <a href="mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}">Open an email to yourself</a> and attach them. Email links cannot attach files.`)}
 
 /* ---------- report tab UI ---------- */
-const SECS=[["setup","Settings"],["review","Year in review"],["areas","Learning areas"],["samples","Work samples"],["program","Next year"],["finish","Checklist and export"]];
+const SECS=[["setup","Settings"],["review","Year in review"],["areas","Learning areas"],["samples","Work samples"],["program","Next year"],["scope","Scope and sequence"],["finish","Checklist and export"]];
 const ta=(k,key,label,D,help)=>`<label class="f">${esc(label)}${help?`<small>${esc(help)}</small>`:""}<textarea data-qf="${esc(key)}">${esc(fv(k,key,D))}</textarea>${D[key]&&RS(k).f[key]!==undefined?`<button class="btn" type="button" data-qreset="${esc(key)}">Reset to app draft</button>`:""}</label>`;
 const lvlRadios=(name,cur,attr)=>`<div class="radios" role="radiogroup">${[["above","Above"],["at","At"],["below","Below"]].map(([v,l])=>`<label><input type="radio" name="${name}" value="${v}" ${attr} ${cur===v?"checked":""}> ${l}</label>`).join("")}<label><input type="radio" name="${name}" value="" ${attr} ${!cur?"checked":""}> Not chosen</label></div>`;
 const YEARS=["Prep","Year 1","Year 2","Year 3","Year 4","Year 5","Year 6","Year 7","Year 8","Year 9","Year 10","Year 11","Year 12"];
@@ -355,6 +366,11 @@ function reportTab(k){
   if(UI.sec==="program"){const PD=programDrafts(k);const D={};Object.keys(PD).forEach(x=>D["p_"+x]=PD[x]);
     body=`<p class="sub">A draft summary of next year's program in the QHE shape. Topics for app areas come from the next year of Pebble Island lessons. Edit everything.</p>${ta(k,"p_goals","Goals (short and long term)",D)}${ta(k,"p_learner","Overview of the learner (background and needs, learning style, teaching strategies)",D)}${ta(k,"p_env","Home learning environment",D)}${ta(k,"p_social","Social opportunities",D)}
     ${AC.map(a=>`<div class="card2"><h3>${esc(AC_LONG[a]||a)}</h3>${ta(k,"p_t_"+a,"Teaching (topics, strategies)",D)}${ta(k,"p_l_"+a,"Learning (activities, skills)",D)}${ta(k,"p_r_"+a,"Resources",D)}${ta(k,"p_m_"+a,"Monitoring and progress",D)}</div>`).join("")}`}
+  if(UI.sec==="scope"){
+    body=`<p class="sub">What ${name} will learn each term, by learning area. App areas show the Pebble Island lessons for the year you choose, split across four terms in teaching order. ✓ means already completed in the app. Add anything you teach away from the app in the notes. This goes in the report after next year's program.</p>`+AC.map(a=>{const sc=scope(k,a);
+      return`<div class="card2"><h3>${esc(AC_LONG[a]||a)}</h3>${sc?`<label class="f">Year<select data-qssy="${a}">${[0,1,2,3,4,5,6].map(y=>`<option value="${y}" ${sc.y===y?"selected":""}>${esc(yrLabel(y))}</option>`).join("")}</select></label>
+      ${sc.n?`<p class="sub">${sc.n} lessons, ${sc.done} completed.</p><div class="scroll"><table><tr><th>Term</th><th>Topics</th></tr>${sc.terms.map((T,i)=>`<tr><td>Term ${i+1}</td><td>${T.map(l=>`${esc(l.title)}${l.codes.length?` <small>${esc(l.codes.join(", "))}</small>`:""}${l.st==="done"?" ✓":l.st==="started"?" <small>(started)</small>":""}`).join("<br>")||"—"}</td></tr>`).join("")}</table></div>`:`<p class="sub">No app lessons for this year.</p>`}`:`<p class="sub">Not covered by the app.</p>`}
+      ${ta(k,"ss_"+a,sc?"Notes and offline topics":"Topics for each term",{})}</div>`}).join("")}
   if(UI.sec==="finish"){
     body=`<h4>Before you send</h4>${CHK.map(([id,t])=>`<label class="f" style="display:flex;gap:10px;align-items:center;font-weight:400"><input type="checkbox" data-qchk="${id}" ${r.chk[id]?"checked":""} style="width:24px;height:24px"> ${esc(t)}</label>`).join("")}
     <p>Download the <a href="${FORM_URL}" target="_blank" rel="noopener">approved form (Word)</a>, fill it in and sign it. Read the <a href="${PAGE_URL}" target="_blank" rel="noopener">Queensland reporting page</a>. Send using the link QHE gave you for ${name}, or email <a href="mailto:${QHE_EMAIL}">${QHE_EMAIL}</a>. QHE cannot open cloud links, so attach files.</p>
@@ -368,6 +384,7 @@ function bindReport(k){
   $$("[data-qs]").forEach(el=>{const ev=el.tagName==="SELECT"||el.type==="date"?"change":"input";el.addEventListener(ev,()=>{r[el.dataset.qs]=el.value;saveSoon();if(ev==="change"){try{save()}catch(e){}H.view()}})});
   $$("[data-qf]").forEach(el=>el.addEventListener("input",()=>{r.f[el.dataset.qf]=el.value;saveSoon()}));
   $$("[data-qreset]").forEach(b=>b.onclick=()=>{delete r.f[b.dataset.qreset];try{save()}catch(e){}H.view()});
+  $$("[data-qssy]").forEach(el=>el.addEventListener("change",()=>{r.ssy=r.ssy||{};r.ssy[el.dataset.qssy]=el.value;try{save()}catch(e){}H.view()}));
   $$("[data-qlvl]").forEach(el=>el.addEventListener("change",()=>{r.lvl[el.dataset.qlvl]=el.value;saveSoon()}));
   $$("[data-qchk]").forEach(el=>el.addEventListener("change",()=>{r.chk[el.dataset.qchk]=el.checked;saveSoon()}));
   $$("[data-sid]").forEach(card=>{const s=r.samples.find(x=>x.id===card.dataset.sid);if(!s)return;
