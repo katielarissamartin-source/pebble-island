@@ -17,7 +17,7 @@ PEBBLE_EXTRA(2,"english",[
 ["Which word has 2 beats?","pickaxe","block","egg","Pick-axe has two beats."]]]],
 
 ["fullstops",
-["Sentence starts and ends","✏️","AC9E2LA10","Use capital letters and full stops.","A sentence starts with a capital letter. It ends with a full stop, question mark or exclamation mark. Names need capital letters too.","The dog ran. A capital T and a full stop.","Write one sentence about today. Check the start and end.",[
+["Sentence starts and ends","✏️","AC9E1LA10","Use capital letters and full stops.","A sentence starts with a capital letter. It ends with a full stop, question mark or exclamation mark. Names need capital letters too.","The dog ran. A capital T and a full stop.","Write one sentence about today. Check the start and end.",[
 ["Which sentence starts correctly?","The cat sat.","the cat sat.","tHe cat sat.","A sentence starts with a capital letter."],
 ["Which sentence ends correctly?","I like pizza.","I like pizza","i like pizza","A sentence ends with a full stop."],
 ["Which name is written correctly?","Mia","mia","mIa","Names start with a capital letter."],
@@ -85,7 +85,7 @@ PEBBLE_EXTRA(2,"english",[
 ["Find the adjective: 'The huge dino roared.'","huge","dino","roared","Huge describes the dino."]]]],
 
 ["punctuation",
-["Question and exclamation marks","❓","AC9E2LA10","Use ? and ! correctly.","A question mark ends an asking sentence. An exclamation mark shows a big feeling or a shout. A full stop ends a telling sentence.","Where is my hat? Wow! A full stop ends: I found it.","Write one question and one exclamation.",[
+["Question and exclamation marks","❓","AC9E1LA10","Use ? and ! correctly.","A question mark ends an asking sentence. An exclamation mark shows a big feeling or a shout. A full stop ends a telling sentence.","Where is my hat? Wow! A full stop ends: I found it.","Write one question and one exclamation.",[
 ["Which ends a question?","?","!",",","Asking sentences end with a question mark."],
 ["Which sentence needs a question mark?","Where is the park","The park is big","I like the park","It asks something."],
 ["Which sentence is a big feeling?","Wow, that is amazing!","I sat down.","It is Monday.","The ! shows strong feeling."],

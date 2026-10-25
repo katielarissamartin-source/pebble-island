@@ -68,7 +68,7 @@ PEBBLE_EXTRA(3,"english",[
 ["Which is spelled correctly?","friend","freind","frend","'Friend' has 'i' before 'e'."]]]],
 
 ["dialogue",
-["Speech marks","💬","AC9E3LA03","Use speech marks around spoken words.","Speech marks show the exact words someone says. Put them around the spoken words. A comma comes before the speech marks. Start a new line when a new person speaks.","Mum said, \"Dinner is ready.\"","Write what two people might say to each other.",[
+["Speech marks","💬","AC9E4LA07","Use speech marks around spoken words.","Speech marks show the exact words someone says. Put them around the spoken words. A comma comes before the speech marks. Start a new line when a new person speaks.","Mum said, \"Dinner is ready.\"","Write what two people might say to each other.",[
 ["Which is written correctly?","Tom said, \"Come here.\"","Tom said Come here.","\"Tom said, Come here.\"","Speech marks go around the spoken words."],
 ["What do speech marks show?","The exact words someone says","The title","A question","They show spoken words."],
 ["Which word tells who is speaking? \"Run!\" shouted Lee.","Lee","Run","shouted","Lee spoke."],

@@ -14,7 +14,7 @@ null,null],
 null,null],
 
 ["explorers4",
-["Explorers and maps","🧭","AC9HS4K03","Learn why explorers sailed and how maps helped.","Explorers sailed to find new lands, trade and knowledge. They used maps, compasses and stars. Not all places they \"found\" were new: people already lived there. Maps change as people learn more. Old maps show how people saw the world.","In 1770 James Cook sailed along the east coast of Australia and drew maps.","Draw a simple map of your street. Add a compass rose.",[
+["Explorers and maps","🧭","AC9HS4K02","Learn why explorers sailed and how maps helped.","Explorers sailed to find new lands, trade and knowledge. They used maps, compasses and stars. Not all places they \"found\" were new: people already lived there. Maps change as people learn more. Old maps show how people saw the world.","In 1770 James Cook sailed along the east coast of Australia and drew maps.","Draw a simple map of your street. Add a compass rose.",[
 ["Explorers used...","Maps and compasses","Only luck","Nothing","Tools helped them navigate."],
 ["Many 'new' lands already had...","People living there","Nobody","Only animals","People already lived in these places."],
 ["Maps change because...","People learn more","The land shrinks","Magic","Maps are updated."]]],
@@ -84,7 +84,7 @@ null,null],
 ["Courts decide...","If a law was broken","The weather","The menu","Courts apply the law."]]]],
 
 ["vote4",
-["Voting and democracy","🗳️","AC9HS4K08","Explain how voting works.","Australia is a democracy, which means people have a say. Adults vote in elections to choose their representatives. Votes are secret. Voting is compulsory in Australia. A majority decision means more than half agree. Children can practise democracy by voting in class.","A class votes for a pet. Five votes beat three votes.","Hold a class vote on a game. Count the votes.",[
+["Voting and democracy","🗳️","AC9HS5K06","Explain how voting works.","Australia is a democracy, which means people have a say. Adults vote in elections to choose their representatives. Votes are secret. Voting is compulsory in Australia. A majority decision means more than half agree. Children can practise democracy by voting in class.","A class votes for a pet. Five votes beat three votes.","Hold a class vote on a game. Count the votes.",[
 ["In a democracy, people...","Have a say","Obey one person","Have no vote","Democracy means people choose."],
 ["A secret ballot means...","Nobody sees your vote","Everybody sees it","It is optional","Votes are private."],
 ["Which has a majority? 5 votes vs 3","5","3","Neither","More than half wins."]]],
@@ -112,7 +112,7 @@ null,null],
 ["Profit is...","Money left after costs","All the money","The cost","Profit = income - costs."]]]],
 
 ["choices4",
-["Smart choices and budgets","💰","AC9HS4S05","Make choices and plan a budget.","A budget is a plan for money. Income is money coming in. Expenses are money going out. Choose needs before wants. Saving for a goal helps you afford bigger things. Every choice has an opportunity cost, which is what you give up.","If you spend $5 on a toy you cannot spend it on a book.","Plan a $20 budget for something you want.",[
+["Smart choices and budgets","💰","AC9HS6K08","Make choices and plan a budget.","A budget is a plan for money. Income is money coming in. Expenses are money going out. Choose needs before wants. Saving for a goal helps you afford bigger things. Every choice has an opportunity cost, which is what you give up.","If you spend $5 on a toy you cannot spend it on a book.","Plan a $20 budget for something you want.",[
 ["A budget is...","A plan for money","A shopping list only","A game","Budgets plan spending."],
 ["Expenses are...","Money going out","Money coming in","Savings","Expenses are costs."],
 ["Opportunity cost is...","What you give up","What you buy","A discount","It is the next best choice lost."]]],
@@ -126,7 +126,7 @@ null,null],
 ["Opportunity cost is...","What you give up","What you buy","A discount","It is the next best choice lost."]]]],
 
 ["asia4",
-["Our Asian neighbours","🌏","AC9HS4K09","Learn about countries in Asia near Australia.","Australia is close to countries in Asia like Indonesia, Japan, China, India and Vietnam. These countries trade with Australia, share culture and food, and many Australians have family connections there. People speak different languages and have different traditions.","Many Australians enjoy Japanese, Chinese or Indian food.","Find three countries in Asia on a map.",[
+["Our Asian neighbours","🌏","AC9HS6K04","Learn about countries in Asia near Australia.","Australia is close to countries in Asia like Indonesia, Japan, China, India and Vietnam. These countries trade with Australia, share culture and food, and many Australians have family connections there. People speak different languages and have different traditions.","Many Australians enjoy Japanese, Chinese or Indian food.","Find three countries in Asia on a map.",[
 ["Indonesia is...","A neighbour to the north","In Europe","In Africa","Indonesia is near northern Australia."],
 ["Countries share...","Trade, culture and food","Nothing","Only weather","Countries connect in many ways."],
 ["Different countries speak...","Different languages","Only English","No languages","There are many languages."]]],
@@ -140,7 +140,7 @@ null,null],
 ["Different countries speak...","Different languages","Only English","No languages","There are many languages."]]]],
 
 ["timeline4",
-["Timelines and change","⏳","AC9HS4S03","Place events on a timeline.","A timeline shows events in order. Older events go on the left. A decade is 10 years. A century is 100 years. A timeline helps us see how much time has passed and what changed.","1788 is more than 200 years ago.","Make a timeline of your life with five events.",[
+["Timelines and change","⏳","AC9HS4S02","Place events on a timeline.","A timeline shows events in order. Older events go on the left. A decade is 10 years. A century is 100 years. A timeline helps us see how much time has passed and what changed.","1788 is more than 200 years ago.","Make a timeline of your life with five events.",[
 ["A century is...","100 years","10 years","1000 years","Century means 100."],
 ["On a timeline, older events go...","Left","Right","Top","Time moves left to right."],
 ["A decade is...","10 years","100 years","1 year","Decade means 10."]]],

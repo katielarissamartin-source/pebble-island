@@ -1,6 +1,6 @@
 PEBBLE_EXTRA(2,"hass",[
 ["family",
-["Families then and now","👪","AC9HS2K02","See how families change over time.","Families can look different. Families can have grown-ups, children, grandparents and carers. Families change over time. Old photos and stories show what life was like.","A photo of your grandparent as a child shows clothes and toys from long ago.","Ask a grown-up about a toy they had as a child.",[
+["Families then and now","👪","AC9HS1K01","See how families change over time.","Families can look different. Families can have grown-ups, children, grandparents and carers. Families change over time. Old photos and stories show what life was like.","A photo of your grandparent as a child shows clothes and toys from long ago.","Ask a grown-up about a toy they had as a child.",[
 ["What can an old family photo show us?","How life was in the past","What will happen tomorrow","The weather next week","Old photos show the past."],
 ["Families can include...","Different kinds of people who care for each other","Only one type of person","Nobody","Families come in many forms."],
 ["Who can you ask about the past?","A grandparent or older person","A pencil","A clock","People remember the past."],
@@ -17,7 +17,7 @@ PEBBLE_EXTRA(2,"hass",[
 ["Families change over time because...","People grow, move and join","Time stops","Nothing ever happens","Life changes."]]]],
 
 ["celebrations",
-["Celebrations and festivals","🎉","AC9HS2K01","Know why people celebrate.","People celebrate special days. They might celebrate birthdays, festivals, holidays or special events. Celebrations bring people together. Different families and cultures celebrate in different ways.","Some families light lanterns. Some share a special meal.","Ask someone how their family celebrates a special day.",[
+["Celebrations and festivals","🎉","AC9HSFK02","Know why people celebrate.","People celebrate special days. They might celebrate birthdays, festivals, holidays or special events. Celebrations bring people together. Different families and cultures celebrate in different ways.","Some families light lanterns. Some share a special meal.","Ask someone how their family celebrates a special day.",[
 ["Why do people celebrate?","To mark something special","To avoid friends","To stay silent","Celebrations mark special times."],
 ["Celebrations can...","Bring people together","Make everyone angry","Stop all talking","People gather and enjoy."],
 ["Do all families celebrate the same way?","No, ways can be different","Yes, always the same","Nobody celebrates","Cultures and families differ."],
@@ -51,7 +51,7 @@ PEBBLE_EXTRA(2,"hass",[
 ["On most maps, north is at the...","Top","Bottom","Side only","North is usually at the top."]]]],
 
 ["features",
-["Natural and built places","🏞️","AC9HS2K03","Tell natural from built features.","Natural features are made by nature, like rivers, hills and beaches. Built features are made by people, like roads, bridges and houses. Many places have both.","A river is natural. A bridge over the river is built.","Walk outside. List 3 natural and 3 built things.",[
+["Natural and built places","🏞️","AC9HS1K03","Tell natural from built features.","Natural features are made by nature, like rivers, hills and beaches. Built features are made by people, like roads, bridges and houses. Many places have both.","A river is natural. A bridge over the river is built.","Walk outside. List 3 natural and 3 built things.",[
 ["Which is a natural feature?","A river","A road","A house","Rivers form by themselves."],
 ["Which is a built feature?","A bridge","A hill","A beach","People build bridges."],
 ["A beach is...","Natural","Built","Both","Beaches form by nature."],
@@ -68,7 +68,7 @@ PEBBLE_EXTRA(2,"hass",[
 ["A house you build is...","Built","Natural","Both","People build houses."]]]],
 
 ["rules",
-["Why we have rules","📋","AC9HS2S05","Know why rules help.","Rules help keep people safe and fair. Rules are in homes, schools and communities. A road rule says to stop at a red light. If everyone follows rules, places work better.","A school rule says walk, not run, in the corridor.","Make one fair rule for your home.",[
+["Why we have rules","📋","AC9HS3K06","Know why rules help.","Rules help keep people safe and fair. Rules are in homes, schools and communities. A road rule says to stop at a red light. If everyone follows rules, places work better.","A school rule says walk, not run, in the corridor.","Make one fair rule for your home.",[
 ["Why do we have rules?","To keep people safe and fair","To make people sad","To confuse everyone","Rules keep things safe and fair."],
 ["A red light means...","Stop","Go","Dance","Red means stop."],
 ["Which is a safety rule?","Wear a helmet on a bike","Run with scissors","Cross without looking","Helmets protect you."],
@@ -102,7 +102,7 @@ PEBBLE_EXTRA(2,"hass",[
 ["Why do we need many jobs?","Different people help in different ways","Jobs are all the same","Nobody needs help","Each job helps."]]]],
 
 ["caring",
-["Caring for our places","♻️","AC9HS2K04","Know how to care for places and resources.","We can care for places by putting rubbish in a bin, saving water and planting trees. Recycling helps save materials. Everyone can help.","Turn off the tap while you brush your teeth to save water.","Do one caring act today. Tell someone.",[
+["Caring for our places","♻️","AC9HS1K04","Know how to care for places and resources.","We can care for places by putting rubbish in a bin, saving water and planting trees. Recycling helps save materials. Everyone can help.","Turn off the tap while you brush your teeth to save water.","Do one caring act today. Tell someone.",[
 ["Where does rubbish go?","In a bin","On the ground","In a river","Bins keep places clean."],
 ["How can you save water?","Turn off the tap when not using it","Leave it running","Pour it on the path","Taps waste water when left on."],
 ["What does recycling help to do?","Save materials","Make more rubbish","Make noise","Recycling reuses materials."],
@@ -119,7 +119,7 @@ PEBBLE_EXTRA(2,"hass",[
 ["Planting a tree helps...","Animals and air","Nothing","Only cars","Trees give homes and clean air."]]]],
 
 ["symbols",
-["Australian symbols","🇦🇺","AC9HS2K01","Know some symbols of Australia.","Symbols stand for places or ideas. The Australian flag is a symbol of Australia. The kangaroo and emu are on the Australian coat of arms. The wattle is Australia's floral emblem. The Aboriginal flag and the Torres Strait Islander flag are also official flags.","The flag flies at school.","Draw one Australian symbol. Say what it stands for.",[
+["Australian symbols","🇦🇺","AC9HS3K02","Know some symbols of Australia.","Symbols stand for places or ideas. The Australian flag is a symbol of Australia. The kangaroo and emu are on the Australian coat of arms. The wattle is Australia's floral emblem. The Aboriginal flag and the Torres Strait Islander flag are also official flags.","The flag flies at school.","Draw one Australian symbol. Say what it stands for.",[
 ["What is a symbol?","Something that stands for an idea or place","A kind of food","A type of weather","Symbols stand for something."],
 ["Which is an Australian flag?","The flag with the Southern Cross","A plain white flag","A flag with a dragon","The Australian flag has the Southern Cross."],
 ["Which animals are on the coat of arms?","Kangaroo and emu","Lion and unicorn","Bear and wolf","The kangaroo and emu are on it."],

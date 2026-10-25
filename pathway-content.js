@@ -94,7 +94,7 @@ const rows=[
 ["A fact sheet about frogs is mainly written to...","Inform","Entertain with a made-up story","Persuade you to buy shoes","Fact sheets provide information."],
 ["A story about a dragon is mainly written to...","Entertain","List bus times","Give a weather warning","Imaginative stories are often for enjoyment."],
 ["A poster saying 'Save water!' is mainly trying to...","Persuade","Measure distance","Retell a fairy tale","The poster encourages readers to act."]]],
-[2,"english","wordparts","Word families","🔎","AC9E2LY04","Use smaller word parts to read new words.","A base word can gain endings such as -s, -ed or -ing. Look for the part you already know.","Jump becomes jumped when we add -ed.","Make a word family with play.","Spot the base word inside the longer word.",[
+[2,"english","wordparts","Word families","🔎","AC9E2LY12","Use smaller word parts to read new words.","A base word can gain endings such as -s, -ed or -ing. Look for the part you already know.","Jump becomes jumped when we add -ed.","Make a word family with play.","Spot the base word inside the longer word.",[
 ["What is the base word in playing?","play","ing","laying","Playing is play with the ending -ing."],
 ["Which word means the action happened before now?","walked","walking","walks","The ending -ed can show past time."],
 ["Which is the plural of book?","books","booked","booking","Add -s to show more than one book."]]]

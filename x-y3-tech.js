@@ -42,7 +42,7 @@ PEBBLE_EXTRA(3,"technologies",[
 ["'If hungry, eat.' You are not hungry. You...","Do not eat","Eat","Run","The if is not true."]]]],
 
 ["debug3",
-["Find the bug","🐞","AC9TDI4P05","Find and fix a mistake in a plan.","A bug is a mistake in a set of steps. Debugging means finding and fixing it. Read the steps one at a time. Find where it goes wrong. Fix it and test again.","Steps: put toast in, push the lever, put butter on, wait. The butter step is in the wrong place.","Swap two steps in a recipe. Ask a friend to find the bug.",[
+["Find the bug","🐞","AC9TDI4P02","Find and fix a mistake in a plan.","A bug is a mistake in a set of steps. Debugging means finding and fixing it. Read the steps one at a time. Find where it goes wrong. Fix it and test again.","Steps: put toast in, push the lever, put butter on, wait. The butter step is in the wrong place.","Swap two steps in a recipe. Ask a friend to find the bug.",[
 ["A bug is...","A mistake in steps","A pet","A button","Bugs are mistakes."],
 ["Debugging means...","Finding and fixing mistakes","Breaking things","Writing more","Debug means fix."],
 ["After a fix you should...","Test again","Stop","Hide it","Testing checks the fix."]]],

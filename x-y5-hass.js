@@ -34,7 +34,7 @@ PEBBLE_EXTRA(5,"hass",[
 ["What shapes an environment?","Climate, rain and temperature","Only people","Only music","Weather and climate shape places."]]]],
 
 ["capitals",
-["States and capitals","🏙️","AC9HS5K06","Name states and capital cities.","Australia has six states and two territories. Each has a capital city. Queensland: Brisbane. New South Wales: Sydney. Victoria: Melbourne. Tasmania: Hobart. South Australia: Adelaide. Western Australia: Perth. Northern Territory: Darwin. The nation's capital is Canberra.","Brisbane is the capital of Queensland.","Say all the capitals out loud.",[
+["States and capitals","🏙️","AC9HS3K03","Name states and capital cities.","Australia has six states and two territories. Each has a capital city. Queensland: Brisbane. New South Wales: Sydney. Victoria: Melbourne. Tasmania: Hobart. South Australia: Adelaide. Western Australia: Perth. Northern Territory: Darwin. The nation's capital is Canberra.","Brisbane is the capital of Queensland.","Say all the capitals out loud.",[
 ["What is the capital of Queensland?","Brisbane","Sydney","Perth","Brisbane is in Queensland."],
 ["What is the capital of Victoria?","Melbourne","Hobart","Darwin","Melbourne is Victoria's capital."],
 ["What is Australia's national capital?","Canberra","Sydney","Melbourne","Canberra is the national capital."],
@@ -68,7 +68,7 @@ PEBBLE_EXTRA(5,"hass",[
 ["The gold rush also...","Changed the land and affected First Nations peoples","Had no effects","Only helped","It had many effects."]]]],
 
 ["lawmaking",
-["Who makes the rules?","🏛️","AC9HS5K06","Know three levels of government.","Australia has three levels of government. Local councils look after parks, rubbish and local roads. State governments look after schools, hospitals and police. The federal government looks after things like defence and the whole country. Parliament makes laws.","The council looks after your local park.","Name one thing each level of government looks after.",[
+["Who makes the rules?","🏛️","AC9HS6K07","Know three levels of government.","Australia has three levels of government. Local councils look after parks, rubbish and local roads. State governments look after schools, hospitals and police. The federal government looks after things like defence and the whole country. Parliament makes laws.","The council looks after your local park.","Name one thing each level of government looks after.",[
 ["Which level looks after local parks?","Local council","Federal government","No one","Councils manage local places."],
 ["Which level looks after state schools and hospitals?","State government","Local council","The Moon","States run schools and hospitals."],
 ["Which level looks after defence?","Federal government","Local council","State police","Defence is a federal job."],
@@ -85,7 +85,7 @@ PEBBLE_EXTRA(5,"hass",[
 ["Where are laws made?","In parliament","At a shop","At a park","Parliament makes laws."]]]],
 
 ["consumer",
-["Smart shopping","🛒","AC9HS5K08","Make good money choices.","A need is something we must have, like food. A want is something we would like, like a toy. We make choices because money is limited. Comparing prices and quality helps us choose well. A budget plans how to spend money.","You have $10. A game costs $8. A snack costs $3. You cannot buy both.","Plan how to spend $10 on a need and a want.",[
+["Smart shopping","🛒","AC9HS6K08","Make good money choices.","A need is something we must have, like food. A want is something we would like, like a toy. We make choices because money is limited. Comparing prices and quality helps us choose well. A budget plans how to spend money.","You have $10. A game costs $8. A snack costs $3. You cannot buy both.","Plan how to spend $10 on a need and a want.",[
 ["Which is a need?","Food","A toy","A game","We must have food."],
 ["Which is a want?","A toy","Water","A home","A toy is something we would like."],
 ["Why do we have to choose?","Money is limited","Money is endless","Shops are closed","We cannot buy everything."],
@@ -102,7 +102,7 @@ PEBBLE_EXTRA(5,"hass",[
 ["What does a budget do?","Plans how to spend money","Prints money","Counts sheep","A budget is a plan."]]]],
 
 ["trade",
-["Buying and selling worldwide","🚢","AC9HS5K08","Know imports and exports.","Exports are goods sold to other countries. Imports are goods bought from other countries. Australia exports iron ore, coal, wheat and wool. Australia imports things like cars and phones. Trade links countries.","Australia sells iron ore to other countries.","Find something at home made in another country.",[
+["Buying and selling worldwide","🚢","AC9HS6K05","Know imports and exports.","Exports are goods sold to other countries. Imports are goods bought from other countries. Australia exports iron ore, coal, wheat and wool. Australia imports things like cars and phones. Trade links countries.","Australia sells iron ore to other countries.","Find something at home made in another country.",[
 ["Exports are...","Goods sold to other countries","Goods bought from others","Goods made at home only","Exports leave the country."],
 ["Imports are...","Goods bought from other countries","Goods sold to other countries","Goods we throw away","Imports come in."],
 ["Which does Australia export?","Iron ore","Nothing","Snowmen","Australia exports iron ore."],

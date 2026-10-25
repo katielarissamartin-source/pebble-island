@@ -1,6 +1,6 @@
 PEBBLE_EXTRA(3,"science",[
 ["groups",
-["Grouping living things","🐾","AC9S3U01","Sort living things into groups.","Scientists sort living things by what they have in common. Animals with a backbone are vertebrates: fish, frogs, reptiles, birds and mammals. Animals without a backbone are invertebrates: insects, spiders, worms.","A sparrow has feathers and a backbone. It is a bird and a vertebrate.","Sort 8 animal pictures into two groups. Say why.",[
+["Grouping living things","🐾","AC9SFU01","Sort living things into groups.","Scientists sort living things by what they have in common. Animals with a backbone are vertebrates: fish, frogs, reptiles, birds and mammals. Animals without a backbone are invertebrates: insects, spiders, worms.","A sparrow has feathers and a backbone. It is a bird and a vertebrate.","Sort 8 animal pictures into two groups. Say why.",[
 ["A fish has a backbone. It is a...","Vertebrate","Invertebrate","Plant","Backbone means vertebrate."],
 ["Which is an invertebrate?","Butterfly","Dog","Frog","A butterfly has no backbone."],
 ["Why do scientists group animals?","To see what they share","To hide them","To name them all the same","Groups show what is alike."]]],
@@ -14,7 +14,7 @@ PEBBLE_EXTRA(3,"science",[
 ["Why do scientists group animals?","To see what they share","To hide them","To name them all the same","Groups show what is alike."]]]],
 
 ["vertebrates",
-["Five animal classes","🐟","AC9S3U01","Name the five groups of vertebrates.","Vertebrates come in five groups. Fish live in water and have gills. Amphibians like frogs start life in water. Reptiles have dry scales. Birds have feathers and lay eggs. Mammals have fur or hair and feed their babies milk.","A frog is an amphibian. A snake is a reptile.","Draw one animal from each group.",[
+["Five animal classes","🐟","AC9SFU01","Name the five groups of vertebrates.","Vertebrates come in five groups. Fish live in water and have gills. Amphibians like frogs start life in water. Reptiles have dry scales. Birds have feathers and lay eggs. Mammals have fur or hair and feed their babies milk.","A frog is an amphibian. A snake is a reptile.","Draw one animal from each group.",[
 ["Which animal is a mammal?","Whale","Shark","Eagle","Mammals feed babies milk."],
 ["Which group has feathers?","Birds","Fish","Reptiles","Only birds have feathers."],
 ["A frog starts life in water. It is an...","Amphibian","Reptile","Mammal","Frogs are amphibians."]]],
@@ -28,7 +28,7 @@ PEBBLE_EXTRA(3,"science",[
 ["Which animals came from small feathered dinosaurs?","Birds","Fish","Frogs","Birds are living dinosaurs."]]]],
 
 ["plants3",
-["What plants need","🌱","AC9S3U01","Know what plants need to grow.","Plants need light, water, air and space to grow. Roots take in water. Leaves catch light. A plant in a dark cupboard grows pale and weak.","A bean seed with water and light grows into a plant.","Plant a bean. Put it in light. Check each day.",[
+["What plants need","🌱","AC9S1U01","Know what plants need to grow.","Plants need light, water, air and space to grow. Roots take in water. Leaves catch light. A plant in a dark cupboard grows pale and weak.","A bean seed with water and light grows into a plant.","Plant a bean. Put it in light. Check each day.",[
 ["Which is NOT needed by a plant?","Chocolate","Water","Light","Plants need light, water and air."],
 ["What do roots do?","Take in water","Catch light","Make flowers","Roots drink."],
 ["A plant in a dark cupboard becomes...","Pale and weak","Strong","Bigger","Plants need light."]]],
@@ -56,7 +56,7 @@ PEBBLE_EXTRA(3,"science",[
 ["A thermometer measures...","Temperature","Weight","Sound","It shows how hot or cold."]]]],
 
 ["daynight",
-["Day, night and the Sun","🌍","AC9S3U03","Explain day and night.","Earth spins once every 24 hours. When your side faces the Sun it is day. When it faces away it is night. The Sun does not move round Earth. It only looks that way.","It is night in Australia when it is day on the other side of Earth.","Spin a ball under a torch. Watch day and night.",[
+["Day, night and the Sun","🌍","AC9S6U02","Explain day and night.","Earth spins once every 24 hours. When your side faces the Sun it is day. When it faces away it is night. The Sun does not move round Earth. It only looks that way.","It is night in Australia when it is day on the other side of Earth.","Spin a ball under a torch. Watch day and night.",[
 ["Day and night happen because...","Earth spins","The Sun moves","Clouds hide it","Earth spins every 24 hours."],
 ["How long does one spin take?","24 hours","1 hour","1 week","A day is 24 hours."],
 ["When your side faces away from the Sun it is...","Night","Day","Summer","Facing away means night."]]],
@@ -70,7 +70,7 @@ PEBBLE_EXTRA(3,"science",[
 ["When your side faces away from the Sun it is...","Night","Day","Summer","Facing away means night."]]]],
 
 ["states",
-["Solids, liquids and gases","🧊","AC9S3U04","Know three states of matter.","Everything is made of matter. Solids keep their shape. Liquids flow and take the shape of the container. Gases spread out to fill the space. Water can be ice, water or steam.","Ice is a solid. Water is a liquid. Steam is a gas.","Name a solid, a liquid and a gas in your kitchen.",[
+["Solids, liquids and gases","🧊","AC9S5U04","Know three states of matter.","Everything is made of matter. Solids keep their shape. Liquids flow and take the shape of the container. Gases spread out to fill the space. Water can be ice, water or steam.","Ice is a solid. Water is a liquid. Steam is a gas.","Name a solid, a liquid and a gas in your kitchen.",[
 ["Which keeps its shape?","A rock","Milk","Air","Solids keep their shape."],
 ["Steam is a...","Gas","Solid","Liquid","Steam is water as a gas."],
 ["A liquid takes the shape of its...","Container","Colour","Name","Liquids fill the container."]]],
@@ -140,7 +140,7 @@ PEBBLE_EXTRA(3,"science",[
 ["Which sense should you not use unless an adult says it's safe?","Taste","Sight","Hearing","Never taste science materials."]]]],
 
 ["adapt3",
-["Living things and their homes","🏜️","AC9S3U01","See how living things suit their homes.","A habitat is where a living thing lives. Features that help an animal live in its home are adaptations. A camel stores fat in its hump. A frog has webbed feet for swimming. A bird's wings help it fly.","A polar bear has thick fur to stay warm in the cold.","Draw an animal and label one feature that helps it live.",[
+["Living things and their homes","🏜️","AC9S5U01","See how living things suit their homes.","A habitat is where a living thing lives. Features that help an animal live in its home are adaptations. A camel stores fat in its hump. A frog has webbed feet for swimming. A bird's wings help it fly.","A polar bear has thick fur to stay warm in the cold.","Draw an animal and label one feature that helps it live.",[
 ["A habitat is...","Where an animal lives","What it eats","Its name","A habitat is a home."],
 ["Webbed feet help a frog...","Swim","Fly","Climb trees","Webbed feet push water."],
 ["Thick fur helps an animal...","Stay warm","Swim fast","See at night","Fur keeps in heat."]]],
@@ -154,7 +154,7 @@ PEBBLE_EXTRA(3,"science",[
 ["Thick fur helps an animal...","Stay warm","Swim fast","See at night","Fur keeps in heat."]]]],
 
 ["forces3",
-["Pushes and pulls","🧲","AC9S3I01","See how pushes and pulls change movement.","A push moves something away. A pull brings something closer. Forces can start, stop or change the way something moves. Friction slows things on rough surfaces. A magnet pulls iron without touching.","A swing moves when you push it.","Push a toy car on carpet and on a smooth floor. Which goes farther?",[
+["Pushes and pulls","🧲","AC9S1U03","See how pushes and pulls change movement.","A push moves something away. A pull brings something closer. Forces can start, stop or change the way something moves. Friction slows things on rough surfaces. A magnet pulls iron without touching.","A swing moves when you push it.","Push a toy car on carpet and on a smooth floor. Which goes farther?",[
 ["A push moves something...","Away","Closer","Nowhere","A push sends it away."],
 ["Friction on a rough surface...","Slows things","Speeds them up","Makes them float","Rough surfaces slow things."],
 ["A magnet pulls...","Iron","Wood","Paper","Magnets pull iron things."]]],

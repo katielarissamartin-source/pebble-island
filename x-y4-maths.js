@@ -17,7 +17,7 @@ PEBBLE_EXTRA(4,"maths",[
 ["9 stacks of 12 blocks. How many?","108","96","112","9 x 12 = 108."]]]],
 
 ["divide4",
-["Dividing with remainders","➗","AC9M4N06","Divide and understand what is left over.","Dividing shares a number into equal groups. Sometimes there is a remainder, which is what is left over. 14 / 4 = 3 remainder 2, because 4 x 3 = 12 and 2 are left.","17 / 5 = 3 remainder 2.","Share 14 buttons between 4 cups. What is left?",[
+["Dividing with remainders","➗","AC9M5N07","Divide and understand what is left over.","Dividing shares a number into equal groups. Sometimes there is a remainder, which is what is left over. 14 / 4 = 3 remainder 2, because 4 x 3 = 12 and 2 are left.","17 / 5 = 3 remainder 2.","Share 14 buttons between 4 cups. What is left?",[
 ["13 / 4 = ?","3 remainder 1","4 remainder 1","3 remainder 3","4 x 3 = 12. 1 left."],
 ["20 / 5 = ?","4","5","15","5 x 4 = 20."],
 ["A remainder is...","What is left over","The answer","The total","Remainder means left over."],
@@ -34,7 +34,7 @@ PEBBLE_EXTRA(4,"maths",[
 ["25 bones shared between 6 diggers. Each gets...","4 and 1 left","3 and 7 left","5 and 0 left","6 x 4 = 24. 1 left."]]]],
 
 ["fracadd",
-["Add and subtract fractions","🍰","AC9M4N04","Add and subtract fractions with the same bottom number.","When fractions have the same denominator (bottom number), add or subtract the numerators (top numbers). Keep the denominator. 2/8 + 3/8 = 5/8. 5/6 - 2/6 = 3/6.","1/5 + 2/5 = 3/5.","Use paper strips to show 2/6 + 3/6.",[
+["Add and subtract fractions","🍰","AC9M5N05","Add and subtract fractions with the same bottom number.","When fractions have the same denominator (bottom number), add or subtract the numerators (top numbers). Keep the denominator. 2/8 + 3/8 = 5/8. 5/6 - 2/6 = 3/6.","1/5 + 2/5 = 3/5.","Use paper strips to show 2/6 + 3/6.",[
 ["2/8 + 3/8 = ?","5/8","5/16","6/8","Add the tops. Keep the bottom."],
 ["5/6 - 2/6 = ?","3/6","3/0","7/6","Subtract the tops."],
 ["1/4 + 2/4 = ?","3/4","3/8","2/4","1 + 2 = 3. Bottom stays 4."],
@@ -102,7 +102,7 @@ PEBBLE_EXTRA(4,"maths",[
 ["An angle of 120 degrees is...","Obtuse","Acute","Right","More than 90 is obtuse."]]]],
 
 ["time4",
-["24-hour time and timetables","🕒","AC9M4M03","Read 24-hour time and work out durations.","24-hour time counts from 00:00 to 23:59. After noon add 12: 3 pm is 15:00. To find how long something takes, count to the next hour then add the rest.","The 14:30 train arrives at 15:10. The trip takes 40 minutes.","Write your day's timetable in 24-hour time.",[
+["24-hour time and timetables","🕒","AC9M5M03","Read 24-hour time and work out durations.","24-hour time counts from 00:00 to 23:59. After noon add 12: 3 pm is 15:00. To find how long something takes, count to the next hour then add the rest.","The 14:30 train arrives at 15:10. The trip takes 40 minutes.","Write your day's timetable in 24-hour time.",[
 ["3 pm in 24-hour time is...","15:00","03:00","13:00","3 + 12 = 15."],
 ["18:00 is...","6 pm","8 pm","4 pm","18 - 12 = 6."],
 ["From 09:15 to 10:00 is...","45 minutes","15 minutes","1 hour","From 09:15 to 10:00 is 45 minutes."],

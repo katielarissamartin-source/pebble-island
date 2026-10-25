@@ -14,7 +14,7 @@ PEBBLE_EXTRA(4,"technologies",[
 ["Else means...","If not","Always","Never","Else covers the other case."]]]],
 
 ["variable4",
-["Variables","📦","AC9TDI4P04","Use a variable to store a value.","A variable is a named box that holds a value. The value can change. A game might use a variable called score. Score starts at 0. Each point adds 1. Variables let programs remember things.","score = 0. Add 1. Now score = 1.","Keep score in a game and update it each turn.",[
+["Variables","📦","AC9TDI6P05","Use a variable to store a value.","A variable is a named box that holds a value. The value can change. A game might use a variable called score. Score starts at 0. Each point adds 1. Variables let programs remember things.","score = 0. Add 1. Now score = 1.","Keep score in a game and update it each turn.",[
 ["A variable is...","A named place holding a value","A picture","A sound","Variables store values."],
 ["Score is 3. Add 2. Score is...","5","6","1","3 + 2 = 5."],
 ["Why use variables?","To remember things","To hide","To waste","Variables store data."]]],

@@ -28,7 +28,7 @@ PEBBLE_EXTRA(4,"science",[
 ["Why make a key?","To identify things","To hide things","To name no one","Keys help identify."]]]],
 
 ["envchange4",
-["Changes to habitats","🌳","AC9S4U01","Explain how changes affect living things.","Habitats can change because of fire, flood, drought or people. Some animals move away. Some can't live there any more. New plants may grow. People can help by planting trees and keeping rubbish out of nature.","After a bushfire, new green shoots grow.","List one way people can help a habitat.",[
+["Changes to habitats","🌳","AC9S6U01","Explain how changes affect living things.","Habitats can change because of fire, flood, drought or people. Some animals move away. Some can't live there any more. New plants may grow. People can help by planting trees and keeping rubbish out of nature.","After a bushfire, new green shoots grow.","List one way people can help a habitat.",[
 ["A habitat can change because of...","Fire or flood","Nothing","A song","Habitats change."],
 ["After a drought, plants may...","Die or grow slowly","Grow faster","Float","Less water harms plants."],
 ["People can help by...","Planting trees","Dropping rubbish","Cutting every tree","Planting helps habitats."]]],
@@ -42,7 +42,7 @@ PEBBLE_EXTRA(4,"science",[
 ["People can help by...","Planting trees","Dropping rubbish","Cutting every tree","Planting helps habitats."]]]],
 
 ["lifecycle4",
-["Life cycles","🦋","AC9S4U01","Describe the life cycle of living things.","A life cycle is the stages of a living thing's life. A butterfly goes egg, caterpillar, pupa, adult. A frog goes egg, tadpole, froglet, adult. A plant goes seed, seedling, adult plant, flowers, seeds.","Egg -> caterpillar -> pupa -> butterfly.","Draw the life cycle of a frog.",[
+["Life cycles","🦋","AC9S3U01","Describe the life cycle of living things.","A life cycle is the stages of a living thing's life. A butterfly goes egg, caterpillar, pupa, adult. A frog goes egg, tadpole, froglet, adult. A plant goes seed, seedling, adult plant, flowers, seeds.","Egg -> caterpillar -> pupa -> butterfly.","Draw the life cycle of a frog.",[
 ["A butterfly's life starts as a...","Egg","Pupa","Adult","Life starts as an egg."],
 ["A tadpole grows into a...","Froglet","Caterpillar","Seed","Tadpoles grow into frogs."],
 ["A life cycle is...","Stages of a life","A bike ride","A shape","Cycle means repeating stages."]]],
@@ -98,7 +98,7 @@ PEBBLE_EXTRA(4,"science",[
 ["A magnet picks up...","Iron","Wood","Paper","Magnets attract iron."]]]],
 
 ["erosion4",
-["Wearing away the land","🏞️","AC9S4U02","Explain how land is worn away.","Wind, water and ice slowly wear away rock. This is called erosion. Rivers carve valleys. Waves wear cliffs. Weathering breaks rock into small pieces. Sand and soil are carried away and settle somewhere new.","A river carved the Grand Canyon over millions of years.","Pour water over sand on a slope. What happens?",[
+["Wearing away the land","🏞️","AC9S5U02","Explain how land is worn away.","Wind, water and ice slowly wear away rock. This is called erosion. Rivers carve valleys. Waves wear cliffs. Weathering breaks rock into small pieces. Sand and soil are carried away and settle somewhere new.","A river carved the Grand Canyon over millions of years.","Pour water over sand on a slope. What happens?",[
 ["Erosion is...","Wearing away of land","Building mountains","Making clouds","Erosion wears land away."],
 ["Which can cause erosion?","Water and wind","Songs","Colours","Water and wind wear rock."],
 ["How long does erosion take?","A long time","Seconds","One minute","It is slow."]]],
@@ -112,7 +112,7 @@ PEBBLE_EXTRA(4,"science",[
 ["How long does erosion take?","A long time","Seconds","One minute","It is slow."]]]],
 
 ["volcano4",
-["Volcanoes and earthquakes","🌋","AC9S4H01","Describe fast changes to Earth's surface.","Earth's crust is made of big moving pieces called plates. Earthquakes happen when plates slip. Volcanoes erupt when hot melted rock, magma, escapes through the crust. Magma that reaches the surface is called lava. These changes happen quickly.","A volcano erupts and lava flows down.","Make a model volcano with an adult.",[
+["Volcanoes and earthquakes","🌋","AC9S5U02","Describe fast changes to Earth's surface.","Earth's crust is made of big moving pieces called plates. Earthquakes happen when plates slip. Volcanoes erupt when hot melted rock, magma, escapes through the crust. Magma that reaches the surface is called lava. These changes happen quickly.","A volcano erupts and lava flows down.","Make a model volcano with an adult.",[
 ["Hot melted rock underground is...","Magma","Water","Sand","Magma is melted rock."],
 ["Melted rock on the surface is...","Lava","Ice","Soil","Lava is on the surface."],
 ["Earthquakes happen when...","Plates slip","Clouds crash","Rain falls","Plates move."]]],
@@ -126,7 +126,7 @@ PEBBLE_EXTRA(4,"science",[
 ["Earthquakes happen when...","Plates slip","Clouds crash","Rain falls","Plates move."]]]],
 
 ["rocks4",
-["Rocks and fossils","🪨","AC9S4U04","Know three rock types and fossils.","Igneous rock forms from cooled lava or magma. Sedimentary rock forms from layers of sand and mud pressed together. Metamorphic rock is changed by heat and pressure. Fossils are found in sedimentary rock. They show life from long ago.","Sandstone is a sedimentary rock. A fossil of a shell may be inside.","Collect and sort rocks by texture and colour.",[
+["Rocks and fossils","🪨","AC9S3U02","Know three rock types and fossils.","Igneous rock forms from cooled lava or magma. Sedimentary rock forms from layers of sand and mud pressed together. Metamorphic rock is changed by heat and pressure. Fossils are found in sedimentary rock. They show life from long ago.","Sandstone is a sedimentary rock. A fossil of a shell may be inside.","Collect and sort rocks by texture and colour.",[
 ["Rock from cooled lava is...","Igneous","Sedimentary","Fossil","Igneous means fire."],
 ["Fossils are found in...","Sedimentary rock","Lava","Air","Layers preserve fossils."],
 ["A fossil shows...","Life from long ago","Tomorrow's weather","A recipe","Fossils preserve past life."]]],
