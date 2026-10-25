@@ -173,7 +173,7 @@ css.textContent=`
 .bb-btn:disabled{cursor:default}
 .bb-go{background:#2f7d4f;border-color:#1f5a37;color:#fff;box-shadow:0 4px 0 #1f5a37}
 .bb-boss{background:#6b3fa0;border-color:#4b2a73;color:#fff;box-shadow:0 4px 0 #4b2a73}
-.bb-back{justify-self:start;border:0;background:none;color:#125877;font:800 1.05rem var(--display);cursor:pointer;padding:6px 0}
+.bb-back{justify-self:start;border:0;background:none;color:#125877;font:800 1.05rem var(--display);cursor:pointer;padding:10px 14px 10px 0;min-height:48px;min-width:64px}
 .bb-why{border-radius:18px;background:#fff6dc;border:2px solid #d9a52b;padding:12px 16px;font-size:1.1rem;line-height:1.45}.bb-why ol{margin:6px 0 0;padding-left:1.4em}
 .bb-bar{display:flex;gap:6px;justify-content:center}.bb-bar i{width:16px;height:16px;border-radius:50%;background:#c9dbe2}.bb-bar i.ok{background:#2f7d4f}.bb-bar i.no{background:#e0a33a}.bb-bar i.now{outline:3px solid #125877}
 .bb-skills{display:grid;gap:8px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}

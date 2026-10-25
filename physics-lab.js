@@ -160,7 +160,7 @@ css.textContent=[
 ".pl-dots{display:flex;gap:6px}.pl-dots i{width:14px;height:14px;border-radius:50%;background:#c9dbe2}.pl-dots i.d{background:#125877}",
 ".pl-guide{display:flex;gap:12px;align-items:flex-start}.pl-guide>span{font-size:2.6rem;line-height:1}.pl-guide>div{position:relative;flex:1;border-radius:18px;background:#eaf7ee;border:2px solid #2f7d4f;padding:12px 14px;font-size:1.15rem;line-height:1.45}",
 ".pl-work{margin:8px 0 0;padding-left:1.4em;font-size:1.1rem;line-height:1.5}.pl-work li{margin:4px 0}.pl-work li:last-child{font-weight:800}",
-".pl-back{justify-self:start;border:0;background:none;color:#125877;font:800 1.05rem var(--display);cursor:pointer;padding:6px 0}"
+".pl-back{justify-self:start;border:0;background:none;color:#125877;font:800 1.05rem var(--display);cursor:pointer;padding:10px 14px 10px 0;min-height:48px;min-width:64px}"
 ].join("\n");
 document.head.appendChild(css);
 
