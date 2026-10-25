@@ -61,7 +61,7 @@ PEBBLE_EXTRA(5,"science",[
 ["How many planets orbit the Sun?","8","9","5","There are eight planets."],
 ["Which planet do we live on?","Earth","Mars","Venus","Earth is our home."],
 ["What orbits Earth?","The Moon","The Sun","Mars","The Moon orbits Earth."]]],
-["Space mining","🪐","The Sun is a star at the centre of our solar system. Eight planets orbit the Sun. Earth is the third planet. The Moon orbits Earth. Earth takes one year to orbit the Sun. Earth spins once each day. In Minecraft, the Sun and Moon cross the sky. In real life, Earth spins.","Mercury is closest to the Sun. Neptune is farthest.","Draw the Sun and the planets in order.",[
+["Space mining","🪐","The Sun is a star at the centre of our solar system. Eight planets orbit the Sun. Earth is the third planet. The Moon orbits Earth. Earth takes one year to orbit the Sun. Earth spins once each day. In your block world, the Sun and Moon cross the sky. In real life, Earth spins.","Mercury is closest to the Sun. Neptune is farthest.","Draw the Sun and the planets in order.",[
 ["What is at the centre of our solar system?","The Sun","Earth","The Moon","The Sun is at the centre."],
 ["How many planets orbit the Sun?","8","9","5","There are eight planets."],
 ["Which planet do we live on?","Earth","Mars","Venus","Earth is our home."],
@@ -112,7 +112,7 @@ PEBBLE_EXTRA(5,"science",[
 ["Opposite poles...","Attract","Repel","Do nothing","North and south pull together."],
 ["The same poles...","Repel","Attract","Melt","Same poles push apart."],
 ["Can a magnet work through paper?","Yes","No","Only in water","A magnet works through thin materials."]]],
-["Block magnets","🧲","A magnet pulls on some metals, like iron. It can also push or pull other magnets. The two ends are poles: north and south. Opposite poles attract. The same poles repel. A magnet works through paper, cloth and water. In Minecraft, iron is a metal you mine. Real iron sticks to magnets.","A magnet picks up iron nails.","Test 5 things with a magnet. Which stick?",[
+["Block magnets","🧲","A magnet pulls on some metals, like iron. It can also push or pull other magnets. The two ends are poles: north and south. Opposite poles attract. The same poles repel. A magnet works through paper, cloth and water. In your block world, iron is a metal you mine. Real iron sticks to magnets.","A magnet picks up iron nails.","Test 5 things with a magnet. Which stick?",[
 ["Which does a magnet attract?","Iron","Wood","Plastic","Magnets attract iron."],
 ["Opposite poles...","Attract","Repel","Do nothing","North and south pull together."],
 ["The same poles...","Repel","Attract","Melt","Same poles push apart."],

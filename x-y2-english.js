@@ -132,6 +132,6 @@ PEBBLE_EXTRA(2,"english",[
 ["The big idea, dino style","🎯","The main idea is what a text is mostly about. Details give extra facts. A text about dinosaurs may say what they ate, where they lived and how big they were.","A text says T. rex had sharp teeth, ate meat and lived long ago. The main idea is T. rex.","Read a short text. Say what it is mostly about.",[
 ["A text says: Triceratops had three horns. It ate plants. It lived long ago. What is it about?","Triceratops","Plants only","Horns only","All the facts are about Triceratops."],
 ["What is a main idea?","What the text is mostly about","The last word","The title only","The main idea covers the whole text."],
-["Which is a detail about Minecraft?","You can build with blocks","It is fun","Games exist","A detail is a small fact."],
+["Which is a detail about block games?","You can build with blocks","It is fun","Games exist","A detail is a small fact."],
 ["A text says: Pickaxes dig. Pickaxes break stone. Pickaxes mine ore. What is it about?","Pickaxes","Stone only","Ore only","All the facts are about pickaxes."]]]]
 ]);

@@ -27,7 +27,7 @@ PEBBLE_EXTRA(5,"hass",[
 ["Which has lots of rain and tall trees?","Rainforest","Desert","Grassland","Rainforests are wet."],
 ["Where does land meet the sea?","The coast","The desert","The mountain","Coasts meet the sea."],
 ["What shapes an environment?","Climate, rain and temperature","Only people","Only music","Weather and climate shape places."]]],
-["Biomes for builders","🏜️","Australia has many environments. Deserts are dry and hot. Rainforests have lots of rain and tall trees. Grasslands have grass and few trees. Coasts meet the sea. Climate, rain and temperature shape each place. Minecraft has biomes like desert and jungle. Real Australia has deserts and rainforests.","Central Australia is mostly desert. Northern Queensland has rainforest.","Name an environment near you. What is it like?",[
+["Biomes for builders","🏜️","Australia has many environments. Deserts are dry and hot. Rainforests have lots of rain and tall trees. Grasslands have grass and few trees. Coasts meet the sea. Climate, rain and temperature shape each place. Block games have biomes like desert and jungle. Real Australia has deserts and rainforests.","Central Australia is mostly desert. Northern Queensland has rainforest.","Name an environment near you. What is it like?",[
 ["Which environment is dry and hot?","Desert","Rainforest","Coast","Deserts get little rain."],
 ["Which has lots of rain and tall trees?","Rainforest","Desert","Grassland","Rainforests are wet."],
 ["Where does land meet the sea?","The coast","The desert","The mountain","Coasts meet the sea."],
@@ -61,7 +61,7 @@ PEBBLE_EXTRA(5,"hass",[
 ["Who came to the goldfields?","People from many places","Only local people","Nobody","People came from Australia and the world."],
 ["What grew fast near goldfields?","Towns","Oceans","Mountains","Towns grew fast."],
 ["The gold rush also...","Changed the land and affected First Nations peoples","Had no effects","Only helped","It had many effects."]]],
-["Mining then and now","⛏️","Gold was found in New South Wales and Victoria in the 1850s. People came from Australia and around the world to find gold. Towns grew fast. Many people worked in hard conditions. The gold rush also changed the land and affected First Nations peoples. In Minecraft you mine ore easily. Real miners worked hard with simple tools.","Ballarat in Victoria became a goldfields town.","Imagine you moved to a goldfield. What is hard?",[
+["Mining then and now","⛏️","Gold was found in New South Wales and Victoria in the 1850s. People came from Australia and around the world to find gold. Towns grew fast. Many people worked in hard conditions. The gold rush also changed the land and affected First Nations peoples. In your block world you mine ore easily. Real miners worked hard with simple tools.","Ballarat in Victoria became a goldfields town.","Imagine you moved to a goldfield. What is hard?",[
 ["When was gold found in New South Wales and Victoria?","The 1850s","The 1950s","The 1650s","The gold rush began in the 1850s."],
 ["Who came to the goldfields?","People from many places","Only local people","Nobody","People came from Australia and the world."],
 ["What grew fast near goldfields?","Towns","Oceans","Mountains","Towns grew fast."],
@@ -112,7 +112,7 @@ PEBBLE_EXTRA(5,"hass",[
 ["Imports are...","Goods bought from other countries","Goods sold to other countries","Goods we throw away","Imports come in."],
 ["Which does Australia export?","Wool","Nothing","Snowmen","Australia exports wool."],
 ["Why do countries trade?","To get things they do not have","To avoid people","To stop all work","Trade shares goods."]]],
-["Trading with villagers","🚢","Exports are goods sold to other countries. Imports are goods bought from other countries. Australia exports iron ore, coal, wheat and wool. Australia imports things like cars and phones. Trade links countries. In Minecraft you trade with villagers.","Australia sells iron ore to other countries.","Find something at home made in another country.",[
+["Trading with villagers","🚢","Exports are goods sold to other countries. Imports are goods bought from other countries. Australia exports iron ore, coal, wheat and wool. Australia imports things like cars and phones. Trade links countries. In your block world you trade with villagers.","Australia sells iron ore to other countries.","Find something at home made in another country.",[
 ["Exports are...","Goods sold to other countries","Goods bought from others","Goods made at home only","Exports leave the country."],
 ["Imports are...","Goods bought from other countries","Goods sold to other countries","Goods we throw away","Imports come in."],
 ["Which does Australia export?","Iron ore","Nothing","Snowmen","Australia exports iron ore."],
@@ -129,7 +129,7 @@ PEBBLE_EXTRA(5,"hass",[
 ["Which digs up minerals?","Mining","Farming","Swimming","Mining digs up minerals."],
 ["Where do many people live and work?","Cities","Deserts only","Oceans","Cities have homes and jobs."],
 ["Why care for land?","So it can be used for a long time","So it breaks","So it gets lost","Care keeps land healthy."]]],
-["Land in the world","🌾","People use land in different ways. Farming grows food. Mining digs up minerals. Cities have homes and workplaces. Forests give timber and homes for animals. People need to care for land so it can be used for a long time. In Minecraft you farm, mine and build on land. Real land needs care too.","Wheat farms use flat land with good soil.","Name 3 ways land is used near you.",[
+["Land in the world","🌾","People use land in different ways. Farming grows food. Mining digs up minerals. Cities have homes and workplaces. Forests give timber and homes for animals. People need to care for land so it can be used for a long time. In your block world you farm, mine and build on land. Real land needs care too.","Wheat farms use flat land with good soil.","Name 3 ways land is used near you.",[
 ["Which use of land grows food?","Farming","Mining","Fishing","Farming grows food."],
 ["Which digs up minerals?","Mining","Farming","Swimming","Mining digs up minerals."],
 ["Where do many people live and work?","Cities","Deserts only","Oceans","Cities have homes and jobs."],

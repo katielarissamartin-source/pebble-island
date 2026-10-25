@@ -8,7 +8,7 @@ PEBBLE_EXTRA(3,"hass",[
 ["A community is...","A group that shares a place or interest","One person","A kind of food","People in a community connect."],
 ["Which is a community?","A riding club","A single tree","A pencil","A club is a group of people."],
 ["How do people help a community?","By sharing and caring","By ignoring it","By leaving rubbish","Helping makes it stronger."]]],
-["A build community","🧱","A community is a group of people who share a place or an interest. Towns, schools and clubs are communities. People help each other and share places like parks and libraries.","A Minecraft server is a community. Players build and share the world together.","Name two communities you belong to.",[
+["A build community","🧱","A community is a group of people who share a place or an interest. Towns, schools and clubs are communities. People help each other and share places like parks and libraries.","A game server is a community. Players build and share the world together.","Name two communities you belong to.",[
 ["A community is...","A group that shares a place or interest","One person","A kind of food","People in a community connect."],
 ["Which is a community?","A dinosaur fan club","A single tree","A pencil","A club is a group of people."],
 ["How do people help a community?","By sharing and caring","By ignoring it","By leaving rubbish","Helping makes it stronger."]]]],
@@ -36,7 +36,7 @@ PEBBLE_EXTRA(3,"hass",[
 ["Diversity means...","Many different people and cultures","Everyone the same","One language only","Diverse means varied."],
 ["We treat everyone...","With respect","With unkindness","Differently for no reason","Respect for all."],
 ["Which is a tradition?","A family meal on special days","Brushing teeth","Wearing socks","Traditions pass down."]]],
-["Different and the same, in a world","🌍","People in a community come from many places and have different cultures, languages and traditions. Differences make a community interesting. We treat everyone with respect.","In a Minecraft world, players come from many countries. They build different things.","Ask a friend about a tradition their family has.",[
+["Different and the same, in a world","🌍","People in a community come from many places and have different cultures, languages and traditions. Differences make a community interesting. We treat everyone with respect.","In a block world, players come from many countries. They build different things.","Ask a friend about a tradition their family has.",[
 ["Diversity means...","Many different people and cultures","Everyone the same","One language only","Diverse means varied."],
 ["We treat everyone...","With respect","With unkindness","Differently for no reason","Respect for all."],
 ["Which is a tradition?","A family meal on special days","Brushing teeth","Wearing socks","Traditions pass down."]]]],
@@ -71,7 +71,7 @@ null,null],
 ["North, south, east and west are...","Compass points","Colours","Numbers","They show direction."],
 ["What does a map key show?","What symbols mean","Who drew it","The weather","The key explains symbols."],
 ["A map shows a place from...","Above","The side","Underground","Maps view from above."]]],
-["Coordinates and world maps","🧭","A map shows places from above. A key tells what symbols mean. A compass rose shows north, south, east and west. Use the key and compass to find places.","In Minecraft you check coordinates. On a map the compass tells you north.","Draw a treasure map of your room. Add a key.",[
+["Coordinates and world maps","🧭","A map shows places from above. A key tells what symbols mean. A compass rose shows north, south, east and west. Use the key and compass to find places.","In your block world you check coordinates. On a map the compass tells you north.","Draw a treasure map of your room. Add a key.",[
 ["North, south, east and west are...","Compass points","Colours","Numbers","They show direction."],
 ["What does a map key show?","What symbols mean","Who drew it","The weather","The key explains symbols."],
 ["A map shows a place from...","Above","The side","Underground","Maps view from above."]]]],
@@ -85,7 +85,7 @@ null,null],
 ["Climate is...","The usual weather over many years","Today's weather","A kind of cloud","Climate is long term."],
 ["What would you wear in hot weather?","A hat and light clothes","A thick coat","Snow boots","Dress for the weather."],
 ["Seasons affect...","Clothes and activities","The alphabet","Maths","Seasons change life."]]],
-["Weather and biomes","⛈️","Weather changes each day. Climate is the usual weather over many years. Seasons affect clothes, food and play. Some places are hot and dry. Others are cold and wet. People choose homes and clothes to suit the weather.","Minecraft has desert and snow biomes. Real places have different climates too.","Check the weather. What would you wear?",[
+["Weather and biomes","⛈️","Weather changes each day. Climate is the usual weather over many years. Seasons affect clothes, food and play. Some places are hot and dry. Others are cold and wet. People choose homes and clothes to suit the weather.","Block games have desert and snow biomes. Real places have different climates too.","Check the weather. What would you wear?",[
 ["Climate is...","The usual weather over many years","Today's weather","A kind of cloud","Climate is long term."],
 ["What would you wear in hot weather?","A hat and light clothes","A thick coat","Snow boots","Dress for the weather."],
 ["Seasons affect...","Clothes and activities","The alphabet","Maths","Seasons change life."]]]],
@@ -99,7 +99,7 @@ null,null],
 ["The council looks after...","Local roads, parks and bins","The whole country","The weather","Councils run local services."],
 ["People choose council members by...","Voting","Guessing","Drawing","Voting picks leaders."],
 ["Which is a council job?","Collecting rubbish","Making cartoons","Selling toys","Councils collect bins."]]],
-["The town council","🏗️","A council is the local government. It looks after roads, parks, libraries and rubbish collection. People in the community vote for their council members. Councils make decisions for the local area.","The council plans new parks. Builders plan too, like in Minecraft.","Find one thing your council looks after.",[
+["The town council","🏗️","A council is the local government. It looks after roads, parks, libraries and rubbish collection. People in the community vote for their council members. Councils make decisions for the local area.","The council plans new parks. Builders plan too, like in a block world.","Find one thing your council looks after.",[
 ["The council looks after...","Local roads, parks and bins","The whole country","The weather","Councils run local services."],
 ["People choose council members by...","Voting","Guessing","Drawing","Voting picks leaders."],
 ["Which is a council job?","Collecting rubbish","Making cartoons","Selling toys","Councils collect bins."]]]],
@@ -127,7 +127,7 @@ null,null],
 ["Which is a need?","Water","A tiara","A game","You need water to live."],
 ["Which is a want?","A sparkly saddle","Food","Shelter","Saddles are wants."],
 ["Saving money helps you...","Buy something later","Spend it now","Lose it","Saving is for later."]]],
-["Survival needs and wants","⛏️","Needs are things you must have to live: food, water, shelter, clothes and care. Wants are things you would like but can live without: toys and treats. People choose how to spend money. Saving helps you buy something later.","In Minecraft survival you need food and a shelter. You want diamond armour.","Sort five things into needs and wants.",[
+["Survival needs and wants","⛏️","Needs are things you must have to live: food, water, shelter, clothes and care. Wants are things you would like but can live without: toys and treats. People choose how to spend money. Saving helps you buy something later.","In block-world survival you need food and a shelter. You want diamond armour.","Sort five things into needs and wants.",[
 ["Which is a need?","Water","A skin","A game","You need water to live."],
 ["Which is a want?","Diamond armour","Food","Shelter","Armour is a want."],
 ["Saving money helps you...","Buy something later","Spend it now","Lose it","Saving is for later."]]]],

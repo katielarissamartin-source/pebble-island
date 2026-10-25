@@ -22,7 +22,7 @@ null,null],
 ["Explorers used...","Maps and compasses","Only luck","Nothing","Tools helped them navigate."],
 ["Many 'new' lands already had...","People living there","Nobody","Only animals","People already lived in these places."],
 ["Maps change because...","People learn more","The land shrinks","Magic","Maps are updated."]]],
-["Explorer maps and coordinates","🧭","Explorers sailed to find new lands, trade and knowledge. They used maps, compasses and stars. Not all places they \"found\" were new: people already lived there. Maps change as people learn more. Old maps show how people saw the world.","Minecraft players use coordinates. Explorers used latitude and longitude.","Draw a simple map of your street. Add a compass rose.",[
+["Explorer maps and coordinates","🧭","Explorers sailed to find new lands, trade and knowledge. They used maps, compasses and stars. Not all places they \"found\" were new: people already lived there. Maps change as people learn more. Old maps show how people saw the world.","Block game players use coordinates. Explorers used latitude and longitude.","Draw a simple map of your street. Add a compass rose.",[
 ["Explorers used...","Maps and compasses","Only luck","Nothing","Tools helped them navigate."],
 ["Many 'new' lands already had...","People living there","Nobody","Only animals","People already lived in these places."],
 ["Maps change because...","People learn more","The land shrinks","Magic","Maps are updated."]]]],
@@ -36,7 +36,7 @@ null,null],
 ["A map scale shows...","Real distances","Colours","Names","Scale links map to real distance."],
 ["Grid square B3 uses...","A letter and a number","Two letters","Two numbers","Grid references mix letter and number."],
 ["1 cm = 2 km. A 4 cm path is...","8 km","4 km","6 km","4 x 2 = 8."]]],
-["Build grid map","🧱","A map scale shows how far real distances are on the map. A grid uses letters and numbers to name squares, like B3. Use the legend to read symbols. Scale helps you work out real distance.","In Minecraft you can use coordinates. A map grid uses letters and numbers.","Use a grid map: find the square for the library.",[
+["Build grid map","🧱","A map scale shows how far real distances are on the map. A grid uses letters and numbers to name squares, like B3. Use the legend to read symbols. Scale helps you work out real distance.","In your block world you can use coordinates. A map grid uses letters and numbers.","Use a grid map: find the square for the library.",[
 ["A map scale shows...","Real distances","Colours","Names","Scale links map to real distance."],
 ["Grid square B3 uses...","A letter and a number","Two letters","Two numbers","Grid references mix letter and number."],
 ["1 cm = 2 km. A 4 cm path is...","8 km","4 km","6 km","4 x 2 = 8."]]]],
@@ -50,7 +50,7 @@ null,null],
 ["Which is an Australian environment?","Desert","Volcano only","Moon","Australia has deserts."],
 ["The Daintree is a...","Rainforest","Desert","Alpine area","The Daintree is rainforest."],
 ["Different environments have different...","Plants and animals","Maths","Letters","Living things suit their environment."]]],
-["Biomes in real life","⛏️","Australia has many environments: rainforest, desert, grassland, coast, alpine and wetland. Each has its own climate, plants and animals. People live and work differently in each environment.","Minecraft has biomes. Australia has real environments like the desert and the rainforest.","Pick two environments. Compare plants and animals.",[
+["Biomes in real life","⛏️","Australia has many environments: rainforest, desert, grassland, coast, alpine and wetland. Each has its own climate, plants and animals. People live and work differently in each environment.","Block games have biomes. Australia has real environments like the desert and the rainforest.","Pick two environments. Compare plants and animals.",[
 ["Which is an Australian environment?","Desert","Volcano only","Moon","Australia has deserts."],
 ["The Daintree is a...","Rainforest","Desert","Alpine area","The Daintree is rainforest."],
 ["Different environments have different...","Plants and animals","Maths","Letters","Living things suit their environment."]]]],
@@ -64,7 +64,7 @@ null,null],
 ["Which helps the environment?","Recycling","Littering","Wasting water","Recycling reduces waste."],
 ["Who can look after the environment?","Everyone","Only adults","Nobody","Everyone can help."],
 ["A reusable bottle...","Reduces waste","Makes litter","Wastes water","Reusable means less waste."]]],
-["Looking after our world","♻️","People look after the environment by saving water and energy, reducing waste, recycling and protecting habitats. Councils, schools and families all help. Small actions add up.","In Minecraft you replant trees. Real people replant trees too.","Plan one action to look after your local park.",[
+["Looking after our world","♻️","People look after the environment by saving water and energy, reducing waste, recycling and protecting habitats. Councils, schools and families all help. Small actions add up.","In your block world you replant trees. Real people replant trees too.","Plan one action to look after your local park.",[
 ["Which helps the environment?","Recycling","Littering","Wasting water","Recycling reduces waste."],
 ["Who can look after the environment?","Everyone","Only adults","Nobody","Everyone can help."],
 ["A reusable bottle...","Reduces waste","Makes litter","Wastes water","Reusable means less waste."]]]],
