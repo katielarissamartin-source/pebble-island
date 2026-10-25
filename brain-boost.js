@@ -225,7 +225,7 @@ function answer(btn,q){
  res.push(right);
  const ev=update(M,q.id,right,secs,age(K)<9?9:7);
  if(ev==="up")ups.push(q.id);
- if(right){sfx("good");try{addCoins(boss?3:2)}catch(e){}}
+ if(right){sfx("good");try{window.PEBBLE_FAIR&&PEBBLE_FAIR.src("boost");addCoins(boss?3:2);window.PEBBLE_FAIR&&PEBBLE_FAIR.after()}catch(e){}}
  else if(boss)lives--;
  const box=document.createElement("div");box.className="bb-why";
  box.innerHTML=(right?"<b>"+P(["Yes!","Brilliant!","You got it!","Nice one!"])+"</b>":"<b>Now we know!</b> The answer is "+esc(q.ans)+".")+(ev==="up"?' <b class="bb-up" style="display:inline-block">⬆️ Level up in '+esc(SK[q.id].name)+'!</b>':"")+(right?"":"<ol>"+q.work.map(w=>"<li>"+esc(w)+"</li>").join("")+"</ol>");
