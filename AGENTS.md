@@ -12,7 +12,7 @@ Real children use this app every day on tablets. Do not break the live site.
 
 ## Hard rules
 1. **No direct Vercel deployments.** Never use `create_deployment`, `assign_alias`, rollbacks, `vercel deploy` or a dashboard upload to change the live site. They bypass `main` and have already wiped other work once.
-2. **Never push to `main`.** Work on a branch, open a pull request, and merge only when KT says to in that chat.
+2. **Never push to `main`.** Work on a branch and open a pull request. Merge it yourself once the work is finished and checked (preview `/sw.js` shows your cache name, no errors); KT does not need to say "merge" (her rule, 25 Oct 2026). Then confirm the live site, per "Before you merge".
 3. **Start from the latest `main`.** Pull it before you branch. Pull it again before you merge; if it changed, merge it into your branch and re-test.
 4. **Never commit** the family code, the hub password or any child data.
 
